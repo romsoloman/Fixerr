@@ -1,5 +1,5 @@
 <template>
-  <section class="hero-app">
+  <section class="container hero-app">
     <div class="hero-backgrounds">
       <div class="hero-andrea"></div>
     </div>
@@ -9,7 +9,7 @@
       </h1>
       <form class="search-box">
         <div class="search">
-          <div class="search-icon">
+          <div class="flex justify-center align-center search-icon">
             <i class="fas fa-search"></i>
           </div>
           <input
@@ -17,9 +17,14 @@
             placeholder="Try 'building mobile app'"
             v-model="filterBy.name"
           />
-          <router-link :to="`/gig?name=${filterBy.name}`"> Search </router-link>
+          <router-link
+            class="flex justify-center align-center"
+            :to="`/gig?name=${filterBy.name}`"
+          >
+            Search
+          </router-link>
         </div>
-        <div class="popular-search">
+        <div class="flex popular-search">
           <span>popular:</span>
           <router-link :to="`/gig?name=business`">Business</router-link>
           <router-link :to="`/gig?name=gaming`">Gaming</router-link>

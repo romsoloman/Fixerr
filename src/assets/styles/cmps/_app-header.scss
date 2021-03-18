@@ -1,16 +1,17 @@
 .app-header {
     background-color: none;
-    padding: 10px;
     display: flex;
     justify-content: space-between;
-
-    nav {
-        padding: 5px 0;
+    h1 {
+        letter-spacing: -3.7px;
     }
-    nav a:not(:first-child) {
-        border-left: 1px solid $clr1;
-        padding: 0 5px;
-        margin: 10px;
+    nav {
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto 0 auto auto;
+        padding: 0 0 10px;
     }
     nav .active {
         color: $clr1;
