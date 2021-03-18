@@ -6,3 +6,15 @@
     display: grid;
     grid-template-columns: 12fr 4.5fr;
 }
+
+
+.checkout-modal{
+    display: flex;
+    height: 100px;
+    color: aliceblue;
+    background-color: rgb(105, 113, 153);
+    border-radius: 3px;
+    font-size: xx-large;
+    align-items: center;
+    justify-content: center;
+}
