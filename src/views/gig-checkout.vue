@@ -84,7 +84,7 @@ export default {
     //console.log("on load in gig-checkout gigId : ", this.gigId);
    // this.gig = this.$store.getters.getGigById(this.gigId)
    console.log('this.$store.getters.getGigById(this.gigId);',this.$store.getters.getGigById(this.gigId))
-     this.gig = this.$store.getters.getGigById(this.gigId);
+  this.gig = this.$store.getters.getGigById(this.gigId);
   },
     methods: {
        checkout(){
