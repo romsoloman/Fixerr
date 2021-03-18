@@ -47,7 +47,6 @@ export const gigStore = {
       state.gigs.splice(idxToRemove, 1);
     },
     addGig(state, { gig }) {
-      console.log('gig', gig);
       state.gigs.push(gig);
     },
     updateGig(state, { gig }) {
@@ -87,7 +86,7 @@ export const gigStore = {
       const type = (gig._id) ? 'updateGig' : 'addGig';
       return gigService.save(gig)
         .then(savedGig => {
-          console.log('savedGig', savedGig);
+          console.log('savedGig-store', savedGig);
           context.commit({ type, gig: savedGig })
         })
         .catch(err => {
