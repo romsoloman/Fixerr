@@ -24,16 +24,16 @@ export const gigStore = {
     getEditChanges(state) {
       return state.editChanges;
     },
-    // getGigById: (state) => (id) => {
-    //   var gigToShow = null
-    //   state.gigs.find(gig => {
-    //     if (gig._id === id) {
-    //       gigToShow = gig;
-    //     }
+    getGigById: (state) => (id) => {
+      var gigToShow = null
+      state.gigs.find(gig => {
+        if (gig._id === id) {
+          gigToShow = gig;
+        }
 
-    //   })
-    //   return gigToShow
-    // },
+      })
+      return gigToShow
+    },
   },
   mutations: {
     setGigs(state, { gigs }) {
@@ -52,7 +52,7 @@ export const gigStore = {
       const idxToUpdate = state.gigs.findIndex(gigFromArray => {
         return gigFromArray._id === gig._id;
       })
-      gigservice.save(gig)
+      gigService.save(gig)
       state.gigs.splice(idxToUpdate, 1, gig);
     },
     updateLastPath(state, { path }) {
