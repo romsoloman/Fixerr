@@ -1,11 +1,27 @@
 .hero-app {
-    height: 80vh;
+    height: 90vh;
     position: relative;
     display: flex;
     align-items: center;
-    background-color: rgb(131, 27, 44);
+    // background-color: rgb(131, 27, 44);
+    & .hero-backgrounds {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        & div {
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            background: #8c1e1e;
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+    }
     & .hero-container{
         width: 50%;
+        z-index: 0;
         & .title {
             font-size: 2.5rem;
             color: white;

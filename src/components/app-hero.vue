@@ -2,6 +2,22 @@
   <section class="container hero-app">
     <div class="hero-backgrounds">
       <div class="hero-andrea"></div>
+      <!-- <div
+        class="hero-puka"
+        :style="{ backgroundImage: `url(${item.img})` }"
+      ></div>
+      <div
+        class="hero-simon"
+        :style="{ backgroundImage: `url(${item.img})` }"
+      ></div>
+      <div
+        class="hero-zack"
+        :style="{ backgroundImage: `url(${item.img})` }"
+      ></div>
+      <div
+        class="hero-dona"
+        :style="{ backgroundImage: `url(${item.img})` }"
+      ></div> -->
     </div>
     <div class="hero-container">
       <h1 class="title">
