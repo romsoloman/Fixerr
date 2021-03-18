@@ -6,6 +6,7 @@
        <p>{{review.rate}}</p>
      </div>
      <p>{{review.txt}}</p>
+     <button @click="onRemoveReview"> X </button>
     </section>
 </template>
 
@@ -15,6 +16,11 @@ export default {
   props: {
     review: Object,
     editNewReview:null,
+  },
+  methods:{
+    onRemoveReview(){
+      this.$emit('removeReview',this.review.id)
+    }
   },
   computed: {},
 };

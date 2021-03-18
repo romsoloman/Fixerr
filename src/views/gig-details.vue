@@ -51,7 +51,7 @@
         </div>
         <div class="review">
           <h2>Review</h2>
-          <review-list :reviews="gig.reviews" @addReview="addReview" />
+          <review-list :reviews="gig.reviews" @addReview="addReview" @removeReview="removeReview"/>
         </div>
 
         <section class="package-price">
@@ -92,6 +92,15 @@ export default {
       reviewToAdd.by= userService.getLoggedinUser()
       console.log('reviewToAdd',reviewToAdd );
       this.gig.reviews.push(reviewToAdd);
+      await this.$store.dispatch({ type: "saveGigs", gig: this.gig })
+    },
+    async removeReview(reviewId){
+      var reviews = this.gig.reviews;
+      const idxToRemove = reviews.findIndex(review => {
+        return review.id === reviewId;
+      })
+      reviews.splice(idxToRemove, 1);
+      this.gig.reviews = reviews;
       await this.$store.dispatch({ type: "saveGigs", gig: this.gig })
     }
   },

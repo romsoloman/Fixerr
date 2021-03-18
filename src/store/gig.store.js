@@ -52,7 +52,7 @@ export const gigStore = {
       const idxToUpdate = state.gigs.findIndex(gigFromArray => {
         return gigFromArray._id === gig._id;
       })
-      gigservice.save(gig)
+      gigService.save(gig)
       state.gigs.splice(idxToUpdate, 1, gig);
     },
     updateLastPath(state, { path }) {
