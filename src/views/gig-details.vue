@@ -19,27 +19,29 @@
           <h2>About this Gig</h2>
           <p class="about">{{gig.about}}</p>
         </div>
+        <h2>About the seller</h2>
         <div class="about-seller-container">
-          <h2>About the seller</h2>
-          <!-- <img :src="gig.creator.imgUrl"> -->
-          <p class="username">{{gig.creator.fullname}}</p>
-          <p>⭐️{{gig.rating}}</p>
-          <p>Contact Me</p>
+          <img :src="gig.creator.imgUrl">
+          <div>
+            <p class="username">{{gig.creator.fullname}}</p>
+            <p>⭐️{{gig.rating}}</p>
+            <p>Contact Me</p>
+          </div>
         </div>
         <div class="more-on-seller">
-          <div class="seller-from">
+          <div class="detail seller-from">
             <h3>from</h3>
             <p>{{gig.creator.location}}</p>
           </div>
-          <div class="member-since">
+          <div class="detail member-since">
             <h3>Member since</h3>
             <p>{{gig.creator.memberSince}}</p>
           </div>
-          <div class="avg-response-time">
+          <div class="detail avg-response-time">
             <h3>Avg response time</h3>
             <p>{{gig.creator.avgResponseTime}}</p>
           </div>
-          <div class="last-delivery">
+          <div class="detail last-delivery">
             <h3>Last-delivery</h3>
             <p>{{gig.creator.lastDelivery}}</p>
           </div>
@@ -49,6 +51,7 @@
         </div>
         <div class="review">
           <h2>Review</h2>
+          <review-list :reviews="gig.reviews" />
         </div>
 
         <section class="package-price">
@@ -61,7 +64,8 @@
 
 <script>
 import { gigService } from '../services/gig.service.js';
-  import packagePrice from '@/components/package-price';
+import packagePrice from '@/components/package-price';
+import reviewList from "@/components/review-list";
 export default {
   name: "gig-details",
   data() {
@@ -69,8 +73,12 @@ export default {
        gig:null,
     }
   },
+  computed:{
+
+  },
   created() {
-     const gigId = this.$route.params.gigId;
+    console.log('this.$store.getters.reviews',this.$store.getters.reviews );
+    const gigId = this.$route.params.gigId;
     gigService.getById(gigId)
       .then(newgig=>{
         this.gig = newgig;
@@ -80,7 +88,8 @@ export default {
   methods: {
   },
   components:{
-    packagePrice
+    packagePrice,
+    reviewList
   }
 };
 </script>

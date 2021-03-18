@@ -1,0 +1,13 @@
+.review-container{
+  display: flex;
+  justify-content: space-between;
+  & .by-user{
+    display: flex;
+    flex-direction: row;
+  }
+  & .user-image {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+}

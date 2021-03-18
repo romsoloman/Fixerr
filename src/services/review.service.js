@@ -1,11 +1,12 @@
 import { httpService } from './http.service'
 import { storageService } from './async-storage.service'
-import {userService} from './user.service'
+import { userService } from './user.service'
 
 export const reviewService = {
   add,
   query,
-  remove
+  remove,
+  getEmptyReview
 }
 
 
@@ -32,4 +33,11 @@ async function add(review) {
   const addedReview = storageService.post('review', review)
 
   return addedReview
+}
+
+function getEmptyReview() {
+  return {
+    txt: '',
+    rat: '',
+  }
 }

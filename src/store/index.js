@@ -14,7 +14,7 @@ export const store = new Vuex.Store({
   modules: {
     userStore,
     // socketStore,
-    // reviewStore,
+    reviewStore,
     // orderStore,
     gigStore
   },
