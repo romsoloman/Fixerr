@@ -62,7 +62,7 @@ export default {
           title : 'abc',
           rating : '12',
           creator : {
-            fullname :'omer'
+            fullname :'tempName'
           },
           about : 'abc',
           rating : '123',
@@ -73,7 +73,7 @@ export default {
               txt : 'abc',
               rate : '123',
              by : {
-                 fullname : 'omer'
+                 fullname : 'tempName'
                  }
              }
           ] ,
