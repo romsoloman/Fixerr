@@ -3,7 +3,7 @@
     <div class="chackout-container main-container">
       <div class="content-container">
         <div class="content">
-          <img class="gig-checkout-img" src="@/img/book2.png" alt="" />
+          <img class="gig-checkout-img" src="http://coding-academy.org/books-photos/1.jpg" alt="" />
 
           <div>rate : {{ gig.rating }}</div>
 
@@ -18,13 +18,13 @@
         </div>
 
         <div>${{ gig.price }}</div>
-
-        <div>by : {{ gig.reviews[0].by.fullname }}</div>
+<!-- 
+        <div>by : {{ gig.reviews[0].by.fullname }}</div> -->
 
         <div>
           <!-- <router-link  :to="'/gig/'+ gigId + '/checkout'">Checkout</router-link> -->
 
-          <button class="checkout-btn">Checkout</button>
+          <button class="checkout-btn"  @click.prevent="checkout()">Checkout</button>
 
           <!-- <router-link class="gig-details-link" :to="'/gig/'+gig._id+'/details'"> -->
         </div>
@@ -43,7 +43,28 @@ export default {
   data() {
     return {
       gigId: null,
-      gig: null,
+            gig: {
+          by : 'cbcb',
+          title : 'abc',
+          rating : '12',
+          creator : {
+            fullname :'omer'
+          },
+          about : 'abc',
+          rating : '123',
+          price : '123',
+          tags : ['123'],
+          reviews :  [
+            {
+              txt : 'abc',
+              rate : '123',
+             by : {
+                 fullname : 'omer'
+                 }
+             }
+          ] ,
+                 
+      },
     };
   },
   mounted() {
@@ -52,6 +73,12 @@ export default {
     //this.gig = this.$store.getters.getGigById(this.gigId)
     this.gig = this.$store.getters.getGigById(this.gigId);
   },
+    methods: {
+       checkout(){
+
+    }
+
+    },
 };
 </script>
 
