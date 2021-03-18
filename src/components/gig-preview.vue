@@ -3,7 +3,7 @@
     <section class="card-container">
       <header>
         <div class="img-container">
-          <!-- <img class="gig-img" :src="gig.imgUrls" /> -->
+          <!-- <img class="gig-img" :src="gig.imgUrls[0]" /> -->
         </div>
       </header>
       <main class="main-info">
