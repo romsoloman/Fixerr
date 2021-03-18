@@ -1,104 +1,87 @@
 <template>
-  <div class="details-wrapper main-container">
-    <div class="gig-details">
+  <div class="gig-details-container" v-if="gig">
+    <section class="gig-details">
+      <p class="gig-title">{{ gig.title }} </p>
+      <section class="main-gig-details">
+        <section class="user-details">
+          <!-- <img :src="gig.creator.imgUrl"> -->
+          <p class="username">{{gig.creator.fullname}} |</p>
+          <p class="rating">⭐️{{gig.rating}}</p>
+          <p class="reviews-count">({{gig.reviews.length}})</p>
+        </section>
+        <section class="gig-imgs-container">
+          <!-- <img class="title-img" src="">
+          <img class="sub-title-img" src="">
+          <img class="sub-title-img" src="">
+          <img class="sub-title-img" src=""> -->
+        </section>
+        <div class="about-gig-container">
+          <h2>About this Gig</h2>
+          <p class="about">{{gig.about}}</p>
+        </div>
+        <div class="about-seller-container">
+          <h2>About the seller</h2>
+          <!-- <img :src="gig.creator.imgUrl"> -->
+          <p class="username">{{gig.creator.fullname}}</p>
+          <p>⭐️{{gig.rating}}</p>
+          <p>Contact Me</p>
+        </div>
+        <div class="more-on-seller">
+          <div class="seller-from">
+            <h3>from</h3>
+            <p>{{gig.creator.location}}</p>
+          </div>
+          <div class="member-since">
+            <h3>Member since</h3>
+            <p>{{gig.creator.memberSince}}</p>
+          </div>
+          <div class="avg-response-time">
+            <h3>Avg response time</h3>
+            <p>{{gig.creator.avgResponseTime}}</p>
+          </div>
+          <div class="last-delivery">
+            <h3>Last-delivery</h3>
+            <p>{{gig.creator.lastDelivery}}</p>
+          </div>
+        </div>
+        <div class="for-you">
+          <h2>For you</h2>
+        </div>
+        <div class="review">
+          <h2>Review</h2>
+        </div>
 
-      <div class="gig-title">
-        {{ this.gig.title }}
-      </div>
-
-      <div class="img-container"></div>
-      <!-- <img class="gig-img" src="@/img/book2.png" alt="" /> -->
-      <!-- <img class="gig-img" :src="gig.creator.imgUrl" alt="" /> -->
-      <!-- <img class="gig-img" src="https://cdn.pixabay.com/photo/2017/03/29/15/18/tianjin-2185510_1280.jpg" alt="" /> -->
-      <img class="gig-img" src="http://coding-academy.org/books-photos/1.jpg" alt="" />
-
-      <div class="gig-title">
-        {{ gig.about }}
-      </div>
-
-      <div>rate : {{ gig.rating }}</div>
-      <div>${{ gig.price }}</div>
-      tags :{{ gig.tags[0] }}
-
-      <div>
-        creator name: {{ gig.creator.fullname }}
-        {{ gig.creator.imgUrl }}
-      </div>
-
-      <div>
-        reviews :
-        {{ gig.reviews[0].txt }}
-      </div>
-
-      <div>rates : {{ gig.reviews[0].rate }}</div>
-      <div>by : {{ this.gig.reviews[0].by.fullname}}</div>
-
-      <div>
-        <!-- <router-link  :to="'/gig/'+ gigId + '/checkout'">Checkout</router-link> -->
-        <button class="continue-btn" @click.prevent="continueToCheckout()">
-          Continue
-        </button>
-
-        <!-- <router-link class="gig-details-link" :to="'/gig/'+gig._id+'/details'"> -->
-      </div>
-
-      <div>
-        {{ gig.by }}
-      </div>
-
-    
-    </div>
+        <section class="package-price">
+          <package-price :gig="gig"></package-price>
+        </section>
+      </section>
+    </section>
   </div>
 </template>
 
 <script>
+import { gigService } from '../services/gig.service.js';
+  import packagePrice from '@/components/package-price';
 export default {
   name: "gig-details",
   data() {
     return {
-      gigId: null,
-       gig: {
-          by : 'cbcb',
-          title : 'abc',
-          rating : '12',
-          creator : {
-            fullname :'omer'
-          },
-          about : 'abc',
-          rating : '123',
-          price : '123',
-          tags : ['123'],
-          reviews :  [
-            {
-              txt : 'abc',
-              rate : '123',
-             by : {
-                 fullname : 'omer'
-                 }
-             }
-          ] ,
-                 
-      },
-      review: {
-        content: "note reviewed yet",
-      },
-    };
+       gig:null,
+    }
   },
-
-  mounted() {
-    console.log('in gig-details  : gig.reviews[0].by.fullname',this.gig.reviews[0].by.fullname)
-    this.gigId = this.$route.params.gigId;
-    this.gig = this.$store.getters.getGigById(this.gigId);
-
-   //console.log("on load in gig-details, gigId : ", this.gigId);
+  created() {
+     const gigId = this.$route.params.gigId;
+    gigService.getById(gigId)
+      .then(newgig=>{
+        this.gig = newgig;
+        console.log('this.gig',this.gig );
+      })
   },
   methods: {
-    continueToCheckout() {
-      this.$router.push(`/gig/${this.gigId}/checkout`);
-
-      // this.$router.push('/gig/ + this.gigId+/checkout')
-    },
   },
+  components:{
+    packagePrice
+  }
 };
 </script>
 

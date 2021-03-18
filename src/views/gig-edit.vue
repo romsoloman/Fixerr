@@ -28,6 +28,9 @@
       <h4>Add price</h4>
       <input type="number" v-model="gigToEdit.price" >
     </div>
+    <div class="edit-delivery-time">
+      <input type="number" v-model="gigToEdit.deliveryTime" >
+    </div>
     <button class="edit-save" @click="saveGig" >SAVE</button>
   </section>
 

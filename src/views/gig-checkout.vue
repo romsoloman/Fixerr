@@ -18,7 +18,7 @@
         </div>
 
         <div>${{ gig.price }}</div>
-<!-- 
+<!--
         <div>by : {{ gig.reviews[0].by.fullname }}</div> -->
 
         <div>
@@ -63,7 +63,7 @@ export default {
                  }
              }
           ] ,
-                 
+
       },
     };
   },
@@ -71,7 +71,7 @@ export default {
     this.gigId = this.$route.params.gigId;
     //console.log("on load in gig-checkout gigId : ", this.gigId);
     //this.gig = this.$store.getters.getGigById(this.gigId)
-    this.gig = this.$store.getters.getGigById(this.gigId);
+    // this.gig = this.$store.getters.getGigById(this.gigId);
   },
     methods: {
        checkout(){

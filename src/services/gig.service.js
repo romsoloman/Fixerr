@@ -60,6 +60,7 @@ function getEmptyGig() {
     tags: [],
     imgsUrls: [],
     price: 0,
+    deliveryTime: '',
     rating: 4,
     creator: {
       fullname: '',
