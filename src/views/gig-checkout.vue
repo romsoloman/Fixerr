@@ -3,7 +3,7 @@
     <div class="chackout-container main-container">
       <div class="content-container">
         <div class="content">
-          <img class="gig-checkout-img" src="@/img/book2.png" alt="" />
+          <img class="gig-checkout-img" src="http://coding-academy.org/books-photos/1.jpg" alt="" />
 
           <div>rate : {{ gig.rating }}</div>
 
