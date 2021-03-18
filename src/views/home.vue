@@ -10,7 +10,9 @@
         <h1>Top rated categories:</h1>
         <ul class="categories-links"></ul>
         <li v-for="(category, idx) in top5Cat" :key="idx">
-          <router-link to="/gig">{{ category }}</router-link>
+          <router-link :to="`/gig?category=${category.toLowerCase()}`">
+            {{ category }}
+          </router-link>
         </li>
       </article>
       <article class="random-category">

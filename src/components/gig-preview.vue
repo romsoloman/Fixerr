@@ -1,14 +1,14 @@
 <template>
-  <router-link class="gig-details-link" :to="'/gig/'+gig._id+'/details'">
+  <router-link class="gig-details-link" :to="'/gig/' + gig._id + '/details'">
     <section class="card-container">
       <header>
         <div class="img-container">
-          <img class="gig-img" :src="gig.imgUrls[0]" />
+          <!-- <img class="gig-img" :src="gig.imgUrls" /> -->
         </div>
       </header>
       <main class="main-info">
         <div class="user-details">
-          <img class="user-img"/>
+          <img class="user-img" />
           <p class="user-name">{{ gig.creator.fullname }}</p>
           <p class="user-level">{{ gig.creator.level }}</p>
         </div>
