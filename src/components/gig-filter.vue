@@ -63,8 +63,8 @@ export default {
       filterBy: {
         name: "",
         price: {
-          minPrice: null,
-          maxPrice: null,
+          minPrice: 0,
+          maxPrice: 5000,
         },
         rating: 0,
         level: 0,

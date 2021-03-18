@@ -39,6 +39,12 @@ export default {
     return {
       filterBy: {
         name: "",
+        price: {
+          minPrice: 0,
+          maxPrice: 5000,
+        },
+        rating: 0,
+        level: 0,
       },
     };
   },

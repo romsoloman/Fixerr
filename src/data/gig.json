@@ -73,9 +73,15 @@
             "mainImg.jpg",
             "otherImg.jpg"
         ],
+<<<<<<< HEAD
+        "rating": 1,
+        "price": 840.00,
+        "title": "i Will help you to draw a beautiful drawings. .. . ",
+=======
         "rating": 3,
         "price": 877.00,
         "title": "I will design creative logo with all files in 72h",
+>>>>>>> e034d8ae303dbd2f888494011e9dc49a4b7cbea1
         "about": "Hello We are a team of professionals who have experience in the field of Logo Design, Business card and other stationer…",
         "deliveryTime":3,
         "tags": [
@@ -164,9 +170,15 @@
             "mainImg.jpg",
             "otherImg.jpg"
         ],
+<<<<<<< HEAD
+        "rating": 4,
+        "price": 10.00,
+        "title": "i Will help you to draw a beautiful drawings. .. . ",
+=======
         "rating": 3,
         "price": 66.00,
         "title": "I will create you a unique and professional brand identity ",
+>>>>>>> e034d8ae303dbd2f888494011e9dc49a4b7cbea1
         "about": "Hello We are a team of professionals who have experience in the field of Logo Design, Business card and other stationer…",
         "deliveryTime":3,
         "tags": [
@@ -183,11 +195,15 @@
             "_id": "51399391",
             "fullname": "Rom Soloman",
             "imgUrl": "https://x.com/pic.jpg",
+<<<<<<< HEAD
+            "level": 1
+=======
             "level": 3,
             "location":"Tel aviv,israel",
              "memberSince":"3,5,2020",
            "avgResponseTime":"2 hours",
            "lastDelivery":"11 hours"
+>>>>>>> e034d8ae303dbd2f888494011e9dc49a4b7cbea1
         },
         "reviews": [
             {
@@ -209,9 +225,15 @@
             "mainImg.jpg",
             "otherImg.jpg"
         ],
+<<<<<<< HEAD
+        "rating": 5,
+        "price": 20.00,
+        "title": "i Will help you to draw a beautiful drawings. .. . ",
+=======
         "rating": 3,
         "price": 654.00,
         "title": "I will design a modern, minimalist logo",
+>>>>>>> e034d8ae303dbd2f888494011e9dc49a4b7cbea1
         "about": "Hello We are a team of professionals who have experience in the field of Logo Design, Business card and other stationer…",
         "deliveryTime":3,
         "tags": [
@@ -229,11 +251,15 @@
             "_id": "51499391",
             "fullname": "Rom Soloman",
             "imgUrl": "https://x.com/pic.jpg",
+<<<<<<< HEAD
+            "level": 2
+=======
             "level": 3,
             "location":"Tel aviv,israel",
              "memberSince":"3,5,2020",
            "avgResponseTime":"2 hours",
            "lastDelivery":"11 hours"
+>>>>>>> e034d8ae303dbd2f888494011e9dc49a4b7cbea1
         },
         "reviews": [
             {
@@ -255,9 +281,15 @@
             "mainImg.jpg",
             "otherImg.jpg"
         ],
+<<<<<<< HEAD
+        "rating": 2,
+        "price": 30.00,
+        "title": "i Will help you to draw a beautiful drawings. .. . ",
+=======
         "rating": 3,
         "price": 456.00,
         "title": "I will record you professional electric guitar tracks ",
+>>>>>>> e034d8ae303dbd2f888494011e9dc49a4b7cbea1
         "about": "Hello We are a team of professionals who have experience in the field of Logo Design, Business card and other stationer…",
 
         "tags": [
@@ -562,7 +594,11 @@
         ]
     },
     {
+<<<<<<< HEAD
+        "_id": "312sdasdsa213",
+=======
         "_id": "1404124638",
+>>>>>>> e034d8ae303dbd2f888494011e9dc49a4b7cbea1
         "imgUrls": [
             "http://coding-academy.org/books-photos/5.jpg",
             "mainImg.jpg",
@@ -596,7 +632,7 @@
         ]
     },
     {
-        "_id": "1104124638",
+        "_id": "12898dhahk21",
         "imgUrls": [
             "http://coding-academy.org/books-photos/5.jpg",
             "mainImg.jpg",
@@ -630,7 +666,11 @@
         ]
     },
     {
+<<<<<<< HEAD
+        "_id": "3dsa212113",
+=======
         "_id": "1144124638",
+>>>>>>> e034d8ae303dbd2f888494011e9dc49a4b7cbea1
         "imgUrls": [
             "http://coding-academy.org/books-photos/5.jpg",
             "mainImg.jpg",
@@ -664,7 +704,11 @@
         ]
     },
     {
+<<<<<<< HEAD
+        "_id": "dsajklj1231278912dsa",
+=======
         "_id": "1104724638",
+>>>>>>> e034d8ae303dbd2f888494011e9dc49a4b7cbea1
         "imgUrls": [
             "http://coding-academy.org/books-photos/5.jpg",
             "mainImg.jpg",
@@ -698,7 +742,11 @@
         ]
     },
     {
+<<<<<<< HEAD
+        "_id": "sadhjk21712hdsa",
+=======
         "_id": "1104124888",
+>>>>>>> e034d8ae303dbd2f888494011e9dc49a4b7cbea1
         "imgUrls": [
             "http://coding-academy.org/books-photos/5.jpg",
             "mainImg.jpg",
@@ -732,7 +780,11 @@
         ]
     },
     {
+<<<<<<< HEAD
+        "_id": "2819shak21",
+=======
         "_id": "1104121638",
+>>>>>>> e034d8ae303dbd2f888494011e9dc49a4b7cbea1
         "imgUrls": [
             "http://coding-academy.org/books-photos/5.jpg",
             "mainImg.jpg",
