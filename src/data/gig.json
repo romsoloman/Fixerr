@@ -103,21 +103,21 @@
         "reviews": [
             {
                 "id": "ajb44j",
-                "txt": "Very helpful hosts. Cooked traditional...",
-                "rate": 4,
+                "txt": "VI couldn't be happier. Sandra understood and surpassed my initial thoughts and expectations. We will be starting our new business with a terrific brand and logo...Thank you!",
+                "rate": 4.5,
                 "by": {
                     "_id": "u102",
-                    "fullname": "user2",
+                    "fullname": "Jimmy Pagination",
                     "imgUrl":   "http://coding-academy.org/books-photos/18.jpg"
                 }
             },
              {
                 "id": "jb24jb4",
-                "txt": "Very helpful hosts....",
-                "rate": 1,
+                "txt": "Very professional and great communication",
+                "rate": 5,
                 "by": {
                     "_id": "k3w",
-                    "fullname": "rom",
+                    "fullname": "Eddie Vector",
                     "imgUrl":   "http://coding-academy.org/books-photos/18.jpg"
                 }
             },

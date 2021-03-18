@@ -4,6 +4,7 @@
       <div class="content-container">
         <div class="content">
           <img class="gig-checkout-img" src="http://coding-academy.org/books-photos/1.jpg" alt="" />
+          <!-- <img class="gig-checkout-img" :src="gig.imgUrls[0]" alt="" /> -->
 
           <div>rate : {{ gig.rating }}</div>
 
@@ -79,9 +80,11 @@ export default {
   },
   mounted() {
     this.gigId = this.$route.params.gigId;
+    console.log('gig id in checkout',this.gigId )
     //console.log("on load in gig-checkout gigId : ", this.gigId);
-    //this.gig = this.$store.getters.getGigById(this.gigId)
-    // this.gig = this.$store.getters.getGigById(this.gigId);
+   // this.gig = this.$store.getters.getGigById(this.gigId)
+   console.log('this.$store.getters.getGigById(this.gigId);',this.$store.getters.getGigById(this.gigId))
+     this.gig = this.$store.getters.getGigById(this.gigId);
   },
     methods: {
        checkout(){
