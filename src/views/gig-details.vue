@@ -30,7 +30,7 @@
       </div>
 
       <div>rates : {{ gig.reviews[0].rate }}</div>
-      <div>by : {{ gig.reviews[0].by.fullname }}</div>
+      <div>by : {{ this.gig.reviews[0].by.fullname}}</div>
 
       <div>
         <!-- <router-link  :to="'/gig/'+ gigId + '/checkout'">Checkout</router-link> -->
@@ -56,7 +56,28 @@ export default {
   data() {
     return {
       gigId: null,
-      gig: null,
+       gig: {
+          by : 'cbcb',
+          title : 'abc',
+          rating : '12',
+          creator : {
+            fullname :'omer'
+          },
+          about : 'abc',
+          rating : '123',
+          price : '123',
+          tags : ['123'],
+          reviews :  [
+            {
+              txt : 'abc',
+              rate : '123',
+             by : {
+                 fullname : 'omer'
+                 }
+             }
+          ] ,
+                 
+      },
       review: {
         content: "note reviewed yet",
       },
@@ -64,8 +85,10 @@ export default {
   },
 
   mounted() {
+    console.log('in gig-details  : gig.reviews[0].by.fullname',this.gig.reviews[0].by.fullname)
     this.gigId = this.$route.params.gigId;
     this.gig = this.$store.getters.getGigById(this.gigId);
+
    //console.log("on load in gig-details, gigId : ", this.gigId);
   },
   methods: {

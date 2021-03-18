@@ -18,8 +18,8 @@
         </div>
 
         <div>${{ gig.price }}</div>
-
-        <div>by : {{ gig.reviews[0].by.fullname }}</div>
+<!-- 
+        <div>by : {{ gig.reviews[0].by.fullname }}</div> -->
 
         <div>
           <!-- <router-link  :to="'/gig/'+ gigId + '/checkout'">Checkout</router-link> -->
@@ -43,7 +43,28 @@ export default {
   data() {
     return {
       gigId: null,
-      gig: null,
+            gig: {
+          by : 'cbcb',
+          title : 'abc',
+          rating : '12',
+          creator : {
+            fullname :'omer'
+          },
+          about : 'abc',
+          rating : '123',
+          price : '123',
+          tags : ['123'],
+          reviews :  [
+            {
+              txt : 'abc',
+              rate : '123',
+             by : {
+                 fullname : 'omer'
+                 }
+             }
+          ] ,
+                 
+      },
     };
   },
   mounted() {
