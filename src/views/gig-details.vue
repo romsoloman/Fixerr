@@ -51,7 +51,7 @@
         </div>
         <div class="review">
           <h2>Review</h2>
-          <review-list :reviews="gig.reviews" />
+          <review-list :reviews="gig.reviews" @addReview="addReview" />
         </div>
 
         <section class="package-price">
@@ -66,6 +66,7 @@
 import { gigService } from '../services/gig.service.js';
 import packagePrice from '@/components/package-price';
 import reviewList from "@/components/review-list";
+import {userService} from "../services/user.service.js";
 export default {
   name: "gig-details",
   data() {
@@ -86,6 +87,13 @@ export default {
       })
   },
   methods: {
+    async addReview(newReview){
+      const reviewToAdd = newReview;
+      reviewToAdd.by= userService.getLoggedinUser()
+      console.log('reviewToAdd',reviewToAdd );
+      this.gig.reviews.push(reviewToAdd);
+      await this.$store.dispatch({ type: "saveGigs", gig: this.gig })
+    }
   },
   components:{
     packagePrice,

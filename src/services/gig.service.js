@@ -50,6 +50,7 @@ function save(gig) {
   //   return axios.post(gig_URL, gig)
   //     .then(res => res.data)
   // }
+  console.log('gig srvice', gig);
   const savedGig = (gig._id) ? storageService.put(KEY, gig) : storageService.post(KEY, gig)
   return savedGig;
 }

@@ -2,12 +2,12 @@
   <section class="review-app-container">
     <ul class="review-list-container">
       <li v-for="review in reviews" :key="review._id">
-        <review-preview :review="review" :addReview="addReview"/>
+        <review-preview :review="review"/>
       </li>
     </ul>
     <div class="add-new-review" v-if="editNewReview">
       <input type="text" v-model="editNewReview.txt">
-      <input type="number" v-model="editNewReview.rate">
+      <input type="number" v-model="editNewReview.rat">
      </div>
     <button class="add-review-button" @click="onAddReview">Add review</button>
   </section>
@@ -22,11 +22,12 @@ export default {
       type: Array,
     },
   },
+  data(){
+    return{
+      editNewReview:null
+    }
+  },
   methods:{
-    addReview(newReview){
-      //TODO ADD REVIEW
-      console.log('newReview', newReview);
-    },
     onAddReview(){
       this.$emit('addReview',this.editNewReview)
     }
