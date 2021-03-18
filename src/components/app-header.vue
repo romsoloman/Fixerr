@@ -1,5 +1,5 @@
 <template>
-  <header class="app-header">
+  <header class="container app-header">
     <div class="logo">
       <!-- <img src="" alt=""> TODO: Replace the H1 in IMG-->
       <router-link to="/"><h1>Fixerr</h1></router-link>
