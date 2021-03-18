@@ -32,6 +32,13 @@
         <div>
           {{ gig.by }}
         </div>
+
+
+<div class="checkout-modal" v-if="isPurchase">congradulations !
+
+</div>
+                 <!-- <p class="checkout-modal" v-if="isPurchase">congradulations !</p> -->
+
       </div>
     </div>
   </div>
@@ -44,11 +51,12 @@ export default {
   name: "gig-checkout",
   data() {
     return {
+      isPurchase: false, 
       gigId: null,
             gig: {
-          by : 'cbcb',
-          title : 'abc',
-          rating : '12',
+          by : 'tempName',
+          title : 'tempTitle',
+          rating : '123',
           creator : {
             fullname :'tempName'
           },
@@ -102,6 +110,8 @@ export default {
                 .catch(err => {
                    console.log('ERROR IN CHECKOUT')
                 })
+
+                this.isPurchase=true;
 
     }
 
