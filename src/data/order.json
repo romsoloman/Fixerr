@@ -1,0 +1,24 @@
+[
+    {
+        "_id": "o1225",
+        "createdAt": 9898989,
+        "buyer": "mini-user",
+        "totalPrice": 20,
+        "vendor": {
+            "_id": "v102",
+            "name": "Hapirat Hadebil",
+            "imgUrl": ""
+        },
+        "gigs": [
+            {
+                "_id": "v140",
+                "name": "Batata Ksbia"
+            },
+            {
+                "_id": "v140",
+                "name": "Batataia"
+            }
+        ],
+        "status": "pending"
+    }
+]

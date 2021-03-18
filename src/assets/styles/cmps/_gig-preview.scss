@@ -1,0 +1,12 @@
+.card-container{
+  border: 1px solid black;
+  height: 350px;
+  display: grid;
+  grid-template-rows:150px 150px 50px;
+  flex-direction: column;
+}
+
+
+.gig-img{
+  height: 480px;
+}
