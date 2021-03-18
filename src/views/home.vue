@@ -21,7 +21,9 @@
         <h1>Explore Marketplace:</h1>
         <ul class="categories-list">
           <li v-for="(category, idx) in categories" :key="idx">
-            <router-link to="/gig">{{ category }}</router-link>
+            <router-link :to="`/gig?category=${category.toLowerCase()}`">
+              {{ category }}
+            </router-link>
           </li>
         </ul>
       </article>
@@ -38,22 +40,22 @@ export default {
     return {
       top5Cat: [
         "Digital Marketing",
-        "Programming & Tech",
-        "Graphics & Design",
-        "Video & Animation",
+        "Programming and Tech",
+        "Graphics and Design",
+        "Video and Animation",
         "Lifestyle",
       ],
       categories: [
         "Digital Marketing",
-        "Programming & Tech",
-        "Graphics & Design",
-        "Video & Animation",
+        "Programming and Tech",
+        "Graphics and Design",
+        "Video and Animation",
         "Lifestyle",
         "Gaming",
         "Business",
         "Data",
-        "Writing & Translation",
-        "Music & Audio",
+        "Writing and Translation",
+        "Music and Audio",
       ],
     };
   },
@@ -71,7 +73,7 @@ export default {
     trendingCategory() {
       const gigs = this.$store.getters.gigs || [];
       const trendingCategory = gigs.filter((gig) => {
-        return gig.tags.includes("programming & tech");
+        return gig.tags.includes("programming and tech");
       });
       return trendingCategory;
     },
