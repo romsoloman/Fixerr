@@ -65,6 +65,8 @@ export const gigStore = {
       state.filter = filterBy;
     },
     filterByCategory(state, { filterBy }) {
+      console.log('filterBy', filterBy);
+      if (!Object.keys(filterBy).length) filterBy = null;
       state.filter = filterBy;
     }
   },
@@ -106,5 +108,5 @@ export const gigStore = {
   },
   modules: {
     orderStore
-}
+  }
 }
