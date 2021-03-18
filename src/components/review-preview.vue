@@ -1,7 +1,7 @@
 <template>
     <section class="review-container">
      <div class="by-user">
-       <img class="user-image" :src="review.by.imgUrl" alt="">
+       <!-- <img class="user-image" :src="review.by.imgUrl" alt=""> -->
        <p>{{review.by.fullname}}</p>
        <p>{{review.rate}}</p>
      </div>

@@ -1,6 +1,7 @@
 import { httpService } from './http.service'
 import { storageService } from './async-storage.service'
 import { userService } from './user.service'
+import { utilService } from './util.service'
 
 export const reviewService = {
   add,
@@ -37,7 +38,10 @@ async function add(review) {
 
 function getEmptyReview() {
   return {
-    txt: '',
-    rat: '',
+    by: {
+      _id: utilService.makeId,
+      txt: '',
+      rat: '',
+    }
   }
 }

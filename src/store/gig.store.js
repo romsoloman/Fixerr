@@ -83,6 +83,7 @@ export const gigStore = {
     },
     saveGigs(context, { gig }) {
       // gig: support EDIT
+      console.log('gig', gig);
       const type = (gig._id) ? 'updateGig' : 'addGig';
       return gigService.save(gig)
         .then(savedGig => {
