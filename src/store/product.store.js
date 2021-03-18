@@ -1,20 +1,22 @@
 // import { userService } from "../services/user.service.js";
 import { orderService } from "../services/order.service.js";
 
-export const orderStore = {
+
+export const productStore = {
     state: {
-        cartGigs: [],
+        products: [],
+        cartProducts: [],
         isLoading: false
     },
     getters: {
         products(state) { return state.products },
-        cartGigs(state) { return state.cartGigs },
+        cartProducts(state) { return state.cartProducts },
         isLoading(state) { return state.isLoading },
         cartSize(state) {
-            return state.cartGigs.length
+            return state.cartProducts.length
         },
         cartTotal(state) {
-            const total = state.cartGigs.reduce((sum, cartProduct) => {
+            const total = state.cartProducts.reduce((sum, cartProduct) => {
                 return sum + cartProduct.price
             }, 0)
             return total
@@ -43,14 +45,14 @@ export const orderStore = {
             state.products.splice(idx, 1)
         },
         addToCart(state, { product }) {
-            state.cartGigs.unshift(product);
+            state.cartProducts.unshift(product);
         },
         removeFromCart(state, { productId }) {
-            const idx = state.cartGigs.findIndex(cp => cp._id === productId);
-            state.cartGigs.splice(idx, 1)
+            const idx = state.cartProducts.findIndex(cp => cp._id === productId);
+            state.cartProducts.splice(idx, 1)
         },
         clearCart(state) {
-            state.cartGigs = [];
+            state.cartProducts = [];
         },
     },
     actions: {
@@ -90,19 +92,17 @@ export const orderStore = {
                     throw new Error('Cannot remove product');
                 })
         },
-        checkout(context,payload) {
-
-            orderService.save(payload.order)
-            // const amount = context.getters.cartTotal
-            // return userService.withdrawBalance(amount)
-            //     .then((balance) => {
-            //         context.commit({ type: 'clearCart' })
-            //         context.commit({ type: 'setBalance', balance })
-            //     })
-            //     .catch(err => {
-            //         console.log('Store: Cannot checkout', err);
-            //         throw err;
-            //     })
+        checkout(context) {
+            const amount = context.getters.cartTotal
+            return userService.withdrawBalance(amount)
+                .then((balance) => {
+                    context.commit({ type: 'clearCart' })
+                    context.commit({ type: 'setBalance', balance })
+                })
+                .catch(err => {
+                    console.log('Store: Cannot checkout', err);
+                    throw err;
+                })
         }
     }
 }

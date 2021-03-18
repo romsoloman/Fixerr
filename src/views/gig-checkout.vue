@@ -38,6 +38,8 @@
 </template>
 
 <script>
+import {utilService} from '../services/util.service.js'
+
 export default {
   name: "gig-checkout",
   data() {
@@ -48,7 +50,7 @@ export default {
           title : 'abc',
           rating : '12',
           creator : {
-            fullname :'omer'
+            fullname :'gigName'
           },
           about : 'abc',
           rating : '123',
@@ -75,6 +77,31 @@ export default {
   },
     methods: {
        checkout(){
+        var purchaseGigId =this.gigId
+
+       var order =  {
+        "_id": utilService.makeId(),
+        "createdAt": 9898989,
+        "buyer": "mini-user",
+        "totalPrice": 20,
+        "vendor": {
+            "_id": "v102",
+            "name": "Hapirat Hadebil",
+            "imgUrl": ""
+        },
+        "gigs": [
+            {
+                "_id": this.gigId,
+                "name": "Batata Ksbia"
+            },
+         
+        ],
+        "status": "pending"
+    }
+        this.$store.dispatch({ type: 'checkout',order })
+                .catch(err => {
+                   console.log('ERROR IN CHECKOUT')
+                })
 
     }
 
