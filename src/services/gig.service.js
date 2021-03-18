@@ -52,6 +52,7 @@ function save(gig) {
   // }
   console.log('gig srvice', gig);
   const savedGig = (gig._id) ? storageService.put(KEY, gig) : storageService.post(KEY, gig)
+  console.log('savedGig', savedGig);
   return savedGig;
 }
 
