@@ -4,6 +4,7 @@
         "imgUrls": [
             "http://coding-academy.org/books-photos/1.jpg",
             "otherImg.jpg"
+          
         ],
         "rating": 3,
         "price": 80.00,
@@ -29,7 +30,7 @@
                 "by": {
                     "_id": "u102",
                     "fullname": "user2",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl":   "http://coding-academy.org/books-photos/18.jpg"
                 }
             }
         ]
@@ -41,15 +42,9 @@
             "mainImg.jpg",
             "otherImg.jpg"
         ],
-<<<<<<< HEAD
-        "rating": 1,
-        "price": 840.00,
-        "title": "i Will help you to draw a beautiful drawings. .. . ",
-=======
         "rating": 3,
         "price": 877.00,
         "title": "I will design creative logo with all files in 72h",
->>>>>>> 96b07a4e0223840266714d5b9e8b38e3b343b5f9
         "about": "Hello We are a team of professionals who have experience in the field of Logo Design, Business card and other stationer…",
         "tags": [
             "gaming",
@@ -69,7 +64,7 @@
                 "by": {
                     "_id": "u102",
                     "fullname": "user2",
-                    "imgUrl": "http://coding-academy.org/books-photos/17.jpg"
+                    "imgUrl":   "http://coding-academy.org/books-photos/17.jpg"
                 }
             }
         ]
@@ -81,8 +76,8 @@
             "mainImg.jpg",
             "otherImg.jpg"
         ],
-        "rating": 2,
-        "price": 801.00,
+        "rating": 3,
+        "price": 80.00,
         "title": "i Will help you to draw a beautiful drawings. .. . ",
         "about": "Hello We are a team of professionals who have experience in the field of Logo Design, Business card and other stationer…",
         "tags": [
@@ -93,7 +88,7 @@
         "creator": {
             "_id": "53399391",
             "fullname": "Rom Soloman",
-            "imgUrl": "http://coding-academy.org/books-photos/16.jpg",
+            "imgUrl":  "http://coding-academy.org/books-photos/16.jpg",
             "level": 3
         },
         "reviews": [
@@ -104,7 +99,7 @@
                 "by": {
                     "_id": "u102",
                     "fullname": "user2",
-                    "imgUrl": "http://coding-academy.org/books-photos/15.jpg"
+                    "imgUrl":  "http://coding-academy.org/books-photos/15.jpg"
                 }
             }
         ]
@@ -116,15 +111,9 @@
             "mainImg.jpg",
             "otherImg.jpg"
         ],
-<<<<<<< HEAD
-        "rating": 4,
-        "price": 10.00,
-        "title": "i Will help you to draw a beautiful drawings. .. . ",
-=======
         "rating": 3,
         "price": 66.00,
         "title": "I will create you a unique and professional brand identity ",
->>>>>>> 96b07a4e0223840266714d5b9e8b38e3b343b5f9
         "about": "Hello We are a team of professionals who have experience in the field of Logo Design, Business card and other stationer…",
         "tags": [
             "writing and translation",
@@ -133,13 +122,8 @@
         "creator": {
             "_id": "51399391",
             "fullname": "Rom Soloman",
-<<<<<<< HEAD
-            "imgUrl": "https://x.com/pic.jpg",
-            "level": 1
-=======
-            "imgUrl": "http://coding-academy.org/books-photos/14.jpg",
+            "imgUrl":   "http://coding-academy.org/books-photos/14.jpg",
             "level": 3
->>>>>>> 96b07a4e0223840266714d5b9e8b38e3b343b5f9
         },
         "reviews": [
             {
@@ -149,7 +133,7 @@
                 "by": {
                     "_id": "u102",
                     "fullname": "user2",
-                    "imgUrl": "http://coding-academy.org/books-photos/13.jpg"
+                    "imgUrl":   "http://coding-academy.org/books-photos/13.jpg"
                 }
             }
         ]
@@ -161,15 +145,9 @@
             "mainImg.jpg",
             "otherImg.jpg"
         ],
-<<<<<<< HEAD
-        "rating": 5,
-        "price": 20.00,
-        "title": "i Will help you to draw a beautiful drawings. .. . ",
-=======
         "rating": 3,
         "price": 654.00,
         "title": "I will design a modern, minimalist logo",
->>>>>>> 96b07a4e0223840266714d5b9e8b38e3b343b5f9
         "about": "Hello We are a team of professionals who have experience in the field of Logo Design, Business card and other stationer…",
         "tags": [
             "data",
@@ -179,13 +157,8 @@
         "creator": {
             "_id": "51499391",
             "fullname": "Rom Soloman",
-<<<<<<< HEAD
-            "imgUrl": "https://x.com/pic.jpg",
-            "level": 2
-=======
-            "imgUrl": "http://coding-academy.org/books-photos/13.jpg",
+            "imgUrl":   "http://coding-academy.org/books-photos/13.jpg",
             "level": 3
->>>>>>> 96b07a4e0223840266714d5b9e8b38e3b343b5f9
         },
         "reviews": [
             {
@@ -195,7 +168,7 @@
                 "by": {
                     "_id": "u102",
                     "fullname": "user2",
-                    "imgUrl": "http://coding-academy.org/books-photos/11.jpg"
+                    "imgUrl":   "http://coding-academy.org/books-photos/11.jpg"
                 }
             }
         ]
@@ -207,15 +180,9 @@
             "mainImg.jpg",
             "otherImg.jpg"
         ],
-<<<<<<< HEAD
-        "rating": 2,
-        "price": 30.00,
-        "title": "i Will help you to draw a beautiful drawings. .. . ",
-=======
         "rating": 3,
         "price": 456.00,
         "title": "I will record you professional electric guitar tracks ",
->>>>>>> 96b07a4e0223840266714d5b9e8b38e3b343b5f9
         "about": "Hello We are a team of professionals who have experience in the field of Logo Design, Business card and other stationer…",
         "tags": [
             "writing and translation",
@@ -716,4 +683,5 @@
             }
         ]
     }
+    
 ]
