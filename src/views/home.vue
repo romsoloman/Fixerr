@@ -10,7 +10,7 @@
         <h1>Top rated categories:</h1>
         <ul class="categories-links"></ul>
         <li v-for="(category, idx) in top5Cat" :key="idx">
-          <router-link :to="`/gig?category=${category.toLowerCase()}`">
+          <router-link :to="`/gig?name=${category.toLowerCase()}`">
             {{ category }}
           </router-link>
         </li>
@@ -23,7 +23,7 @@
         <h1>Explore Marketplace:</h1>
         <ul class="categories-list">
           <li v-for="(category, idx) in categories" :key="idx">
-            <router-link :to="`/gig?category=${category.toLowerCase()}`">
+            <router-link :to="`/gig?name=${category.toLowerCase()}`">
               {{ category }}
             </router-link>
           </li>
