@@ -24,7 +24,7 @@
         <div>
           <!-- <router-link  :to="'/gig/'+ gigId + '/checkout'">Checkout</router-link> -->
 
-          <button class="checkout-btn">Checkout</button>
+          <button class="checkout-btn"  @click.prevent="checkout()">Checkout</button>
 
           <!-- <router-link class="gig-details-link" :to="'/gig/'+gig._id+'/details'"> -->
         </div>
@@ -73,6 +73,12 @@ export default {
     //this.gig = this.$store.getters.getGigById(this.gigId)
     this.gig = this.$store.getters.getGigById(this.gigId);
   },
+    methods: {
+       checkout(){
+
+    }
+
+    },
 };
 </script>
 
