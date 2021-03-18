@@ -1,6 +1,6 @@
 <template>
   <section class="gig-app-container">
-    <!-- <gig-filter @setFilter="setFilter" /> -->
+    <gig-filter @setFilter="setFilter" />
     <gig-list :gigs="gigs" />
   </section>
 </template>
@@ -8,7 +8,7 @@
 <script>
 import { gigService } from "../services/gig.service.js";
 import gigList from "@/components/gig-list";
-// import gigFilter from "@/components/gig-filter";
+import gigFilter from "@/components/gig-filter";
 export default {
   data() {
     return {
@@ -21,8 +21,8 @@ export default {
     },
   },
   created() {
-    const { category } = this.$route.query;
-    this.$store.commit({ type: "filterByCategory", category });
+    const filterBy = this.$route.query;
+    this.$store.commit({ type: "filterByCategory", filterBy });
     this.$store.dispatch({ type: "loadGigs" });
   },
   methods: {
@@ -35,14 +35,14 @@ export default {
         this.gigToEdit = gigService.getEmptyGig();
       });
     },
-    // setFilter(newFilterBy) {
-    //     this.$store.commit({ type: 'setFilter',filterBy: newFilterBy})
-    //     this.$store.dispatch({ type: 'loadGigs' })
-    // },
+    setFilter(filterBy) {
+      this.$store.commit({ type: "setFilter", filterBy });
+      this.$store.dispatch({ type: "loadGigs" });
+    },
   },
   components: {
     gigList,
-    // gigFilter,
+    gigFilter,
   },
 };
 </script>

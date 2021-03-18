@@ -32,23 +32,33 @@
         <div>
           {{ gig.by }}
         </div>
+
+
+<div class="checkout-modal" v-if="isPurchase">congradulations !
+
+</div>
+                 <!-- <p class="checkout-modal" v-if="isPurchase">congradulations !</p> -->
+
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import {utilService} from '../services/util.service.js'
+
 export default {
   name: "gig-checkout",
   data() {
     return {
+      isPurchase: false, 
       gigId: null,
             gig: {
-          by : 'cbcb',
-          title : 'abc',
-          rating : '12',
+          by : 'tempName',
+          title : 'tempTitle',
+          rating : '123',
           creator : {
-            fullname :'omer'
+            fullname :'tempName'
           },
           about : 'abc',
           rating : '123',
@@ -59,7 +69,7 @@ export default {
               txt : 'abc',
               rate : '123',
              by : {
-                 fullname : 'omer'
+                 fullname : 'tempName'
                  }
              }
           ] ,
@@ -75,6 +85,33 @@ export default {
   },
     methods: {
        checkout(){
+        var purchaseGigId =this.gigId
+
+       var order =  {
+        "_id": utilService.makeId(),
+        "createdAt": 9898989,
+        "buyer": "mini-user",
+        "totalPrice": 20,
+        "vendor": {
+            "_id": "v102",
+            "name": "Hapirat Hadebil",
+            "imgUrl": ""
+        },
+        "gigs": [
+            {
+                "_id": this.gigId,
+                "name": "Batata Ksbia"
+            },
+         
+        ],
+        "status": "pending"
+    }
+        this.$store.dispatch({ type: 'checkout',order })
+                .catch(err => {
+                   console.log('ERROR IN CHECKOUT')
+                })
+
+                this.isPurchase=true;
 
     }
 

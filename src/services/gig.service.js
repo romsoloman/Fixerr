@@ -20,7 +20,12 @@ function query(filterBy) {
   if (!filterBy) localStorage.setItem(KEY, JSON.stringify(gGigs))
   else {
     const gigs = gGigs.filter(gig => {
-      return gig.tags.includes(filterBy)
+      if (filterBy.name) return gig.tags.includes(filterBy.name)
+      if (filterBy.price) {
+        if (gig.price >= filterBy.price.minPrice && gig.price <= filterBy.price.maxPrice) return gig;
+      }
+      if (filterBy.rating) return filterBy.rating === gig.rating;
+      if (filterBy.level) return filterBy.level === gig.creator.level
     })
     localStorage.setItem(KEY, JSON.stringify(gigs))
   }

@@ -17,18 +17,16 @@
             placeholder="Try 'building mobile app'"
             v-model="filterBy.name"
           />
-          <router-link :to="`/gig?category=${filterBy.name}`">
-            Search
-          </router-link>
+          <router-link :to="`/gig?name=${filterBy.name}`"> Search </router-link>
         </div>
         <div class="popular-search">
           <span>popular:</span>
-          <router-link :to="`/gig?category=business`">Business</router-link>
-          <router-link :to="`/gig?category=gaming`">Gaming</router-link>
-          <router-link :to="`/gig?category=programming+and+tech`">
+          <router-link :to="`/gig?name=business`">Business</router-link>
+          <router-link :to="`/gig?name=gaming`">Gaming</router-link>
+          <router-link :to="`/gig?name=programming+and+tech`">
             Programming and Tech
           </router-link>
-          <router-link :to="`/gig?category=data`"> Data </router-link>
+          <router-link :to="`/gig?name=data`"> Data </router-link>
         </div>
       </form>
     </div>

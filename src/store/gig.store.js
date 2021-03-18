@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import { gigService } from "../services/gig.service.js";
 import { utilService } from '../services/util.service.js';
+import { orderStore } from "./order.store.js";
 
 Vue.use(Vuex)
 
@@ -10,7 +11,8 @@ export const gigStore = {
     gigs: null,
     filter: null,
     lastPath: null,
-    editChanges: null
+    editChanges: null,
+
   },
   getters: {
     gigs(state) {
@@ -35,7 +37,6 @@ export const gigStore = {
   },
   mutations: {
     setGigs(state, { gigs }) {
-      console.log('load gigs in stor', gigs)
       state.gigs = gigs;
     },
     removeGig(state, { gigId }) {
@@ -60,18 +61,17 @@ export const gigStore = {
     keepEditChanges(state, { newEditChanges }) {
       state.editChanges = newEditChanges;
     },
-    // setFilter(state, { filterBy }) {
-    //   state.filter = filterBy;
-    // },
-    filterByCategory(state, { category }) {
-      state.filter = category;
+    setFilter(state, { filterBy }) {
+      state.filter = filterBy;
+    },
+    filterByCategory(state, { filterBy }) {
+      state.filter = filterBy;
     }
   },
   actions: {
     loadGigs({ commit, state }) {
       gigService.query(state.filter || undefined)
         .then(gigs => {
-          console.log('state.filter', state.filter);
           commit({ type: 'setGigs', gigs });
         })
         .catch(err => {
@@ -104,4 +104,7 @@ export const gigStore = {
         })
     },
   },
+  modules: {
+    orderStore
+}
 }
