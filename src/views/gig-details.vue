@@ -4,9 +4,10 @@
       <p class="gig-title">{{ gig.title }} </p>
       <section class="main-gig-details">
         <section class="user-details">
-          <!-- <img :src="gig.creator.imgUrl"> -->
-          <p class="username">{{gig.creator.fullname}} |</p>
-          <p class="rating">⭐️{{gig.rating}}</p>
+          <img class="creator-img" :src="gig.creator.imgUrl">
+          <p class="username">{{gig.creator.fullname}}</p>
+          <p class="user-level">level {{gig.creator.level}} <span>|</span></p>
+          <p class="rating">⭐️⭐️⭐️ {{gig.rating}}</p>
           <p class="reviews-count">({{gig.reviews.length}})</p>
         </section>
         <section class="gig-imgs-container">
@@ -16,16 +17,19 @@
           <img class="sub-title-img" src=""> -->
         </section>
         <div class="about-gig-container">
-          <h2>About this Gig</h2>
+          <h2 class="about-gig-title">About this Gig</h2>
           <p class="about">{{gig.about}}</p>
         </div>
-        <h2>About the seller</h2>
+        <h2 class="about-seller-title">About the seller</h2>
         <div class="about-seller-container">
-          <img :src="gig.creator.imgUrl">
-          <div>
-            <p class="username">{{gig.creator.fullname}}</p>
-            <p>⭐️{{gig.rating}}</p>
-            <p>Contact Me</p>
+          <div class="seller-img-container">
+            <img class="seller-img" :src="gig.creator.imgUrl">
+          </div>
+          <div class="seller-details">
+            <div class="seller-username">{{gig.creator.fullname}}</div>
+            <div class="about-user">{{gig.creator.about}}</div>
+            <div class="rating">⭐️⭐️⭐️ {{gig.rating}}</div>
+            <div>Contact Me</div>
           </div>
         </div>
         <div class="more-on-seller">
@@ -75,6 +79,26 @@ export default {
     }
   },
   computed:{
+    getStars (){
+
+      let stars;
+      if(this.gig.rating === 1){
+        stars = '⭐️'
+      }
+      else if(this.gig.rating === 2) {
+        stars = '⭐️⭐️'
+      }
+      else if(this.gig.rating === 3) {
+      stars = '⭐️⭐️⭐️'
+      }
+      else if(this.gig.rating === 4){
+       stars = '⭐️⭐️⭐️⭐️'
+      }
+      // else{
+      //   stars = '⭐️⭐️⭐️⭐️⭐'️
+      // }
+      return stars
+    }
 
   },
   created() {

@@ -1,13 +1,17 @@
 .gig-details-container{
-    padding: 10px;
+    padding: 20px;
+    font-family: macan,helvetica neue,Helvetica,Arial,sans-serif;
     & .main-gig-details{
-        width: 55%;
+        width: 56%;
     }
     & .gig-title{
         font-size: 35px;
         grid-row: 1/1;
         grid-column: 1/-1;
         padding-top: 100px;
+        width: 56%;
+        font-weight: 700;
+        color: #404145;
     }
      & .gig-imgs-container{
          background-color: red;
@@ -19,19 +23,76 @@
      }
      & .user-details{
         display: flex;
-        width: 50%;
-        justify-content: space-around;
+        width: 56%;
+        justify-content:flex-start;
+        align-items: center;
+        & .creator-img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        & .username{
+            font-weight: 700;
+            color: #404145;
+            padding-right: 10px;
+            font-size: 12px;
+        }
+        & .user-level{
+            font-size: 14px;
+            color: #ffb33e;
+            & span{
+                color: #c5c6c9;
+                padding-right: 10px;
+            }
+        }
+        & .rating{
+            font-weight: 700;
+            color: #ffc100;
+            padding-right: 6px;
+            font-size: 14px;
+        }
+        & .reviews-count{
+            font-size: 14px;
+        }
      }
-     & h2{
-         text-align: center;
+     & .about-gig-title{
+         font-size: 20px;
+        line-height: 28px;
+        padding-bottom: 25px;
      }
      & .about{
-         text-align: center;
+         color: #62646a;
+        font: 400 16px/24px "Macan","Helvetica Neue",Helvetica,Arial,sans-serif;
      }
      & .about-seller-container{
          display: flex;
-         justify-content: space-around;
+         justify-content: space-between;
          margin-bottom: 50px;
+         align-items: center;
+         height: 155px;
+         & .seller-img-container{
+             height: 155px;
+             & .seller-img{
+                 border-radius: 50%;
+                 width: 110px;
+                 height: 110px;
+             }
+         }
+         & .seller-details{
+             max-height: 155px;
+             display: flex;
+             flex-direction: column;
+             justify-content: space-between;
+             width: 70%;
+            & .seller-username{
+                color: #62646a;
+                font-weight: 700;
+            }
+            & .about-user{
+                font-size: 14px;
+            }
+         }
      }
      & .more-on-seller{
          display: grid;
