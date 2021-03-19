@@ -21,13 +21,8 @@ export default {
     },
   },
   created() {
-    const filterBy = this.$route.query;
-    // filterBy.price.minPrice = 0;
-    // filterBy.price.maxPrice = 5000;
-    // filterBy.rating = 0;
-    // filterBy.level = 0;
-    console.log("filterBy", filterBy);
-    this.$store.commit({ type: "filterByCategory", filterBy });
+    const { filterBy } = this.$route.params;
+    this.$store.commit({ type: "setFilter", filterBy });
     this.$store.dispatch({ type: "loadGigs" });
   },
   methods: {

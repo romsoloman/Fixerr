@@ -35,19 +35,29 @@
           />
           <router-link
             class="flex justify-center align-center"
-            :to="`/gig?name=${filterBy.name}`"
+            :to="{ name: 'gig', params: { filterBy: filterBy } }"
           >
             Search
           </router-link>
         </div>
         <div class="flex popular-search">
           <span>popular:</span>
-          <router-link :to="`/gig?name=business`">Business</router-link>
-          <router-link :to="`/gig?name=gaming`">Gaming</router-link>
-          <router-link :to="`/gig?name=programming+and+tech`">
+          <!-- TODO: need to insert the category name into filterBy object -->
+          <router-link :to="{ name: 'gig', params: { filterBy: filterBy } }">
+            Business
+          </router-link>
+          <!-- TODO: need to insert the category name into filterBy object -->
+          <router-link :to="{ name: 'gig', params: { filterBy: filterBy } }">
+            Gaming
+          </router-link>
+          <!-- TODO: need to insert the category name into filterBy object -->
+          <router-link :to="{ name: 'gig', params: { filterBy: filterBy } }">
             Programming and Tech
           </router-link>
-          <router-link :to="`/gig?name=data`"> Data </router-link>
+          <!-- TODO: need to insert the category name into filterBy object -->
+          <router-link :to="{ name: 'gig', params: { filterBy: filterBy } }">
+            Data
+          </router-link>
         </div>
       </form>
     </div>

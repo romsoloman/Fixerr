@@ -64,11 +64,11 @@ export const gigStore = {
     setFilter(state, { filterBy }) {
       state.filter = filterBy;
     },
-    filterByCategory(state, { filterBy }) {
-      console.log('filterBy', filterBy);
-      if (!Object.keys(filterBy).length) filterBy = null;
-      state.filter = filterBy;
-    }
+    // filterByCategory(state, { filterBy }) {
+    //   console.log('filterBy', filterBy);
+    //   if (!Object.keys(filterBy).length) filterBy = null;
+    //   state.filter = filterBy;
+    // }
   },
   actions: {
     loadGigs({ commit, state }) {

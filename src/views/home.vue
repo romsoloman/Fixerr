@@ -10,7 +10,8 @@
         <h1>Top rated categories:</h1>
         <ul class="categories-links"></ul>
         <li v-for="(category, idx) in top5Cat" :key="idx">
-          <router-link :to="`/gig?name=${category.toLowerCase()}`">
+          <!-- TODO: need to insert the category name into filterBy object -->
+          <router-link :to="{ name: 'gig', params: { filterBy: filterBy } }">
             {{ category }}
           </router-link>
         </li>
@@ -23,7 +24,8 @@
         <h1>Explore Marketplace:</h1>
         <ul class="categories-list">
           <li v-for="(category, idx) in categories" :key="idx">
-            <router-link :to="`/gig?name=${category.toLowerCase()}`">
+            <!-- TODO: need to insert the category name into filterBy object -->
+            <router-link :to="{ name: 'gig', params: { filterBy: filterBy } }">
               {{ category }}
             </router-link>
           </li>
@@ -40,6 +42,15 @@ export default {
   name: "Home",
   data() {
     return {
+      filterBy: {
+        name: "",
+        price: {
+          minPrice: 0,
+          maxPrice: 5000,
+        },
+        rating: 0,
+        level: 0,
+      },
       top5Cat: [
         "Digital Marketing",
         "Programming and Tech",
