@@ -89,10 +89,10 @@ export default {
   methods: {
     async addReview(newReview){
       const reviewToAdd = newReview;
-      reviewToAdd.by= userService.getLoggedinUser()
-      console.log('reviewToAdd',reviewToAdd );
+      reviewToAdd.by = userService.getLoggedinUser()
       this.gig.reviews.push(reviewToAdd);
-      await this.$store.dispatch({ type: "saveGigs", gig: this.gig })
+      console.log('this.gig', this.gig);
+      await this.$store.dispatch({ type: "saveGigs", gig:JSON.parse(JSON.stringify(this.gig))})
     },
     async removeReview(reviewId){
       var reviews = this.gig.reviews;

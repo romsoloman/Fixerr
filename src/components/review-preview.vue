@@ -6,7 +6,7 @@
        <p>{{review.rate}}</p>
      </div>
      <p>{{review.txt}}</p>
-     <button @click="onRemoveReview"> X </button>
+     <button class="remove-review-button" @click="onRemoveReview"> X </button>
     </section>
 </template>
 

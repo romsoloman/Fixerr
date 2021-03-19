@@ -16,9 +16,10 @@ export const gigService = {
 }
 
 function query(filterBy) {
-  if (!filterBy) localStorage.setItem(KEY, JSON.stringify(gGigs))
+  const gigsFromStorage = localStorage.getItem(KEY);
+  if (!filterBy && !gigsFromStorage) localStorage.setItem(KEY, JSON.stringify(gGigs))
   else {
-    const gigs = gGigs.filter(gig => {
+    const gigs = gigsFromStorage.filter(gig => {
       return (gig.tags.includes(filterBy.name) || ((gig.tags.includes(filterBy.name)) && (gig.price >= filterBy.price.minPrice && gig.price <= filterBy.price.maxPrice) &&
         (filterBy.rating === gig.rating) && (filterBy.level === gig.creator.level))
       ) // TODO fix the problem with the second if statement!!!!!!!!!

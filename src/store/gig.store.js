@@ -52,7 +52,6 @@ export const gigStore = {
       const idxToUpdate = state.gigs.findIndex(gigFromArray => {
         return gigFromArray._id === gig._id;
       })
-      gigService.save(gig)
       state.gigs.splice(idxToUpdate, 1, gig);
     },
     updateLastPath(state, { path }) {
@@ -83,7 +82,6 @@ export const gigStore = {
     },
     saveGigs(context, { gig }) {
       // gig: support EDIT
-      console.log('gig', gig);
       const type = (gig._id) ? 'updateGig' : 'addGig';
       return gigService.save(gig)
         .then(savedGig => {
