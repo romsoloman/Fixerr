@@ -2,25 +2,27 @@
   <router-link class="gig-details-link" :to="'/gig/' + gig._id + '/details'">
     <section class="card-container">
       <header>
-        <div class="img-container">
-          <img class="gig-img" :src="gig.imgUrls[0]" />
-        </div>
+        <img class="gig-img" :src="gig.imgUrls[0]" />
       </header>
       <main class="main-info">
-        <div class="user-details">
-          <img class="user-img" />
-          <p class="user-name">{{ gig.creator.fullname }}</p>
-          <p class="user-level">{{ gig.creator.level }}</p>
+        <div class="flex align-center user-details">
+          <!-- <img src="" /> -->
+          <div class="user-img"></div>
+          <div class="user-info">
+            <p class="user-name">{{ gig.creator.fullname }}</p>
+            <p class="user-level">Level {{ gig.creator.level }} Seller</p>
+          </div>
         </div>
-        <p class="gig-description">{{ gig.about }}</p>
-        <div class="rating-info">
+        <p class="gig-description">{{ gig.title }}</p>
+        <div class="flex rating-info">
+          <span><i class="fas fa-star"></i></span>
           <div class="stars">{{ gig.rating }}</div>
           <!-- <div class="reviews-count">{{ gig.reviews.length }}</div> -->
         </div>
       </main>
-      <footer class="footer-info">
-        <div class="like">❤️</div>
-        <div class="price">{{ gig.price }}$</div>
+      <footer class="flex align-center footer-info">
+        <i class="far fa-heart"></i>
+        <div class="price"><small>starting at</small> ${{ gig.price }}</div>
       </footer>
     </section>
   </router-link>
