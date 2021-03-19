@@ -26,35 +26,37 @@
             <img class="seller-img" :src="gig.creator.imgUrl">
           </div>
           <div class="seller-details">
-            <div class="seller-username">{{gig.creator.fullname}}</div>
-            <div class="about-user">{{gig.creator.about}}</div>
-            <div class="rating">⭐️⭐️⭐️ {{gig.rating}}</div>
-            <div>Contact Me</div>
+            <div>
+              <div class="seller-username">{{gig.creator.fullname}}</div>
+              <div class="about-user">{{gig.creator.about}}</div>
+              <div class="seller-rating">⭐️⭐️⭐️ {{gig.rating}} ({{gig.reviews.length}} reviews)</div>
+            </div>
+            <div class="contect-button">Contact Me</div>
           </div>
         </div>
         <div class="more-on-seller">
           <div class="detail seller-from">
-            <h3>from</h3>
-            <p>{{gig.creator.location}}</p>
+            <p>from</p>
+            <h3>{{gig.creator.location}}</h3>
           </div>
           <div class="detail member-since">
-            <h3>Member since</h3>
-            <p>{{gig.creator.memberSince}}</p>
+            <p>Member since</p>
+            <h3>{{gig.creator.memberSince}}</h3>
           </div>
           <div class="detail avg-response-time">
-            <h3>Avg response time</h3>
-            <p>{{gig.creator.avgResponseTime}}</p>
+            <p>Avg response time</p>
+            <h3>{{gig.creator.avgResponseTime}}</h3>
           </div>
           <div class="detail last-delivery">
-            <h3>Last-delivery</h3>
-            <p>{{gig.creator.lastDelivery}}</p>
+            <p>Last-delivery</p>
+            <h3>{{gig.creator.lastDelivery}}</h3>
           </div>
         </div>
         <div class="for-you">
           <h2>For you</h2>
         </div>
         <div class="review">
-          <h2>Review</h2>
+          <h2 class="review-title">Review</h2>
           <review-list :reviews="gig.reviews" @addReview="addReview" @removeReview="removeReview"/>
         </div>
 
