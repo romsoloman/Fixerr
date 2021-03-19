@@ -3,7 +3,6 @@
     position: relative;
     display: flex;
     align-items: center;
-    // background-color: rgb(131, 27, 44);
     & .hero-backgrounds {
         position: absolute;
         top:0;
@@ -12,11 +11,14 @@
         height: 100%;
         & div {
             height: 100%;
-            width: 100%;
+            width: 100vw;
             z-index: -1;
             background: #8c1e1e;
+            background-image: url('../../assets/imgs/bg-hero-4.png');
             background-repeat: no-repeat;
-            background-size:cover;
+            background-size: 100% 100%;
+            transition: opacity .9s;
+            background-position: 100% 100%;
         }
     }
     & .hero-container{

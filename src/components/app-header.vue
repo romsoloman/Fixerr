@@ -1,5 +1,8 @@
 <template>
-  <header class="container app-header">
+  <header
+    class="container app-header"
+    :class="{ change_color: scrollPosition > 50 }"
+  >
     <div class="logo">
       <!-- <img src="" alt=""> TODO: Replace the H1 in IMG-->
       <router-link to="/"><h1>Fixerr</h1></router-link>
@@ -30,10 +33,18 @@ export default {
       filterBy: {
         name: "",
       },
+      scrollPosition: null,
       // isHomepage: true,
     };
   },
-  created() {},
+  mounted() {
+    window.addEventListener("scroll", this.updateScroll);
+  },
+  methods: {
+    updateScroll() {
+      this.scrollPosition = window.scrollY;
+    },
+  },
   components: {},
 };
 </script>
