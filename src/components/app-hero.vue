@@ -32,9 +32,10 @@
             type="text"
             placeholder="Try 'building mobile app'"
             v-model="filterBy.name"
+            class="search-input"
           />
           <router-link
-            class="flex justify-center align-center"
+            class="flex justify-center align-center search-button"
             :to="{ name: 'gig', params: { filterBy: filterBy } }"
           >
             Search

@@ -1,7 +1,7 @@
 <template>
   <header
     class="container app-header"
-    :class="{ change_color: scrollPosition > 50 }"
+    :class="{ change_color: scrollPosition > 50, fixed: isHome }"
   >
     <div class="logo">
       <!-- <img src="" alt=""> TODO: Replace the H1 in IMG-->
@@ -34,7 +34,7 @@ export default {
         name: "",
       },
       scrollPosition: null,
-      // isHomepage: true,
+      isHome: false,
     };
   },
   mounted() {
@@ -44,6 +44,9 @@ export default {
     updateScroll() {
       this.scrollPosition = window.scrollY;
     },
+  },
+  created() {
+    if (this.$route.name === "home") this.isHome = true;
   },
   components: {},
 };

@@ -10,6 +10,28 @@
 .text-center {
     text-align: center;
 }
+
+.fixed{
+    z-index: 1;
+    position: fixed;
+    top:0;
+    left: 0;
+}
+
+.search-button{
+    padding: 12px 24px;
+    color: $clr6;
+    border-radius: 0 4px 4px 0;
+    background-color: $clr5;
+    font-weight: 500;
+}
+
+.search-input{
+    padding: 8px 7px 7px 0;
+    flex: 6;
+    border: none;
+    font-size: 1rem;
+}
 // flex helpers
 
 .flex {

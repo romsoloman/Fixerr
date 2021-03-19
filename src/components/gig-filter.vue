@@ -1,19 +1,19 @@
 <template>
-  <section class="filter-search">
-    <div class="category-search">
+  <section class="container flex align-center filter-search">
+    <div class="flex align-center category-search">
       <div class="search-icon">
         <i class="fas fa-search"></i>
       </div>
       <input
         type="text"
-        placeholder="Try 'building mobile app'"
         v-model="filterBy.name"
         @input="setFilter"
+        class="search-input"
       />
-      <button @click="setFilter">Search</button>
+      <button @click="setFilter" class="search-button">Search</button>
     </div>
-    <div class="price-search">
-      <h2>Min.</h2>
+    <div class="flex align-center price-search">
+      <h5>Min.</h5>
       <input
         type="number"
         placeholder="Any"
@@ -21,7 +21,7 @@
         max="5000"
         v-model.number="filterBy.price.minPrice"
       />
-      <h2>Max.</h2>
+      <h5>Max.</h5>
       <input
         type="number"
         placeholder="Any"

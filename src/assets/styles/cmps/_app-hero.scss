@@ -41,19 +41,6 @@
                 border: none;
                 background-color: $clr6;
                 border-radius: 0 4px 4px 0;
-                & input {
-                  padding: 8px 7px 7px 0;
-                  flex: 6;
-                  border: none;
-                  font-size: 1rem;
-                }
-                & a{
-                    padding: 12px 24px;
-                    color: $clr6;
-                    border-radius: 0 4px 4px 0;
-                    background-color: $clr5;
-                    font-weight: 500;
-                }
             }
         }
         & .popular-search {
