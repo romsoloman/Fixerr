@@ -73,6 +73,7 @@ export default {
   },
   methods: {
     setFilter() {
+      console.log("this.filterBy", this.filterBy);
       this.$emit("setFilter", JSON.parse(JSON.stringify(this.filterBy)));
     },
   },
