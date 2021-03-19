@@ -39,9 +39,9 @@ async function add(review) {
 function getEmptyReview() {
   return {
     by: {
-      _id: utilService.makeId,
+      _id: utilService.makeId(),
       txt: '',
-      rat: '',
+      rate: 0,
     }
   }
 }

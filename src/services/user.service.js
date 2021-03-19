@@ -66,7 +66,7 @@ async function logout() {
     // return await httpService.post('auth/logout')
 }
 function _saveLocalUser(user) {
-    console.log('new user inserted to DB',user)
+    console.log('new user inserted to DB', user)
     sessionStorage.setItem('loggedinUser', JSON.stringify(user))
     return user
 }

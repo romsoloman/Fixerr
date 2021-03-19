@@ -1,7 +1,7 @@
 <template>
-  <section class="container hero-app">
+  <section class="hero-app">
     <div class="hero-backgrounds">
-      <div class="hero-andrea"></div>
+      <img src="../assets/imgs/bg-hero-1.png" alt="" />
       <!-- <div
         class="hero-puka"
         :style="{ backgroundImage: `url(${item.img})` }"
