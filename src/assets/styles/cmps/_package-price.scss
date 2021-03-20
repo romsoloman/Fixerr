@@ -1,18 +1,56 @@
 .package-price-container{
   position: fixed;
-  top: 30%;
+  top: 20%;
   right: 10px;
   width: 40%;
-  height: 355px;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  padding: 10px;
-  & header{
+  border: 1px solid #dadbdd;
+  padding: 30px;
+  & .price-container{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 40px;
   }
-  & .about{
-    font-size: 10px;
+  & .package-about{
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  & .delivery-time{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #62646a;
+  }
+  & .extras{
+    list-style: none;
+    padding: 0;
+  }
+  & .extra{
+    & span{
+          color: #1dbf73;
+    }
+  }
+  & .checkout-button{
+    background-color: #2bbe76;
+    color: #fff;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    padding: 12px 24px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: .15s ease-in-out;
+  }
+  & .checkout-button:hover{
+      background-color: #19a463;
   }
 }
