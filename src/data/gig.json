@@ -36,6 +36,8 @@
                 "txt": "Excellent. Professional. Takes inputs and gives credible and creative challenger to make the outcome better. On time turnaround. Would I use again? Yes. In fact, I’m already readying the next order.",
                 "rate": 5,
                 "by": {
+                    "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "Mia Bella",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -103,6 +105,8 @@
                 "txt": "VI couldn't be happier. Sandra understood and surpassed my initial thoughts and expectations. We will be starting our new business with a terrific brand and logo...Thank you!",
                 "rate": 4.5,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "Jimmy Pagination",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -172,7 +176,9 @@
                 "by": {
                     "_id": "u102",
                     "fullname": "Mia Bella",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg",
+                     "from":"New york,USA",
+                    "flag":"🇺🇸"
                 }
             },
             {
@@ -238,6 +244,8 @@
                 "rate": 5,
                 "by": {
                     "_id": "u102",
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "fullname": "Maya b",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
                 }
@@ -304,7 +312,9 @@
                 "by": {
                     "_id": "u102",
                     "fullname": "Frank Zip",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg",
+                     "from":"New york,USA",
+                    "flag":"🇺🇸"
                 }
             },
             {
@@ -369,6 +379,8 @@
                 "txt": "A good process although we exceeded the deadline which was moved from Friday till Monday. We might be returning for more design. It was nice to have the project delivered in Adobe XD. There was some spelling errors in the web design but nothing that had a negative impact on the design.",
                 "rate": 5,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "Kim Basic",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -436,6 +448,8 @@
                 "txt": "Very quick turn around for my project, and seller was very good at communicating with me!",
                 "rate": 4,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "Norah Jonah",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -570,6 +584,8 @@
                 "txt": "Job delivered to specification as requested. Many thanks",
                 "rate": 5,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "lukeadrian",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -647,6 +663,8 @@
                 "txt": "Very attentive and thorough with the needs of my order, and very prompt with revisions. I would recommend this seller and would purchase again",
                 "rate": 4.7,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "k3w",
                     "fullname": "ashealthyfeels",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -714,6 +732,8 @@
                 "txt": "Artist Meforya did an amazing job! She worked really hard to ensure we were completely satisfied with the final cover design. Her attention to detail is amazing. We are definitely going to work with her on additional cover designs.",
                 "rate": 5,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "k3w",
                     "fullname": "rom",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -770,6 +790,8 @@
                 "txt": "Selecting a writer is never an easy process. The writer needs to have the capability to immediately grasp the story you want to tell, without having the company background and experience as you have. Nick did an absolutely amazing job. Straight to the point, and exactly how we wanted the ebook to come out.",
                 "rate": 5,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "scottmcinnes",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -847,6 +869,8 @@
                 "txt": "Went above and beyond. I could not have asked for anyone better to capture my event.",
                 "rate": 1,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "k3w",
                     "fullname": "echo3b",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -904,6 +928,8 @@
                 "txt": "Fantastic. Had expected a great logo - but a multi-page in-depth analysis and a whole set of options, all simple, layered, beautiful, and one PERFECT for our project! And the lengths Rob and his team took to turn us inside out with imaginative and pertinent - and friendly - questions to get it just right for us! Thanks fiverr, thanks RJS team",
                 "rate": 5,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "ruthfinnegan",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -971,6 +997,8 @@
                 "txt": "Another terrific image by happym0saics. It is great to be working with a talented artist. He definitely 'value adds' to every project that I have brought to him. Highly recommended for your next artistic project. Dr Gary Allen www.enabled.vip www.ahrecs.com",
                 "rate": 4,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "garyahrecs",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -1038,6 +1066,8 @@
                 "txt": "Very beautiful painting.",
                 "rate": 4,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "steviesoldsoul",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -1105,6 +1135,8 @@
                 "txt": "She did such a beautiful job on this piece of my pregnant sister and her 8 month old baby. I am speechless! This is a beautiful piece that they will keep forever. Thank you for listening to me and coming up with a piece that was better than I could have hoped for. I highly recommend!!!",
                 "rate": 5,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "tarashelley",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -1172,6 +1204,8 @@
                 "txt": "This seller was so professional and very experienced! He provided exactly what I needed in a short amount of time. I will definitely be contacting this seller in the future!",
                 "rate": 5,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "jamiebirdsey",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -1192,6 +1226,8 @@
                 "txt": "Good producer and musician. Well delivery and solid communication. REcommended !",
                 "rate": 2,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "nk34j9",
                     "fullname": "wpemployer",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -1239,6 +1275,8 @@
                 "txt": "Always amazing!",
                 "rate": 5,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "obehave",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -1249,6 +1287,8 @@
                 "txt": "Nice work. Thanks!",
                 "rate": 5,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "k3w",
                     "fullname": "christinepenny",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -1259,6 +1299,8 @@
                 "txt": "Fantastic work with great turnaround.",
                 "rate": 2,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "nk34j8",
                     "fullname": "christinepenny",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -1306,6 +1348,8 @@
                 "txt": "Jim was very efficient communicator, highly skilled team, and nothing was too hard would highly recommend. We will continue to use Jims service.",
                 "rate": 5,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "danielwilson433",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -1316,6 +1360,8 @@
                 "txt": "Good experience working with Jim. Quick to respond and does the job well. Would recommend his services and will be working with him again!",
                 "rate": 5,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "k3w",
                     "fullname": "narangrohan",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
@@ -1326,6 +1372,8 @@
                 "txt": "Great. No complaints. My 3rd time working with him. Communication is fast! Issue with not clear product images that I contacted shopify support but wasn't that helpful, but quickly found the issue and site looks fantastic. Will be hiring him again for more redesign work.",
                 "rate": 5,
                 "by": {
+                     "from":"New york,USA",
+                    "flag":"🇺🇸",
                     "_id": "nk34j7",
                     "fullname": "cjp0524",
                     "imgUrl": "http://coding-academy.org/books-photos/18.jpg"

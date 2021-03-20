@@ -1,15 +1,17 @@
 <template>
-  <section class="review-app-container">
+  <section class="review-app-container container">
     <ul class="review-list-container">
       <li v-for="review in reviews" :key="review._id">
         <review-preview :review="review" @removeReview="removeReview" />
       </li>
     </ul>
     <div class="add-new-review" v-if="editNewReview">
-      <input type="text" v-model="editNewReview.txt" />
-      <input type="number" v-model.number="editNewReview.rate" />
+      <div class="add-new-review-inputs">
+        <input type="text" v-model="editNewReview.txt" placeholder="Add review..."/>
+        <input type="number" v-model.number="editNewReview.rate" placeholder="Add rate..."/>
+      </div>
+      <button class="add-review-button" @click="onAddReview">Add review</button>
     </div>
-    <button class="add-review-button" @click="onAddReview">Add review</button>
   </section>
 </template>
 

@@ -1,16 +1,51 @@
 .review-container{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-top: 1px solid #dadbdd;
   display: flex;
   justify-content: space-between;
+  & .user-image-container{
+    & .user-image{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+  }
   & .by-user{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    & .info{
+      display: flex;
+      align-items: center;
+      & h5{
+        font-size: 16px;
+        line-height: 120%;
+        margin: 0 10px 0 0;
+        text-transform: capitalize;
+      }
+      & p{
+        margin: 0;
+        font-size: 1.2rem;
+        color: #ffbf00;
+        font-weight: 700;
+      }
+    }
   }
-  & .user-image {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
+  & .user-location{
+    display: flex;
+    & .from{
+      margin-inline-start: 10px;
+      color: #95979d;
+      font-size: .875rem;
+      font-weight: 600;
+    }
   }
-  & .remove-review-button{
-    height: 30px;
+  & .user-p{
+      margin: 0!important;
+    -webkit-margin-before: .5rem;
+    margin-block-start: .5rem;
+    color: #404145;
+    font: 400 16px/24px "Macan","Helvetica Neue",Helvetica,Arial,sans-serif;
   }
 }

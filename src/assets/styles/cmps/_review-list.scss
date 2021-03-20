@@ -1,5 +1,45 @@
-.review-list-container{
-  display: flex;
-  flex-direction: column;
-  list-style: none;
+.review-app-container{
+  padding: 0;
+  & .review-list-container{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+  & .add-new-review{
+    padding: 15px;
+    border: 1px solid #dadbdd;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    & .add-new-review-inputs{
+      display: flex;
+      justify-content: space-around;
+      padding-bottom: 30px;
+      & input{
+        text-align: center;
+      }
+    }
+    & .add-review-button{
+      background-color: white;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+      width: 130px;
+      height: 40px;
+      color: #62646a;
+      border: 1px solid #62646a;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: .15s ease-in-out;
+      margin: auto;
+    }
+    & .add-review-button:hover{
+        background: #7a7d85;
+        color: white;
+    }
+  }
+
 }

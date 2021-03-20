@@ -1,5 +1,5 @@
 <template>
-  <div class="container gig-details-container" v-if="gig">
+  <div class="container gig-details-container container" v-if="gig">
     <section class="gig-details">
       <p class="gig-title">{{ gig.title }}</p>
       <section class="main-gig-details">
@@ -16,7 +16,7 @@
           <img class="sub-title-img" src="">
           <img class="sub-title-img" src=""> -->
         </section>
-        <div class="about-gig-container">
+        <div class="about-gig-container container">
           <h2 class="about-gig-title">About this Gig</h2>
           <p class="about">{{ gig.about }}</p>
         </div>
@@ -58,14 +58,15 @@
           <h2>For you</h2>
           <gig-list :gigs="randomCategory"></gig-list>
         </div>
-        <div class="review">
-          <h2 class="review-title">Review</h2>
+        <section class="review">
+          <h2 class="review-title">{{gig.reviews.length}} Review <span class="avg-rat">⭐️ 1.3</span></h2>
+          <reviews-stats/>
           <review-list
             :reviews="gig.reviews"
             @addReview="addReview"
             @removeReview="removeReview"
           />
-        </div>
+        </section>
 
         <section class="package-price">
           <package-price :gig="gig"></package-price>
@@ -80,6 +81,7 @@ import { gigService } from "../services/gig.service.js";
 import packagePrice from "@/components/package-price";
 import reviewList from "@/components/review-list";
 import gigList from "@/components/gig-list";
+import reviewsStats from "@/components/reviews-stats";
 import { userService } from "../services/user.service.js";
 export default {
   name: "gig-details",
@@ -90,20 +92,10 @@ export default {
   },
   computed: {
     getStars() {
-      let stars;
-      if (this.gig.rating === 1) {
-        stars = "⭐️";
-      } else if (this.gig.rating === 2) {
-        stars = "⭐️⭐️";
-      } else if (this.gig.rating === 3) {
-        stars = "⭐️⭐️⭐️";
-      } else if (this.gig.rating === 4) {
-        stars = "⭐️⭐️⭐️⭐️";
-      }
-      // else{
-      //   stars = '⭐️⭐️⭐️⭐️⭐'️
-      // }
-      return stars;
+      // TODO-GETSTARS - 10
+    },
+    getAvgRat(){
+      // TODO-getAvgRat - 62
     },
     randomCategory() {
       const gigs = this.$store.getters.gigs || [];
@@ -146,6 +138,7 @@ export default {
     packagePrice,
     reviewList,
     gigList,
+    reviewsStats
   },
 };
 </script>

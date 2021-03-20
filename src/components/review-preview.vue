@@ -1,12 +1,22 @@
 <template>
-    <section class="review-container">
+    <section class="review-container container">
+      <div class="user-image-container">
+       <img class="user-image" :src="review.by.imgUrl" alt="">
+      </div>
      <div class="by-user">
-       <!-- <img class="user-image" :src="review.by.imgUrl" alt=""> -->
-       <p>{{review.by.fullname}}</p>
-       <p>{{review.rate}}</p>
+        <div class="info">
+          <h5>{{review.by.fullname}}</h5>
+          <p>⭐️ {{review.rate}}</p>
+        </div>
+        <div class="user-location">
+          <div>{{review.by.flag}}</div>
+          <div class="from">{{review.by.from}}</div>
+        </div>
+        <div>
+          <p class="user-p">{{review.txt}}</p>
+        </div>
      </div>
-     <p>{{review.txt}}</p>
-     <button class="remove-review-button" @click="onRemoveReview"> X </button>
+     <!-- <button class="remove-review-button" @click="onRemoveReview"> X </button> -->
     </section>
 </template>
 
