@@ -1,0 +1,8 @@
+.category{
+    height: 500px;
+    overflow: scroll;
+    & .gig-list-container{
+        display:flex;
+        width:100%;
+    }
+}

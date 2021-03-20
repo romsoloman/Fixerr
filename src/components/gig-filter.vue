@@ -1,5 +1,5 @@
 <template>
-  <section class="container flex align-center filter-search">
+  <section class="flex align-center filter-search">
     <div class="flex align-center category-search">
       <div class="search-icon">
         <i class="fas fa-search"></i>

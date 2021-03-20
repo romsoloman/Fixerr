@@ -1,5 +1,5 @@
 <template>
-  <section class="app-footer">
+  <section class="container app-footer">
     <div class="logo">
       <!-- <img src="" alt=""> TODO: Replace the H1 in IMG-->
       <h1>Fixerr</h1>

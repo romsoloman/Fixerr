@@ -1,5 +1,5 @@
 <template>
-  <section class="gig-app-container">
+  <section class="container gig-app-container">
     <gig-filter @setFilter="setFilter" />
     <gig-list :gigs="gigs" />
   </section>

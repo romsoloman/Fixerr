@@ -1,10 +1,12 @@
 <template>
   <div class="home">
     <app-hero></app-hero>
-    <section class="gig-categories">
+    <section class="container gig-categories">
       <article class="trending">
         <h1>Trending Category:</h1>
-        <gig-list :gigs="trendingCategory"></gig-list>
+        <div class="category">
+          <gig-list :gigs="trendingCategory"></gig-list>
+        </div>
       </article>
       <article class="top-rated-categories">
         <h1>Top rated categories:</h1>
@@ -18,7 +20,9 @@
       </article>
       <article class="random-category">
         <h1>Gaming:</h1>
-        <gig-list :gigs="randomCategory"></gig-list>
+        <div class="category">
+          <gig-list :gigs="randomCategory"></gig-list>
+        </div>
       </article>
       <article class="explore-categories">
         <h1>Explore Marketplace:</h1>
@@ -88,7 +92,7 @@ export default {
       const trendingCategory = gigs.filter((gig) => {
         return gig.tags.includes("programming and tech");
       });
-      return trendingCategory;
+      return trendingCategory.slice(0, 7);
     },
   },
   methods: {},
