@@ -4,34 +4,34 @@
     imgsUrls: [],
     price: 0,
 <template>
-  <section class="gig-edit-container">
+  <section class="gig-edit-container container">
     <div class="edit-title">
       <h4>Add title</h4>
-      <textarea name="title" id="" cols="30" rows="5" v-model="gigToEdit.title"></textarea>
+      <textarea class="edit-inputs" name="title" id="" cols="30" rows="1" placeholder="Add title..." v-model="gigToEdit.title"></textarea>
     </div>
     <div class="edit-aboat">
       <h4>Add about</h4>
-      <textarea name="about" id="" cols="30" rows="5" v-model="gigToEdit.about"></textarea>
+      <textarea class="edit-inputs" name="about" id="" cols="30" rows="5" placeholder="Enter gig about..." v-model="gigToEdit.about"></textarea>
     </div>
     <div class="edit-tags">
       <h4>Add tags</h4>
-      <input type="text" v-model="gigToEdit.tags" >
+      <input class="edit-inputs" type="text" placeholder="Add tags..." v-model="gigToEdit.tags" >
     </div>
     <div class="edit-imgs">
       <h4>Add imgs</h4>
-      <input type="text" v-model="gigToEdit.imgsUrls" >
-      <input type="text" v-model="gigToEdit.imgsUrls" >
-      <input type="text" v-model="gigToEdit.imgsUrls" >
-      <input type="text" v-model="gigToEdit.imgsUrls" >
+      <input placeholder="Add img url..." class="edit-inputs" type="text" v-model="gigToEdit.imgsUrls" >
+      <input placeholder="Add img url..." class="edit-inputs" type="text" v-model="gigToEdit.imgsUrls" >
+      <input placeholder="Add img url..." class="edit-inputs" type="text" v-model="gigToEdit.imgsUrls" >
+      <input placeholder="Add img url..." class="edit-inputs" type="text" v-model="gigToEdit.imgsUrls" >
     </div>
     <div class="edit-price">
       <h4>Add price</h4>
-      <input type="number" v-model="gigToEdit.price" >
+      <input class="edit-inputs" type="number" v-model="gigToEdit.price" placeholder="Add price...">
     </div>
     <div class="edit-delivery-time">
-      <input type="number" v-model="gigToEdit.deliveryTime" >
+      <input class="edit-inputs" type="number" v-model="gigToEdit.deliveryTime" placeholder="Add delivery time...">
     </div>
-    <button class="edit-save" @click="saveGig" >SAVE</button>
+    <button class="edit-save fiverr-button" @click="saveGig" >SAVE</button>
   </section>
 
 </template>

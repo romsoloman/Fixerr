@@ -11,7 +11,7 @@
         <span><i class="fas fa-check"></i></span> {{extra}}
       </li>
     </ul>
-    <button class="checkout-button" @click="onCheckout">checkout</button>
+    <button class="checkout-button fiverr-button" @click="onCheckout">checkout</button>
   </section>
 </template>
 

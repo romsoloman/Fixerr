@@ -1,0 +1,28 @@
+.gig-edit-container{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #2bbe76;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    width: 80%;
+    & h4{
+      color: #222325;
+      margin: 10px 0;
+    }
+    & textarea{
+      font-family: "Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+      outline: none;
+      resize: none;
+      padding: 10px;
+      width: 70%;
+    }
+    & input{
+      width: 30%;
+    }
+    & .edit-save{
+      margin-top: 30px;
+      width: 100px;
+      margin: auto;
+    }
+}
