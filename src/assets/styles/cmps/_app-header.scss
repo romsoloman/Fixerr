@@ -4,6 +4,7 @@
     justify-content: space-between;
     color:$clr6;
     transition: background-color .7s;
+    border-bottom: 1px solid #eee;
     &.change_color{
         background-color: $clr6;
         z-index: 2;

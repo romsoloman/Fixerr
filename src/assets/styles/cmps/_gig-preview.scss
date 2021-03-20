@@ -19,6 +19,7 @@
      display: grid;
      grid-template-rows: 30% 1fr;
      border-bottom: 1px solid #eee;
+     padding: 2px 1rem;
      & .user-details {
        grid-row: 1/1;
        & .user-img {
@@ -50,7 +51,7 @@
      }
   }
   & .footer-info {
-    padding: 12px 0;
+    padding: 2px 1rem;
     grid-row: 3/3;
     justify-content: space-between;
    & .price {

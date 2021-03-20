@@ -1,9 +1,10 @@
 .gig-edit-container{
-  display: flex;
-  flex-direction: column;
-  border: 2px solid #2bbe76;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #2bbe76;
     border-radius: 5px;
-    padding: 1rem;
+    padding: 3rem;
+    margin-top:2rem;
     margin-bottom: 1.5rem;
     width: 80%;
     & h4{

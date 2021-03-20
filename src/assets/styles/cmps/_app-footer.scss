@@ -1,0 +1,25 @@
+.app-footer{
+    margin-top: 2rem;
+    padding: 32px;
+    border-top: 1px solid #eee;
+    justify-content: space-between;
+    & .logo {
+        width:35%;
+        justify-content: space-between;
+        & h1{
+            margin:0;
+        }
+        & p {
+            color: $clr2;
+            font-size:0.875rem;
+        }
+    }
+    & .nav-links{
+        width:15%;
+        justify-content: space-around;
+        & a {
+            color: $clr2;
+            font-size:1.3rem;
+        }
+    }
+}
