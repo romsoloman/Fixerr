@@ -10,13 +10,18 @@
       </article>
       <article class="top-rated-categories">
         <h1>Top rated categories:</h1>
-        <ul class="categories-links"></ul>
-        <li v-for="(category, idx) in top5Cat" :key="idx">
-          <!-- TODO: need to insert the category name into filterBy object -->
-          <router-link :to="{ name: 'gig', params: { filterBy: filterBy } }">
-            {{ category }}
-          </router-link>
-        </li>
+        <ul class="flex categories-links">
+          <li v-for="(category, idx) in top5Cat" :key="idx">
+            <!-- TODO: need to insert the category name into filterBy object -->
+            <div class="category-card">
+              <router-link
+                :to="{ name: 'gig', params: { filterBy: filterBy } }"
+              >
+                {{ category }}
+              </router-link>
+            </div>
+          </li>
+        </ul>
       </article>
       <article class="random-category">
         <h1>Gaming:</h1>
@@ -60,7 +65,6 @@ export default {
         "Programming and Tech",
         "Graphics and Design",
         "Video and Animation",
-        "Lifestyle",
       ],
       categories: [
         "Digital Marketing",
