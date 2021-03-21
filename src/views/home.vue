@@ -2,13 +2,13 @@
   <div class="home">
     <app-hero></app-hero>
     <section class="container gig-categories">
-      <article class="trending">
-        <h1>Trending Category:</h1>
+      <article class="every-category trending">
+        <h1>Top Selling Gigs:</h1>
         <div class="category">
           <gig-list :gigs="trendingCategory"></gig-list>
         </div>
       </article>
-      <article class="top-rated-categories">
+      <article class="every-category top-rated-categories">
         <h1>Top rated categories:</h1>
         <ul class="flex categories-links">
           <li v-for="(category, idx) in top5Cat" :key="idx">
@@ -24,19 +24,22 @@
           </li>
         </ul>
       </article>
-      <article class="random-category">
+      <article class="every-category random-category">
         <h1>Gaming:</h1>
         <div class="category">
           <gig-list :gigs="randomCategory"></gig-list>
         </div>
       </article>
-      <article class="explore-categories">
+      <article class="every-category explore-categories">
         <h1>Explore Marketplace:</h1>
         <ul class="flex categories-list">
           <li v-for="(category, idx) in categories" :key="idx">
             <!-- TODO: need to insert the category name into filterBy object -->
-            <img :src="require(`../assets/imgs/${category.imgUrl}`)" />
-            <router-link :to="{ name: 'gig', params: { filterBy: filterBy } }">
+            <router-link
+              :to="{ name: 'gig', params: { filterBy: filterBy } }"
+              class="flex align-center justify-center column"
+            >
+              <img :src="require(`../assets/imgs/${category.imgUrl}`)" />
               {{ category.name }}
             </router-link>
           </li>
@@ -82,10 +85,6 @@ export default {
       ],
       categories: [
         {
-          name: "Digital Marketing",
-          imgUrl: "programming.svg",
-        },
-        {
           name: "Programming and Tech",
           imgUrl: "programming.svg",
         },
@@ -94,16 +93,24 @@ export default {
           imgUrl: "graphics-design.svg",
         },
         {
+          name: "Digital Marketing",
+          imgUrl: "programming.svg",
+        },
+        {
           name: "Video and Animation",
           imgUrl: "video-animation.svg",
         },
         {
           name: "Data",
-          imgUrl: "online-marketing.svg",
+          imgUrl: "writing.svg",
+        },
+        {
+          name: "Gaming",
+          imgUrl: "video-animation.svg",
         },
         {
           name: "Writing and Translation",
-          imgUrl: "programming.svg",
+          imgUrl: "writing.svg",
         },
         {
           name: "Music and Audio",
@@ -111,10 +118,6 @@ export default {
         },
         {
           name: "Business",
-          imgUrl: "business.svg",
-        },
-        {
-          name: "Gaming",
           imgUrl: "business.svg",
         },
         {

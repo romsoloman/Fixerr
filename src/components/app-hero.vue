@@ -1,23 +1,7 @@
 <template>
   <section class="hero-app">
     <div class="hero-backgrounds">
-      <img src="../assets/imgs/bg-hero-1.png" alt="" />
-      <!-- <div
-        class="hero-puka"
-        :style="{ backgroundImage: `url(${item.img})` }"
-      ></div>
-      <div
-        class="hero-simon"
-        :style="{ backgroundImage: `url(${item.img})` }"
-      ></div>
-      <div
-        class="hero-zack"
-        :style="{ backgroundImage: `url(${item.img})` }"
-      ></div>
-      <div
-        class="hero-dona"
-        :style="{ backgroundImage: `url(${item.img})` }"
-      ></div> -->
+      <img :src="require(`../assets/imgs/${mainImageSrc}`)" />
     </div>
     <div class="hero-container">
       <h1 class="title">
@@ -78,9 +62,35 @@ export default {
         rating: 0,
         level: 0,
       },
+      mainImageSrc: "bg-hero-1.png",
     };
   },
-  methods: {},
+  created() {
+    let self = this;
+    this.images = [
+      {
+        id: "2",
+        image: "bg-hero-2.png",
+      },
+      {
+        id: "3",
+        image: "bg-hero-3.png",
+      },
+      {
+        id: "4",
+        image: "bg-hero-4.png",
+      },
+      {
+        id: "5",
+        image: "bg-hero-5.png",
+      },
+    ];
+
+    setInterval(function () {
+      self.mainImageSrc =
+        self.images[Math.floor(Math.random() * self.images.length)].image;
+    }, 3000);
+  },
 };
 </script>
 
