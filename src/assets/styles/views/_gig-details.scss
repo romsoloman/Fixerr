@@ -162,9 +162,15 @@
         & .sub-img-container{
             display: flex;
             justify-content: space-between;
+            cursor: pointer;
             & img{
-                width: 27%;
+                border-radius: 3px;
+                filter: brightness(50%);
+                width: 24%;
                 height: 80px;
+            }
+            & .curr-img{
+                filter: brightness(100%);
             }
         }
      }
