@@ -15,9 +15,9 @@
             <img class="main-img" :src="gig.imgUrls[0]" alt="">
           </div>
           <div class="sub-img-container">
-            <img class="sub-img" :src="gig.imgUrls[0]" alt="">
-            <img class="sub-img" :src="gig.imgUrls[0]" alt="">
-            <img class="sub-img" :src="gig.imgUrls[0]" alt="">
+            <img class="sub-img" :src="gig.imgUrls[1]" alt="">
+            <img class="sub-img" :src="gig.imgUrls[2]" alt="">
+            <img class="sub-img" :src="gig.imgUrls[3]" alt="">
           </div>
           <!-- <ul :v-for="imgUrl in gig.imgUrls">
             <li><img :src="imgUrl" alt=""></li>
