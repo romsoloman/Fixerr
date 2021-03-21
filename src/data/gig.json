@@ -354,7 +354,7 @@
                 "by": {
                     "_id": "k3w",
                     "fullname": "Backslash",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -366,7 +366,7 @@
                 "by": {
                     "_id": "nk34j8",
                     "fullname": "Joe Graph",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             }
         ]
@@ -490,7 +490,7 @@
                     "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "Norah Jonah",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -500,7 +500,7 @@
                 "by": {
                     "_id": "k3w",
                     "fullname": "bklynie",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -510,7 +510,7 @@
                 "by": {
                     "_id": "nk37j3",
                     "fullname": "Frank Zip",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             }
         ]
@@ -557,7 +557,7 @@
                 "by": {
                     "_id": "u102",
                     "fullname": "mike72906",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -567,7 +567,7 @@
                 "by": {
                     "_id": "k3w",
                     "fullname": "bklynie",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -577,7 +577,7 @@
                 "by": {
                     "_id": "nk84j3",
                     "fullname": "networxgrid",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             }
         ]
@@ -731,8 +731,10 @@
     {
         "_id": "10206546",
         "imgUrls": [
-            "http://coding-academy.org/books-photos/11.jpg",
-            "otherImg.jpg"
+            "https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjF8fGRlc2lnbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+            "https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fGRlc2lnbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+            "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzJ8fGRlc2lnbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+            "https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzR8fGRlc2lnbnxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=700&q=60"
         ],
         "rating": 3,
         "price": 80.00,
@@ -740,10 +742,9 @@
         "about": "I will design book cover art for you. This will include character art in semi realistic anime style with a detailed background. I will design the characters as per your description and would keep you updated on every step of the process. I also provide detailed background and landscape/ environment in which I set the characters in a way that is narrative. ",
         "deliveryTime": 5,
         "tags": [
-            "Music and Audio",
-            "gaming",
-            "programming and tech",
-            "Music and Audio"
+            "digital Marketing",
+            "graphics and Design",
+            "data"
         ],
         "extras": [
             "Source File",
@@ -754,7 +755,7 @@
         "creator": {
             "_id": "31399391",
             "fullname": "meforya",
-            "imgUrl": "https://media.istockphoto.com/photos/caucasian-musician-playing-drumms-during-online-concert-or-soundcheck-picture-id1219172994",
+            "imgUrl": "https://images.unsplash.com/photo-1547508446-e097049cade7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzF8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
             "level": 3,
             "location": "India",
             "memberSince": "Jul 2020",
@@ -767,10 +768,12 @@
                 "id": "kab44j",
                 "txt": "It was a pleasure working with Meforya! She brought my character to life with beautiful emotive colors and expressions. She pays close attention to details and makes sure to get every piece of the design just right. It turned out better than I could have ever imagined! I'm looking forward to working with Meforya again!",
                 "rate": 5,
+                "from":"New york,USA",
+                "flag":"🇺🇸",
                 "by": {
                     "_id": "u102",
                     "fullname": "fosterhollow",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1565104781149-275a5392dabc?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzJ8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -778,21 +781,23 @@
                 "txt": "Artist Meforya did an amazing job! She worked really hard to ensure we were completely satisfied with the final cover design. Her attention to detail is amazing. We are definitely going to work with her on additional cover designs.",
                 "rate": 5,
                 "by": {
-                     "from":"New york,USA",
-                    "flag":"🇺🇸",
+                     "from":"Paris, France",
+                    "flag":"🇫🇷",
                     "_id": "k3w",
                     "fullname": "rom",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1588731234159-8b9963143fca?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
                 "id": "j4b5jh34b43",
                 "txt": "Very fast, very good job",
                 "rate": 5,
+                "from":"Lyon, France",
+                "flag":"🇫🇷",
                 "by": {
                     "_id": "nk34jd",
                     "fullname": "luisferroebay",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1600872251027-c3f499985bdf?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzR8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             }
         ]
@@ -800,8 +805,10 @@
     {
         "_id": "10306546",
         "imgUrls": [
-            "http://coding-academy.org/books-photos/12.jpg",
-            "otherImg.jpg"
+            "https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fGdhbWluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+            "https://images.unsplash.com/photo-1580327344181-c1163234e5a0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjZ8fGdhbWluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+            "https://images.unsplash.com/photo-1600861194942-f883de0dfe96?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjd8fGdhbWluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+            "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDV8fGdhbWluZ3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=700&q=60"
         ],
         "rating": 3,
         "price": 3116.00,
@@ -810,8 +817,7 @@
         "deliveryTime": 3,
         "tags": [
             "Music and Audio",
-            "gaming",
-            "programming and tech"
+            "gaming"
         ],
         "extras": [
             "Source File",
@@ -822,7 +828,7 @@
         "creator": {
             "_id": "31399391",
             "fullname": "tme2012",
-            "imgUrl": "https://media.istockphoto.com/photos/caucasian-musician-playing-drumms-during-online-concert-or-soundcheck-picture-id1219172994",
+            "imgUrl": "https://images.unsplash.com/photo-1562159278-1253a58da141?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODR8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
             "level": 5,
             "location": "United States",
             "memberSince": "Aug 2017",
@@ -836,31 +842,35 @@
                 "txt": "Selecting a writer is never an easy process. The writer needs to have the capability to immediately grasp the story you want to tell, without having the company background and experience as you have. Nick did an absolutely amazing job. Straight to the point, and exactly how we wanted the ebook to come out.",
                 "rate": 5,
                 "by": {
-                     "from":"New york,USA",
+                     "from":"Dallas,USA",
                     "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "scottmcinnes",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1598628340414-bbf4c9e21604?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODl8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
                 "id": "jb54jb5",
                 "txt": "Wow! I'm extremely impressed with this seller's writing and attention to detail. He needed very little instruction and was the support I needed for my writing project. I highly recommend his services.",
                 "rate": 5,
+                "from":"L.A,USA",
+                "flag":"🇺🇸",
                 "by": {
                     "_id": "k3w",
                     "fullname": "kimrarakim",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1595347097560-69238724e7bd?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OTV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
                 "id": "j4b5jh34b43",
                 "txt": "This was a good experience for I was back and forth in my ideas and thoughts and the way it was reviewed and edited was awesome.",
                 "rate": 5,
+                "from":"Beijing, China",
+                "flag":"🇨🇳",
                 "by": {
                     "_id": "nk34j5",
                     "fullname": "drcherylhardy",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1544266401-0c13025c8fd6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             }
         ]
@@ -868,8 +878,10 @@
     {
         "_id": "10406546",
         "imgUrls": [
-            "http://coding-academy.org/books-photos/13.jpg",
-            "otherImg.jpg"
+            "https://images.unsplash.com/photo-1519640350407-953bc0614f4c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Njh8fG11c2ljfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+            "https://images.unsplash.com/photo-1465821185615-20b3c2fbf41b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nzh8fG11c2ljfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+            "https://images.unsplash.com/photo-1520496938502-73e942d08cc3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODJ8fG11c2ljfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+            "https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODd8fG11c2ljfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60"
         ],
         "rating": 3,
         "price": 692.37,
@@ -878,9 +890,7 @@
         "deliveryTime": "10 Days Delivery",
         "tags": [
             "Music and Audio",
-            "gaming",
-            "programming and tech",
-            "Music and Audio"
+            "writing and Translation"
         ],
         "extras": [
             "Source File",
@@ -891,7 +901,7 @@
         "creator": {
             "_id": "31399391",
             "fullname": "nickstarichenko",
-            "imgUrl": "https://media.istockphoto.com/photos/caucasian-musician-playing-drumms-during-online-concert-or-soundcheck-picture-id1219172994",
+            "imgUrl": "https://images.unsplash.com/photo-1518882570151-157128e78fa1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8YmxhY2slMjBtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
             "level": 5,
             "location": "United States",
             "memberSince": "Dec 2016",
@@ -904,32 +914,36 @@
                 "id": "kjb43j",
                 "txt": "Great working with you. Easy and professional!!",
                 "rate": 5,
+                "from":"Amsterdam, Netherlands",
+                "flag":"🇳🇱",
                 "by": {
                     "_id": "u102",
                     "fullname": "tareckelzeinab",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
                 "id": "jb54jb7",
                 "txt": "Went above and beyond. I could not have asked for anyone better to capture my event.",
                 "rate": 1,
+                "from":"New york,USA",
+               "flag":"🇺🇸",
                 "by": {
-                     "from":"New york,USA",
-                    "flag":"🇺🇸",
                     "_id": "k3w",
                     "fullname": "echo3b",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8d29tYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
                 "id": "j4b5jh34b43",
                 "txt": "Excellent photographer, would highly recommend.",
                 "rate": 5,
+                "from":"Tel aviv, israel",
+                "flag":"🇮🇱",
                 "by": {
                     "_id": "nk24j3",
                     "fullname": "kelseafarmer",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1486074051793-e41332bf18fc?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fHdvbWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             }
         ]
@@ -937,7 +951,7 @@
     {
         "_id": "10506546",
         "imgUrls": [
-            "http://coding-academy.org/books-photos/14.jpg",
+            "https://images.unsplash.com/photo-1597586124394-fbd6ef244026?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjZ8fHdvbWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
             "otherImg.jpg"
         ],
         "rating": 5,
@@ -978,7 +992,7 @@
                     "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "ruthfinnegan",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -988,7 +1002,7 @@
                 "by": {
                     "_id": "k3w",
                     "fullname": "globalfx1",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -998,7 +1012,7 @@
                 "by": {
                     "_id": "nk34j3",
                     "fullname": "njsarraf",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             }
         ]
@@ -1047,7 +1061,7 @@
                     "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "garyahrecs",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -1057,7 +1071,7 @@
                 "by": {
                     "_id": "k3w",
                     "fullname": "garyahrecs",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -1067,7 +1081,7 @@
                 "by": {
                     "_id": "ak34j3",
                     "fullname": "garyahrecs",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             }
         ]
@@ -1116,7 +1130,7 @@
                     "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "steviesoldsoul",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -1126,7 +1140,7 @@
                 "by": {
                     "_id": "k3w",
                     "fullname": "liftedatl",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -1136,7 +1150,7 @@
                 "by": {
                     "_id": "nk37j3",
                     "fullname": "adamkent144",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             }
         ]
@@ -1185,7 +1199,7 @@
                     "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "tarashelley",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -1195,7 +1209,7 @@
                 "by": {
                     "_id": "k3w",
                     "fullname": "gemcimi",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -1205,7 +1219,7 @@
                 "by": {
                     "_id": "nk34j1",
                     "fullname": "twendzone",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             }
         ]
@@ -1213,7 +1227,7 @@
     {
         "_id": "10906546",
         "imgUrls": [
-            "http://coding-academy.org/books-photos/18.jpg",
+            "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
             "otherImg.jpg"
         ],
         "rating": 3,
@@ -1254,7 +1268,7 @@
                     "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "jamiebirdsey",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -1264,7 +1278,7 @@
                 "by": {
                     "_id": "k3w",
                     "fullname": "lewisnclark",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -1276,7 +1290,7 @@
                     "flag":"🇺🇸",
                     "_id": "nk34j9",
                     "fullname": "wpemployer",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             }
         ]
@@ -1325,7 +1339,7 @@
                     "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "obehave",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -1337,7 +1351,7 @@
                     "flag":"🇺🇸",
                     "_id": "k3w",
                     "fullname": "christinepenny",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -1349,7 +1363,7 @@
                     "flag":"🇺🇸",
                     "_id": "nk34j8",
                     "fullname": "christinepenny",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597835260821-561af8cb424f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8ODV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             }
         ]
@@ -1357,8 +1371,10 @@
     {
         "_id": "10016546",
         "imgUrls": [
-            "http://coding-academy.org/books-photos/20.jpg",
-            "otherImg.jpg"
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZGF0YXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+            "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGF0YXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+            "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8ZGF0YXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+            "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTh8fGRhdGF8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60"
         ],
         "rating": 3,
         "price": 80.00,
@@ -1366,10 +1382,9 @@
         "about": "If you are using Shopify Plus or Shopify, just development or design of an e-commerce website is not sufficient, since the industry is growing there is always a need to accelerate and grow your store, which is when customization or custom development comes into picture.",
         "deliveryTime": 3,
         "tags": [
-            "Music and Audio",
-            "gaming",
-            "programming and tech",
-            "Music and Audio"
+            "music and Audio",
+            "data",
+            "programming and tech"
         ],
         "extras": [
             "Source File",
@@ -1380,7 +1395,7 @@
         "creator": {
             "_id": "31399391",
             "fullname": "oded ron",
-            "imgUrl": "https://media.istockphoto.com/photos/caucasian-musician-playing-drumms-during-online-concert-or-soundcheck-picture-id1219172994",
+            "imgUrl": "https://images.unsplash.com/photo-1561677843-39dee7a319ca?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
             "level": 5,
             "location": "India",
             "memberSince": "Jun 2017",
@@ -1398,7 +1413,7 @@
                     "flag":"🇺🇸",
                     "_id": "u102",
                     "fullname": "danielwilson433",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1597895386990-a5b1d51690e1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -1406,11 +1421,11 @@
                 "txt": "Good experience working with Jim. Quick to respond and does the job well. Would recommend his services and will be working with him again!",
                 "rate": 5,
                 "by": {
-                     "from":"New york,USA",
-                    "flag":"🇺🇸",
+                     "from":"Berlin, Germany",
+                    "flag":"🇩🇪",
                     "_id": "k3w",
                     "fullname": "narangrohan",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1556474835-b0f3ac40d4d1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzN8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             },
             {
@@ -1418,11 +1433,11 @@
                 "txt": "Great. No complaints. My 3rd time working with him. Communication is fast! Issue with not clear product images that I contacted shopify support but wasn't that helpful, but quickly found the issue and site looks fantastic. Will be hiring him again for more redesign work.",
                 "rate": 5,
                 "by": {
-                     "from":"New york,USA",
-                    "flag":"🇺🇸",
+                     "from":"Prague, Czechia",
+                    "flag":"🇨🇿",
                     "_id": "nk34j7",
                     "fullname": "cjp0524",
-                    "imgUrl": "http://coding-academy.org/books-photos/18.jpg"
+                    "imgUrl": "https://images.unsplash.com/photo-1592023031338-ee30ef94abbc?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nzh8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
                 }
             }
         ]
