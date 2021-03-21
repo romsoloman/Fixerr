@@ -6,8 +6,7 @@
       </header>
       <main class="main-info">
         <div class="flex align-center user-details">
-          <!-- <img src="" /> -->
-          <div class="user-img"></div>
+          <img :src="gig.creator.imgUrl" class="user-img" />
           <div class="user-info">
             <p class="user-name">{{ gig.creator.fullname }}</p>
             <p class="user-level">Level {{ gig.creator.level }} Seller</p>
