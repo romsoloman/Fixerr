@@ -28,7 +28,8 @@
         <h2 class="about-seller-title">About the seller</h2>
         <div class="about-seller-container">
           <div class="seller-img-container">
-            <img class="seller-img" :src="gig.creator.imgUrl" />
+            <img class="seller-img" :src="gig.creator.imgUrl"/>
+            <img class="badge" src="../assets/imgs/badge.svg" alt="">
           </div>
           <div class="seller-details">
             <div>
