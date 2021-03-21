@@ -48,6 +48,7 @@
        font-weight: 600;
        font-size:1rem;
        & span {margin-right:5px;}
+       & .reviews-count {color:$clr2; font-weight: 400; padding-left: 5px; font-size: 14px;align-self: center;}
      }
   }
   & .footer-info {

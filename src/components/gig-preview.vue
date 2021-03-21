@@ -16,7 +16,7 @@
         <div class="flex rating-info">
           <span><i class="fas fa-star"></i></span>
           <div class="stars">{{ gig.rating }}</div>
-          <!-- <div class="reviews-count">{{ gig.reviews.length }}</div> -->
+          <span class="reviews-count">({{ gig.reviews.length }})</span>
         </div>
       </main>
       <footer class="flex align-center footer-info">
