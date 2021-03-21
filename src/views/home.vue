@@ -17,7 +17,7 @@
               <router-link
                 :to="{ name: 'gig', params: { filterBy: filterBy } }"
               >
-                {{ category }}
+                {{ category.name }}
               </router-link>
             </div>
           </li>
@@ -31,7 +31,7 @@
       </article>
       <article class="explore-categories">
         <h1>Explore Marketplace:</h1>
-        <ul class="categories-list">
+        <ul class="flex categories-list">
           <li v-for="(category, idx) in categories" :key="idx">
             <!-- TODO: need to insert the category name into filterBy object -->
             <router-link :to="{ name: 'gig', params: { filterBy: filterBy } }">
@@ -61,10 +61,22 @@ export default {
         level: 0,
       },
       top5Cat: [
-        "Digital Marketing",
-        "Programming and Tech",
-        "Graphics and Design",
-        "Video and Animation",
+        {
+          name: "Digital Marketing",
+          imgUrl: "src/assets/imgs/digital-cat.jpeg",
+        },
+        {
+          name: "Programming and Tech",
+          imgUrl: "src/assets/imgs/programming-cat.jpeg",
+        },
+        {
+          name: "Graphics and Design",
+          imgUrl: "src/assets/imgs/design-cat.jpeg",
+        },
+        {
+          name: "Video and Animation",
+          simgUrl: "src/assets/imgs/video-cat.jpg",
+        },
       ],
       categories: [
         "Digital Marketing",
