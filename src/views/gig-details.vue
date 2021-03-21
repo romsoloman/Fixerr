@@ -7,7 +7,7 @@
           <img class="creator-img" :src="gig.creator.imgUrl" />
           <p class="username">{{ gig.creator.fullname }}</p>
           <p class="user-level">level {{ gig.creator.level }} <span>|</span></p>
-          <p class="rating">⭐️⭐️⭐️ {{ gig.rating }}</p>
+          <p class="rating">{{getStars}} {{ gig.rating }}</p>
           <p class="reviews-count">({{ gig.reviews.length }})</p>
         </section>
         <section class="gig-imgs-container container">
@@ -33,8 +33,8 @@
             <div>
               <div class="seller-username">{{ gig.creator.fullname }}</div>
               <div class="about-user">{{ gig.creator.about }}</div>
-              <div class="seller-rating">
-                ⭐️⭐️⭐️ {{ gig.rating }} ({{ gig.reviews.length }} reviews)
+              <div class="seller-rating" >
+               <span class="rating">{{getStars}} {{ gig.rating }}</span> ({{ gig.reviews.length }} reviews)
               </div>
             </div>
             <div class="contect-button">Contact Me</div>
@@ -63,7 +63,7 @@
           <gig-list :gigs="randomCategory"></gig-list>
         </div>
         <section class="review">
-          <h2 class="review-title">{{gig.reviews.length}} Review <span class="avg-rat">⭐️ 1.3</span></h2>
+          <h2 class="review-title">{{gig.reviews.length}} Review <span class="avg-rat"> {{getAvgRat}}</span></h2>
           <reviews-stats/>
           <review-list
             :reviews="gig.reviews"
@@ -97,9 +97,46 @@ export default {
   computed: {
     getStars() {
       // TODO-GETSTARS - 10
+      let stars;
+        if(this.gig.rating > 0 && this.gig.rating < 0.5){
+           stars = '✩✩✩✩✩';
+        }else if(this.gig.rating > 0.5 && this.gig.rating < 1.5){
+           stars = '⭐️✩✩✩✩';
+        }else if(this.gig.rating > 1.5 && this.gig.rating < 2.5){
+           stars = '⭐️⭐️✩✩✩';
+        }else if(this.gig.rating > 2.5 && this.gig.rating < 3.5){
+           stars = '⭐️⭐️⭐️✩✩';
+        }else if(this.gig.rating > 3.5 && this.gig.rating < 4.5){
+           stars = '⭐️⭐️⭐️⭐️✩';
+        }else if(this.gig.rating > 4.5){
+           stars = '⭐️⭐️⭐️⭐️⭐️';
+        }
+      return stars;
     },
     getAvgRat(){
       // TODO-getAvgRat - 62
+      let reviewSum = this.gig.reviews.reduce((acc, review) => {
+        acc += review.rate;
+        return acc;
+        }, 0);
+
+        const avgReviews = reviewSum / this.gig.reviews.length;
+        // return avgReviews.toFixed(2);
+        let stars;
+        if(avgReviews > 0 && avgReviews < 0.5){
+           stars = '✩✩✩✩✩';
+        }else if(avgReviews > 0.5 && avgReviews < 1.5){
+           stars = '⭐️✩✩✩✩';
+        }else if(avgReviews > 1.5 && avgReviews < 2.5){
+           stars = '⭐️⭐️✩✩✩';
+        }else if(avgReviews > 2.5 && avgReviews < 3.5){
+           stars = '⭐️⭐️⭐️✩✩';
+        }else if(avgReviews > 3.5 && avgReviews < 4.5){
+           stars = '⭐️⭐️⭐️⭐️✩';
+        }else if(avgReviews > 4.5){
+           stars = '⭐️⭐️⭐️⭐️⭐️';
+        }
+      return stars + ' ' + avgReviews.toFixed(2);
     },
     randomCategory() {
       const gigs = this.$store.getters.gigs || [];
@@ -118,6 +155,10 @@ export default {
     });
   },
   methods: {
+    getStarsOfReviews(){
+      const reviewsAvg = getAvgRat()
+      return reviewsAvg;
+    },
     async addReview(newReview) {
       const reviewToAdd = newReview;
       reviewToAdd.by = userService.getLoggedinUser();

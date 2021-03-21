@@ -2,7 +2,7 @@
   <section class="package-price-container container">
     <header class="price-container">
       <h3>package price</h3>
-      <p class="price">{{gig.price}} $ </p>
+      <p class="price">$ {{gig.price}}</p>
     </header>
     <p class="package-about">{{gig.about}}</p>
     <div class="delivery-time"><i class="far fa-clock"></i>{{gig.deliveryTime}}</div>
