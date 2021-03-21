@@ -19,9 +19,6 @@
             <img class="sub-img" :src="gig.imgUrls[2]" alt="">
             <img class="sub-img" :src="gig.imgUrls[3]" alt="">
           </div>
-          <!-- <ul :v-for="imgUrl in gig.imgUrls">
-            <li><img :src="imgUrl" alt=""></li>
-          </ul> -->
         </section>
         <div class="about-gig-container container">
           <h2 class="about-gig-title">About this Gig</h2>
