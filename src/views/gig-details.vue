@@ -10,11 +10,18 @@
           <p class="rating">⭐️⭐️⭐️ {{ gig.rating }}</p>
           <p class="reviews-count">({{ gig.reviews.length }})</p>
         </section>
-        <section class="gig-imgs-container">
-          <!-- <img class="title-img" src="">
-          <img class="sub-title-img" src="">
-          <img class="sub-title-img" src="">
-          <img class="sub-title-img" src=""> -->
+        <section class="gig-imgs-container container">
+          <div class="main-img-container">
+            <img class="main-img" :src="gig.imgUrls[0]" alt="">
+          </div>
+          <div class="sub-img-container">
+            <img class="sub-img" :src="gig.imgUrls[0]" alt="">
+            <img class="sub-img" :src="gig.imgUrls[0]" alt="">
+            <img class="sub-img" :src="gig.imgUrls[0]" alt="">
+          </div>
+          <!-- <ul :v-for="imgUrl in gig.imgUrls">
+            <li><img :src="imgUrl" alt=""></li>
+          </ul> -->
         </section>
         <div class="about-gig-container container">
           <h2 class="about-gig-title">About this Gig</h2>
