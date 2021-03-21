@@ -41,7 +41,7 @@
          }
        }
      }
-     & .gig-description {transition: color .4s;}
+     & .gig-description {transition: color .4s; font-size:0.95rem; margin-top:5px;}
      & .gig-description:hover {color: $clr5;}
      & .rating-info {
        color: gold;
