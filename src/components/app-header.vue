@@ -5,7 +5,9 @@
   >
     <div class="logo">
       <!-- <img src="" alt=""> TODO: Replace the H1 in IMG-->
-      <router-link to="/"><h1>Fixerr</h1></router-link>
+      <router-link to="/">
+        <h1>Fixerr</h1>
+      </router-link>
     </div>
     <!-- <div v-if="!isHomepage" class="category-search">
       <div class="search-icon">

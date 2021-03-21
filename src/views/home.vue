@@ -14,6 +14,7 @@
           <li v-for="(category, idx) in top5Cat" :key="idx">
             <!-- TODO: need to insert the category name into filterBy object -->
             <div class="category-card">
+              <img :src="require(`../assets/imgs/${category.imgUrl}`)" />
               <router-link
                 :to="{ name: 'gig', params: { filterBy: filterBy } }"
               >
@@ -34,8 +35,9 @@
         <ul class="flex categories-list">
           <li v-for="(category, idx) in categories" :key="idx">
             <!-- TODO: need to insert the category name into filterBy object -->
+            <img :src="require(`../assets/imgs/${category.imgUrl}`)" />
             <router-link :to="{ name: 'gig', params: { filterBy: filterBy } }">
-              {{ category }}
+              {{ category.name }}
             </router-link>
           </li>
         </ul>
@@ -63,32 +65,62 @@ export default {
       top5Cat: [
         {
           name: "Digital Marketing",
-          imgUrl: "src/assets/imgs/digital-cat.jpeg",
+          imgUrl: "digital-cat.jpg",
         },
         {
           name: "Programming and Tech",
-          imgUrl: "src/assets/imgs/programming-cat.jpeg",
+          imgUrl: "programming-cat.jpeg",
         },
         {
           name: "Graphics and Design",
-          imgUrl: "src/assets/imgs/design-cat.jpeg",
+          imgUrl: "design-cat.jpeg",
         },
         {
           name: "Video and Animation",
-          simgUrl: "src/assets/imgs/video-cat.jpg",
+          imgUrl: "video-cat.jpg",
         },
       ],
       categories: [
-        "Digital Marketing",
-        "Programming and Tech",
-        "Graphics and Design",
-        "Video and Animation",
-        "Lifestyle",
-        "Gaming",
-        "Business",
-        "Data",
-        "Writing and Translation",
-        "Music and Audio",
+        {
+          name: "Digital Marketing",
+          imgUrl: "programming.svg",
+        },
+        {
+          name: "Programming and Tech",
+          imgUrl: "programming.svg",
+        },
+        {
+          name: "Graphics and Design",
+          imgUrl: "graphics-design.svg",
+        },
+        {
+          name: "Video and Animation",
+          imgUrl: "video-animation.svg",
+        },
+        {
+          name: "Data",
+          imgUrl: "online-marketing.svg",
+        },
+        {
+          name: "Writing and Translation",
+          imgUrl: "programming.svg",
+        },
+        {
+          name: "Music and Audio",
+          imgUrl: "music-audio.svg",
+        },
+        {
+          name: "Business",
+          imgUrl: "business.svg",
+        },
+        {
+          name: "Gaming",
+          imgUrl: "business.svg",
+        },
+        {
+          name: "Lifestyle",
+          imgUrl: "lifestyle.svg",
+        },
       ],
     };
   },
