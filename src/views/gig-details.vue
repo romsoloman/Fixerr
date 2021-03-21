@@ -64,7 +64,7 @@
         </div>
         <section class="review">
           <h2 class="review-title">{{gig.reviews.length}} Review <span class="avg-rat"> {{getAvgRat}}</span></h2>
-          <reviews-stats/>
+          <reviews-stats :gig="gig"/>
           <review-list
             :reviews="gig.reviews"
             @addReview="addReview"
@@ -101,15 +101,15 @@ export default {
         if(this.gig.rating > 0 && this.gig.rating < 0.5){
            stars = '✩✩✩✩✩';
         }else if(this.gig.rating > 0.5 && this.gig.rating < 1.5){
-           stars = '⭐️✩✩✩✩';
+           stars = '★✩✩✩✩';
         }else if(this.gig.rating > 1.5 && this.gig.rating < 2.5){
-           stars = '⭐️⭐️✩✩✩';
+           stars = '★★✩✩✩';
         }else if(this.gig.rating > 2.5 && this.gig.rating < 3.5){
-           stars = '⭐️⭐️⭐️✩✩';
+           stars = '★★★✩✩';
         }else if(this.gig.rating > 3.5 && this.gig.rating < 4.5){
-           stars = '⭐️⭐️⭐️⭐️✩';
+           stars = '★★★★✩';
         }else if(this.gig.rating > 4.5){
-           stars = '⭐️⭐️⭐️⭐️⭐️';
+           stars = '★★★★★';
         }
       return stars;
     },
@@ -126,15 +126,15 @@ export default {
         if(avgReviews > 0 && avgReviews < 0.5){
            stars = '✩✩✩✩✩';
         }else if(avgReviews > 0.5 && avgReviews < 1.5){
-           stars = '⭐️✩✩✩✩';
+           stars = '★✩✩✩✩';
         }else if(avgReviews > 1.5 && avgReviews < 2.5){
-           stars = '⭐️⭐️✩✩✩';
+           stars = '★★✩✩✩';
         }else if(avgReviews > 2.5 && avgReviews < 3.5){
-           stars = '⭐️⭐️⭐️✩✩';
+           stars = '★★★✩✩';
         }else if(avgReviews > 3.5 && avgReviews < 4.5){
-           stars = '⭐️⭐️⭐️⭐️✩';
+           stars = '★★★★✩';
         }else if(avgReviews > 4.5){
-           stars = '⭐️⭐️⭐️⭐️⭐️';
+           stars = '★★★★★';
         }
       return stars + ' ' + avgReviews.toFixed(2);
     },
