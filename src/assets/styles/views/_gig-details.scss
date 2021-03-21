@@ -7,7 +7,7 @@
         font-size: 35px;
         grid-row: 1/1;
         grid-column: 1/-1;
-        padding-top: 1.1rem;
+        padding: 1.1rem 12px 0;
         width: 56%;
         font-weight: 700;
         color: #404145;
@@ -167,5 +167,8 @@
                 height: 80px;
             }
         }
+     }
+     & .review{
+         margin-top: 2rem;
      }
 }

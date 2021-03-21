@@ -10,15 +10,25 @@
     padding: 15px;
     border: 1px solid #dadbdd;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    & .add-new-review-inputs{
-      display: flex;
-      justify-content: space-around;
-      padding-bottom: 30px;
-      & input{
-        text-align: center;
+      & textarea{
+        padding: 10px;
+        height: 200px;
+        margin-bottom: 15px;
       }
+      & .stars{
+        margin-bottom: 15px;
+        font-size: 20px;
+        background-color: rgba(255, 255, 255, 0.111);
+        cursor: pointer;
+        & .gold-star{
+          display: none;
+        }
+        & .draw-star{
+          display: inline-block;
+        }
+        & .remove-star{
+          display: none;
+        }
     }
     & .add-review-button{
       background-color: white;

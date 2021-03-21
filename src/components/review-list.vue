@@ -5,11 +5,20 @@
         <review-preview :review="review" @removeReview="removeReview" />
       </li>
     </ul>
-    <div class="add-new-review" v-if="editNewReview">
-      <div class="add-new-review-inputs">
-        <input type="text" v-model="editNewReview.txt" placeholder="Add review..."/>
-        <input type="number" v-model.number="editNewReview.rate" placeholder="Add rate..."/>
+    <div class="flex column add-new-review" v-if="editNewReview">
+      <div class="stars">
+        <span class="star1 gold-star" :class="{'draw-star':editNewReview.rate>0}" @click="rateGig(1)">⭐️</span>
+        <span class="star2 gold-star" :class="{'draw-star':editNewReview.rate>1}" @click="rateGig(2)">⭐️</span>
+        <span class="star3 gold-star" :class="{'draw-star':editNewReview.rate>2}" @click="rateGig(3)">⭐️</span>
+        <span class="star4 gold-star" :class="{'draw-star':editNewReview.rate>3}" @click="rateGig(4)">⭐️</span>
+        <span class="star5 gold-star" :class="{'draw-star':editNewReview.rate>4}" @click="rateGig(5)">⭐️</span>
+        <span class="star6 black-star" :class="{'remove-star':editNewReview.rate>0}" @click="rateGig(1)">✩</span>
+        <span class="star7 black-star" :class="{'remove-star':editNewReview.rate>1}" @click="rateGig(2)">✩</span>
+        <span class="star8 black-star" :class="{'remove-star':editNewReview.rate>2}" @click="rateGig(3)">✩</span>
+        <span class="star9 black-star" :class="{'remove-star':editNewReview.rate>3}" @click="rateGig(4)">✩</span>
+        <span class="star10 black-star" :class="{'remove-star':editNewReview.rate>4}" @click="rateGig(5)">✩</span>
       </div>
+      <textarea type="text" v-model="editNewReview.txt" placeholder="Add review..."/>
       <button class="add-review-button" @click="onAddReview">Add review</button>
     </div>
   </section>
@@ -30,6 +39,10 @@ export default {
     };
   },
   methods: {
+    rateGig(rate){
+      this.editNewReview.rate = rate;
+      console.log('this.editNewReview', this.editNewReview);
+    },
     onAddReview() {
       this.$emit("addReview", this.editNewReview);
     },
