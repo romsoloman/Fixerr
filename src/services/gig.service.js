@@ -76,7 +76,7 @@ function getEmptyGig() {
     title: '',
     about: '',
     tags: [],
-    imgsUrls: [''],
+    imgUrls: [''],
     price: 0,
     deliveryTime: '',
     rating: 4,
@@ -84,6 +84,10 @@ function getEmptyGig() {
       fullname: '',
       imgUrl: '',
       level: 3,
+      location: "Israel",
+      memberSince: null,
+      avgResponseTime: `${utilService.getRandomInt(1, 6)} Hours`,
+      lastDelivery: `About ${utilService.getRandomInt(1, 6)} Hours`,
     },
     review: []
   }

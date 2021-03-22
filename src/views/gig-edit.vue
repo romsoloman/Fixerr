@@ -39,25 +39,25 @@
         placeholder="Add img url..."
         class="edit-inputs"
         type="text"
-        v-model="gigToEdit.imgsUrls[0]"
+        v-model="gigToEdit.imgUrls[0]"
       />
       <input
         placeholder="Add img url..."
         class="edit-inputs"
         type="text"
-        v-model="gigToEdit.imgsUrls[1]"
+        v-model="gigToEdit.imgUrls[1]"
       />
       <input
         placeholder="Add img url..."
         class="edit-inputs"
         type="text"
-        v-model="gigToEdit.imgsUrls[2]"
+        v-model="gigToEdit.imgUrls[2]"
       />
       <input
         placeholder="Add img url..."
         class="edit-inputs"
         type="text"
-        v-model="gigToEdit.imgsUrls[3]"
+        v-model="gigToEdit.imgUrls[3]"
       />
     </div>
     <div class="edit-price">
