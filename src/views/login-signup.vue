@@ -1,45 +1,54 @@
 <template>
   <div class="container about">
-    <p>{{ msg }}</p>
-    <div v-if="loggedinUser">
-      <h3>
-        Loggedin User:
-        {{ loggedinUser.username }}
-        <button @click="doLogout">Logout</button>
-      </h3>
-    </div>
-    <div v-else-if="!loggedinUser && isMember">
-      <h2>Login</h2>
-      <form @submit.prevent="doLogin">
-        <input type="text" v-model="loginCred.username" placeholder="User name" />
-        <input
-          type="text"
-          v-model="loginCred.password"
-          placeholder="Password"
-        />
-        <button>Login</button>
-        <button @click="toggleIsMemeber">Not a member yet? Join Now</button>
-      </form>
-    </div>
+    <section class="register-container">
+      <p>{{ msg }}</p>
+      <div v-if="loggedinUser">
+        <h3>
+          Loggedin User:
+          {{ loggedinUser.username }}
+          <button @click="doLogout">continue</button>
+        </h3>
+      </div>
+      <div class="login-signup-container" v-else-if="!loggedinUser && isMember">
+        <h4 class="title">Sign in to fixerr</h4>
+        <div class="separator">OR</div>
+        <form @submit.prevent="doLogin">
+          <input type="text" v-model="loginCred.username" placeholder="User name" />
+          <input
+            type="text"
+            v-model="loginCred.password"
+            placeholder="Password"
+          />
+          <button class="fiverr-button">Login</button>
+        </form>
+        <footer>
+          <button>Not a member yet?<span @click="toggleIsMemeber"> Join Now</span></button>
+        </footer>
+      </div>
 
-    <div v-else-if="!loggedinUser && !isMember">
-      <form @submit.prevent="doSignup">
-        <h2>Signup</h2>
-        <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
-        <input
-          type="text"
-          v-model="signupCred.password"
-          placeholder="Password"
-        />
-        <input
-          type="text"
-          v-model="signupCred.username"
-          placeholder="Username"
-        />
-        <button>Signup</button>
-        <button @click="toggleIsMemeber">Already a member? Sign In</button>
-      </form>
-    </div>
+      <div class="login-signup-container" v-else-if="!loggedinUser && !isMember">
+        <form @submit.prevent="doSignup">
+          <h4 class="title">Signup fixerr</h4>
+          <div class="separator">OR</div>
+          <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
+          <input
+            type="text"
+            v-model="signupCred.password"
+            placeholder="Password"
+          />
+          <input
+            type="text"
+            v-model="signupCred.username"
+            placeholder="Username"
+          />
+          <button class="fiverr-button">continue</button>
+          <p>By joining I agree to receive emails from Fiverr.</p>
+        </form>
+        <footer>
+          <button>Already a member? <span @click="toggleIsMemeber"> Sign In </span></button>
+        </footer>
+      </div>
+    </section>
   </div>
 </template>
 
