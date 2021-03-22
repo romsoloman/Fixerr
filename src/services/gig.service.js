@@ -89,7 +89,7 @@ function getEmptyGig() {
       avgResponseTime: `${utilService.getRandomInt(1, 6)} Hours`,
       lastDelivery: `About ${utilService.getRandomInt(1, 6)} Hours`,
     },
-    review: []
+    reviews: []
   }
 }
 

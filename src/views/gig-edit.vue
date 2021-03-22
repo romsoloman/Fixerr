@@ -92,7 +92,6 @@ export default {
   methods: {
     saveGig() {
       if (!this.$store.getters.loggedinUser) {
-        // console.log('this.$router.history.current.path', this.$router.history.current.path);
         this.$store.commit({
           type: "updateLastPath",
           path: this.$router.history.current.path,
@@ -111,10 +110,8 @@ export default {
         });
       }
       const gigToSave = JSON.parse(JSON.stringify(this.gigToEdit));
-      this.$store.dispatch({ type: "saveGigs", gig: gigToSave }).then(() => {
-        // this.gigToEdit = gigService.getEmptyGig();
-      });
-      // return this.$router.push("/gig");
+      this.$store.dispatch({ type: "saveGigs", gig: gigToSave });
+      return this.$router.push("/gig");
     },
   },
   components: {},
