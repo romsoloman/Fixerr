@@ -3,24 +3,23 @@ import { orderService } from "../services/order.service.js";
 
 export const orderStore = {
     state: {
-        cartGigs: [],
+        orders: [],
         isLoading: false
     },
     getters: {
-        products(state) { return state.products },
-        cartGigs(state) { return state.cartGigs },
+        orders(state) { return state.orders },
         isLoading(state) { return state.isLoading },
-        cartSize(state) {
-            return state.cartGigs.length
+        ordersSize(state) {
+            return state.orders.length
         },
-        cartTotal(state) {
-            const total = state.cartGigs.reduce((sum, cartProduct) => {
-                return sum + cartProduct.price
+        ordersTotal(state) {
+            const total = state.orders.reduce((sum, order) => {
+                return sum + order.price
             }, 0)
             return total
         },
-        cartTotalForDisplay(state, getters) {
-            return getters.cartTotal.toLocaleString()
+        ordersTotalForDisplay(state, getters) {
+            return getters.ordersTotal.toLocaleString()
         }
     },
     // Mutations should be SYNC and PURE functions (a pure function does not cause any side effects)
@@ -28,81 +27,75 @@ export const orderStore = {
         setIsLoading(state, { isLoading }) {
             state.isLoading = isLoading;
         },
-        setProducts(state, {products}) {
-            state.products = products;
+        setOrders(state, { orders }) {
+            state.orders = orders;
         },
-        addProduct(state, { product }) {
-            state.products.push(product);
+        addOrder(state, { order }) {
+            state.orders.push(order);
         },
-        updateProduct(state, { product }) {
-            const idx = state.products.findIndex(p => p._id === product._id)
-            state.products.splice(idx, 1, product);
+        updateOrder(state, { order }) {
+            const idx = state.orders.findIndex(p => p._id === order._id)
+            state.orders.splice(idx, 1, order);
         },
-        removeProduct(state, { productId }) {
-            const idx = state.products.findIndex(p => p._id === productId)
-            state.products.splice(idx, 1)
+        removeOrder(state, { orderId }) {
+            const idx = state.orders.findIndex(p => p._id === orderId)
+            state.orders.splice(idx, 1)
         },
-        addToCart(state, { product }) {
-            state.cartGigs.unshift(product);
-        },
-        removeFromCart(state, { productId }) {
-            const idx = state.cartGigs.findIndex(cp => cp._id === productId);
-            state.cartGigs.splice(idx, 1)
-        },
-        clearCart(state) {
-            state.cartGigs = [];
+        clearorders(state) {
+            state.orders = [];
         },
     },
     actions: {
-        loadProducts({commit}) {
+        loadOrders({ commit }) {
             commit({ type: 'setIsLoading', isLoading: true });
-            productService.query()
-                .then(products => {
-                    commit({ type: 'setProducts', products });
+            orderService.query()
+                .then(orders => {
+                    commit({ type: 'setOrders', orders });
                 })
                 .catch(err => {
-                    console.log('Store: Cannot load products', err);
-                    throw new Error('Cannot load products');
+                    console.log('Store: Cannot load orders', err);
+                    throw new Error('Cannot load orders');
                 })
-                .finally(()=>{
+                .finally(() => {
                     commit({ type: 'setIsLoading', isLoading: false });
                 })
         },
-        saveProduct({commit}, { product }) {
-            const type = (product._id) ? 'updateProduct' : 'addProduct';
-            return productService.save(product)
-                .then(savedProduct => {
-                    commit({ type, product: savedProduct })
+        saveOrder({ commit }, { order }) {
+            const type = (order._id) ? 'updateOrder' : 'addOrder';
+            return orderService.save(order)
+                .then(savedOrder => {
+                    console.log('savedOrder', savedOrder);
+                    commit({ type, order: savedOrder })
                 })
                 .catch(err => {
-                    console.log('Store: Cannot save product', err);
-                    throw new Error('Cannot save product');
+                    console.log('Store: Cannot save order', err);
+                    throw new Error('Cannot save order');
                 })
 
         },
-        removeProduct({commit}, payload) {
-            return productService.remove(payload.productId)
+        removeOrder({ commit }, payload) {
+            return orderService.remove(payload.orderId)
                 .then(() => {
                     commit(payload)
                 })
                 .catch(err => {
-                    console.log('Store: Cannot remove product', err);
-                    throw new Error('Cannot remove product');
+                    console.log('Store: Cannot remove order', err);
+                    throw new Error('Cannot remove order');
                 })
         },
-        checkout(context,payload) {
+        checkout(context, payload) {
 
             orderService.save(payload.order)
-            // const amount = context.getters.cartTotal
-            // return userService.withdrawBalance(amount)
-            //     .then((balance) => {
-            //         context.commit({ type: 'clearCart' })
-            //         context.commit({ type: 'setBalance', balance })
-            //     })
-            //     .catch(err => {
-            //         console.log('Store: Cannot checkout', err);
-            //         throw err;
-            //     })
+            const amount = context.getters.ordersTotal
+            return userService.withdrawBalance(amount)
+                .then((balance) => {
+                    context.commit({ type: 'clearorders' })
+                    context.commit({ type: 'setBalance', balance })
+                })
+                .catch(err => {
+                    console.log('Store: Cannot checkout', err);
+                    throw err;
+                })
         }
     }
 }

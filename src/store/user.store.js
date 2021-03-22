@@ -36,6 +36,7 @@ export const userStore = {
                 return userFromArray._id === user._id;
             })
             state.users.splice(idxToUpdate, 1, user);
+            console.log('state.users', state.users);
         },
     },
     actions: {

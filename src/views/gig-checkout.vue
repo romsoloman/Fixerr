@@ -58,6 +58,7 @@
 
 <script>
 import { gigService } from "../services/gig.service.js";
+import { orderService } from "../services/order.service.js";
 import { utilService } from "../services/util.service.js";
 
 export default {
@@ -68,12 +69,14 @@ export default {
       gig: null,
       serviceFee: utilService.getRandomInt(3, 10),
       user:null,
+      orderToEdit:null
     };
   },
   async created() {
     const gigId = this.$route.params.gigId;
     this.gig = await gigService.getById(gigId);
     this.user = this.$store.getters.loggedinUser;
+    this.orderToEdit = orderService.getEmptyOrder();
   },
   computed: {
     totalPrice() {
@@ -82,14 +85,15 @@ export default {
   },
   methods: {
    async checkout() {
-      console.log('this.gig', this.gig);
-      if(!this.user.orders){
-        this.user.orders = [];
-      }
-      this.user.orders.push(this.gig);
-      const user = this.user
-      const newUser = await this.$store.dispatch({ type: "updateUser", user });
-
+        this.orderToEdit.buyer = this.user;
+        this.orderToEdit.totalPrice = this.serviceFee + this.gig.price;
+        this.orderToEdit.seller._id = this.gig.creator._id;
+        this.orderToEdit.seller.name = this.gig.creator.fullname;
+        this.orderToEdit.seller.imgUrl = this.gig.creator.imgUrl;
+        this.orderToEdit.items[0]._id = this.gig._id;
+        this.orderToEdit.items[0].title = this.gig.title;
+        console.log('this.orderToEdit',this.orderToEdit );
+        this.$store.dispatch({ type: "saveOrder", order: this.orderToEdit});
     }
   },
 };

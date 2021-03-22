@@ -23,7 +23,7 @@ async function query(filterBy) {
   //   const gigs = JSON.parse(gigsFromStorage).filter(gig => {
   //     return (gig.tags.includes(filterBy.name) || ((gig.tags.includes(filterBy.name)) && (gig.price >= filterBy.price.minPrice && gig.price <= filterBy.price.maxPrice) &&
   //       (filterBy.rating === gig.rating) && (filterBy.level === gig.creator.level))
-  //     ) 
+  //     )
   //   })
   //   localStorage.setItem(KEY, JSON.stringify(gigs))
   // }
@@ -59,7 +59,7 @@ async function remove(id) {
 async function save(gig) {
   try {
     if (gig._id) {
-      const updatedGig = await httpService.put(TOY_URL + gig._id, gig)
+      const updatedGig = await httpService.put(GIG_URL + gig._id, gig)
       return updatedGig
     } else {
       const savedGig = await httpService.post(GIG_URL, gig)
