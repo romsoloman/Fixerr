@@ -9,23 +9,16 @@
         <h1>Fixerr</h1>
       </router-link>
     </div>
-    <!-- <div v-if="!isHomepage" class="category-search">
-      <div class="search-icon">
-        <i class="fas fa-search"></i>
-      </div>
-      <input
-        type="text"
-        placeholder="Try 'building mobile app'"
-        v-model="filterBy.name"
-      />
-      <router-link :to="`/gig?category=${filterBy.name}`"> Search </router-link>
-    </div> -->
     <nav class="nav-links">
       <router-link to="/gig">Explore</router-link>
       <router-link to="/gig/edit">Become a Seller</router-link>
-      <router-link to="/login">Sign in</router-link>
-      <router-link to="/login">Join</router-link>
-      <router-link v-if="getLoggedInUser" :to="'/user/' + getLoggedInUserId + '/details'">Profile</router-link>
+      <router-link v-if="!getLoggedInUser" to="/login">Sign in</router-link>
+      <router-link v-if="!getLoggedInUser" to="/login">Join</router-link>
+      <router-link
+        v-if="getLoggedInUser"
+        :to="'/user/' + getLoggedInUserId + '/details'"
+        >Profile</router-link
+      >
     </nav>
   </header>
 </template>
@@ -47,13 +40,12 @@ export default {
       this.scrollPosition = window.scrollY;
     },
   },
-  created() {
-  },
+  created() {},
   computed: {
-    getLoggedInUser(){
+    getLoggedInUser() {
       return this.$store.getters.loggedinUser;
     },
-    getLoggedInUserId(){
+    getLoggedInUserId() {
       return this.$store.getters.loggedinUser._id;
     },
   },
