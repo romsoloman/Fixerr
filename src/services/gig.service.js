@@ -1,10 +1,10 @@
 import { utilService } from "./util.service.js";
-// import axios from 'axios'
+import { httpService } from './http.service.js';
 import { storageService } from "./async-storage.service.js";
 const gGigs = require('../data/gig.json');
 const KEY = 'gigDB';
 
-// const GIG_URL = 'http://localhost:3030/api/gig/'
+const GIG_URL = 'gig/'
 // _createToys();
 
 export const gigService = {
@@ -15,47 +15,60 @@ export const gigService = {
   getEmptyGig
 }
 
-function query(filterBy) {
-  var gigsFromStorage = localStorage.getItem(KEY);
-  if (!gigsFromStorage) localStorage.setItem(KEY, JSON.stringify(gGigs))
-  if (!filterBy) gigsFromStorage = gGigs;
-  else {
-    const gigs = JSON.parse(gigsFromStorage).filter(gig => {
-      return (gig.tags.includes(filterBy.name) || ((gig.tags.includes(filterBy.name)) && (gig.price >= filterBy.price.minPrice && gig.price <= filterBy.price.maxPrice) &&
-        (filterBy.rating === gig.rating) && (filterBy.level === gig.creator.level))
-      ) // TODO fix the problem with the second if statement!!!!!!!!!
-    })
-    localStorage.setItem(KEY, JSON.stringify(gigs))
-  }
-  return storageService.query(KEY);
-}
-
-function getById(id) {
-  // return axios.get(TOY_URL + id)
-  //   .then(res => {
-  //     return res.data
+async function query(filterBy) {
+  // var gigsFromStorage = localStorage.getItem(KEY);
+  // if (!gigsFromStorage) localStorage.setItem(KEY, JSON.stringify(gGigs))
+  // if (!filterBy) gigsFromStorage = gGigs;
+  // else {
+  //   const gigs = JSON.parse(gigsFromStorage).filter(gig => {
+  //     return (gig.tags.includes(filterBy.name) || ((gig.tags.includes(filterBy.name)) && (gig.price >= filterBy.price.minPrice && gig.price <= filterBy.price.maxPrice) &&
+  //       (filterBy.rating === gig.rating) && (filterBy.level === gig.creator.level))
+  //     ) 
   //   })
-  return storageService.get(KEY, id)
-}
-
-function remove(id) {
-  // return axios.delete(TOY_URL + id)
-  //   .then(res => res.data)
-  return storageService.remove(KEY, id)
-}
-
-function save(gig) {
-  // if (gig._id) {
-  //   return axios.put(gig_URL + gig._id, gig)
-  //     .then(res => res.data)
-  // } else {
-  //   return axios.post(gig_URL, gig)
-  //     .then(res => res.data)
+  //   localStorage.setItem(KEY, JSON.stringify(gigs))
   // }
-  console.log('gig srvice', gig);
-  const savedGig = (gig._id) ? storageService.put(KEY, gig) : storageService.post(KEY, gig)
-  console.log('savedGig', savedGig);
-  return savedGig;
+  // return storageService.query(KEY);
+  try {
+    const gigs = await httpService.get(GIG_URL)
+    localStorage.setItem(KEY, JSON.stringify(gigs))
+    return gigs
+  } catch (err) {
+    console.log('Got err ', err)
+  }
+}
+
+async function getById(id) {
+  try {
+    const gig = await httpService.get(GIG_URL + id)
+    return gig
+  } catch (err) {
+    console.log('Got err ', err)
+  }
+}
+
+async function remove(id) {
+  try {
+    const gig = await httpService.delete(GIG_URL + id)
+    return gig
+  }
+  catch (err) {
+    console.log('Got err ', err)
+  }
+}
+
+async function save(gig) {
+  try {
+    if (gig._id) {
+      const updatedGig = await httpService.put(TOY_URL + gig._id, gig)
+      return updatedGig
+    } else {
+      const savedGig = await httpService.post(GIG_URL, gig)
+      console.log('savedGig', savedGig);
+      return savedGig;
+    }
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 function getEmptyGig() {
@@ -63,7 +76,7 @@ function getEmptyGig() {
     title: '',
     about: '',
     tags: [],
-    imgsUrls: [],
+    imgsUrls: [''],
     price: 0,
     deliveryTime: '',
     rating: 4,
