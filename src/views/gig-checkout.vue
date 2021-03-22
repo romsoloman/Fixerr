@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex column details">
+  <div v-if="gig" class="container flex column details">
     <div class="requirements">
       <i class="fas fa-info-circle"></i>
       <span
@@ -67,11 +67,13 @@ export default {
       isPurchase: false,
       gig: null,
       serviceFee: utilService.getRandomInt(3, 10),
+      user:null,
     };
   },
   async created() {
     const gigId = this.$route.params.gigId;
     this.gig = await gigService.getById(gigId);
+    this.user = this.$store.getters.loggedinUser;
   },
   computed: {
     totalPrice() {
@@ -79,29 +81,16 @@ export default {
     },
   },
   methods: {
-    checkout() {
-      var order = {
-        _id: utilService.makeId(),
-        createdAt: 9898989,
-        buyer: "mini-user",
-        totalPrice: 20,
-        vendor: {
-          _id: "v102",
-          name: "Hapirat Hadebil",
-          imgUrl: "",
-        },
-        gigs: [
-          {
-            _id: this.gigId,
-            name: "Batata Ksbia",
-          },
-        ],
-        status: "pending",
-      };
-      this.$store.dispatch({ type: "checkout", order }).catch((err) => {
-        console.log("ERROR IN CHECKOUT");
-      });
-    },
+   async checkout() {
+      console.log('this.gig', this.gig);
+      if(!this.user.orders){
+        this.user.orders = [];
+      }
+      this.user.orders.push(this.gig);
+      const user = this.user
+      const newUser = await this.$store.dispatch({ type: "updateUser", user });
+
+    }
   },
 };
 </script>

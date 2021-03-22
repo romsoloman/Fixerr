@@ -1,0 +1,8 @@
+.user-details-container{
+  border: 1px solid $clr2;
+  height: 600px;
+  width: 50%;
+  & .title{
+    text-align: center;
+  }
+}

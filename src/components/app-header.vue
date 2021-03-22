@@ -25,6 +25,7 @@
       <router-link to="/gig/edit">Become a Seller</router-link>
       <router-link to="/login">Sign in</router-link>
       <router-link to="/login">Join</router-link>
+      <router-link v-if="getLoggedInUser" :to="'/user/' + getLoggedInUserId + '/details'">Profile</router-link>
     </nav>
   </header>
 </template>
@@ -46,8 +47,16 @@ export default {
       this.scrollPosition = window.scrollY;
     },
   },
-  created() {},
-  components: {},
+  created() {
+  },
+  computed: {
+    getLoggedInUser(){
+      return this.$store.getters.loggedinUser;
+    },
+    getLoggedInUserId(){
+      return this.$store.getters.loggedinUser._id;
+    },
+  },
 };
 </script>
 

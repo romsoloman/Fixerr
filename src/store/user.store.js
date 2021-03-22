@@ -31,6 +31,12 @@ export const userStore = {
         removeUser(state, { userId }) {
             state.users = state.users.filter(user => user._id !== userId)
         },
+        updateUser(state, { user }) {
+            const idxToUpdate = state.users.findIndex(userFromArray => {
+                return userFromArray._id === user._id;
+            })
+            state.users.splice(idxToUpdate, 1, user);
+        },
     },
     actions: {
         async login({ commit }, { userCred }) {
@@ -98,8 +104,9 @@ export const userStore = {
         },
         async updateUser({ commit }, { user }) {
             try {
-                user = await userService.update(user);
-                commit({ type: 'setUser', user })
+                const newUser = await userService.update(user);
+                console.log('user', user);
+                commit({ type: 'updateUser', user: newUser })
             } catch (err) {
                 console.log('userStore: Error in updateUser', err)
                 throw err
