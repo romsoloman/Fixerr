@@ -74,4 +74,3 @@ function _saveLocalUser(user) {
 function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem('loggedinUser') || 'null')
 }
-
