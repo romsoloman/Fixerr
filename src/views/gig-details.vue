@@ -76,7 +76,7 @@
           </div>
           <div class="detail member-since">
             <p>Member since</p>
-            <h3>{{ gig.creator.memberSince }}</h3>
+            <h3>{{ getTimeOfMemberSince }}</h3>
           </div>
           <div class="detail avg-response-time">
             <p>Avg response time</p>
@@ -92,11 +92,12 @@
           <gig-list :gigs="randomCategory"></gig-list>
         </div>
         <section class="review">
-          <h2 class="review-title">
+        <h2 v-if="gig.reviews.length === 0"> Reviews </h2>
+          <h2 v-else class="review-title">
             {{ gig.reviews.length }} Review
             <span class="avg-rat"> {{ getAvgRat }}</span>
           </h2>
-          <reviews-stats :gig="gig" />
+          <reviews-stats v-if="gig.reviews.length > 0" :gig="gig" />
           <review-list
             :reviews="gig.reviews"
             @addReview="addReview"
@@ -119,6 +120,7 @@ import reviewList from "@/components/review-list";
 import gigList from "@/components/gig-list";
 import reviewsStats from "@/components/reviews-stats";
 import { userService } from "../services/user.service.js";
+import moment from 'moment';
 export default {
   name: "gig-details",
   data() {
@@ -178,6 +180,13 @@ export default {
       });
       return randomCategory;
     },
+    getTimeOfMemberSince(){
+      if (this.gig.creator.memberSince) {
+        let currTime;
+        currTime = moment(this.gig.creator.memberSince).fromNow() // 3 days ago
+        return currTime;
+      }
+    }
   },
   created() {
     const gigId = this.$route.params.gigId;
