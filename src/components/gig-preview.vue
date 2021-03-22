@@ -35,5 +35,6 @@ export default {
     gig: Object,
   },
   computed: {},
+  created() {},
 };
 </script>
