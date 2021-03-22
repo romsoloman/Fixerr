@@ -1,6 +1,6 @@
 <template>
-  <div class="container about">
-    <section class="register-container">
+  <div class="container register">
+    <section class="register-modal-container">
       <p>{{ msg }}</p>
       <div v-if="loggedinUser">
         <h3>
@@ -13,7 +13,7 @@
         <h4 class="title">Sign in to fixerr</h4>
         <div class="separator">OR</div>
         <form @submit.prevent="doLogin">
-          <input type="text" v-model="loginCred.username" placeholder="User name" />
+          <input type="text" v-model="loginCred.username" placeholder="Username" />
           <input
             type="text"
             v-model="loginCred.password"
