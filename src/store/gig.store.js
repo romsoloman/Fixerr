@@ -12,11 +12,15 @@ export const gigStore = {
     filter: null,
     lastPath: null,
     editChanges: null,
+    isLoading: false
 
   },
   getters: {
     gigs(state) {
       return state.gigs
+    },
+    isLoading(state) {
+      return state.isLoading;
     },
     getLastPath(state) {
       return state.lastPath;
@@ -28,6 +32,9 @@ export const gigStore = {
   mutations: {
     setGigs(state, { gigs }) {
       state.gigs = gigs;
+    },
+    setIsLoading(state, { isLoading }) {
+      state.isLoading = isLoading;
     },
     removeGig(state, { gigId }) {
       const idxToRemove = state.gigs.findIndex(gig => {
@@ -61,6 +68,7 @@ export const gigStore = {
   },
   actions: {
     loadGigs({ commit, state }) {
+      commit({ type: 'setIsLoading', isLoading: true });
       gigService.query(state.filter || undefined)
         .then(gigs => {
           commit({ type: 'setGigs', gigs });
@@ -69,6 +77,7 @@ export const gigStore = {
           console.log('Store: Cannot load gigs', err);
           throw new Error('Cannot load gigs');
         })
+        .finally(() => commit({ type: 'setIsLoading', isLoading: false }));
     },
     saveGigs(context, { gig }) {
       // gig: support EDIT

@@ -1,12 +1,13 @@
 <template>
-  <div class="container gig-details-container container" v-if="gig">
+<loader v-if="isLoading"/>
+  <div class="container gig-details-container container" v-else-if="gig && !isLoading">
     <section class="gig-details">
       <p class="gig-title">{{ gig.title }}</p>
       <section class="main-gig-details">
         <section class="user-details">
           <img class="creator-img" :src="gig.creator.imgUrl" />
           <p class="username">{{ gig.creator.fullname }}</p>
-          <p class="user-level">level {{ gig.creator.level }} <span>|</span></p>
+          <p class="user-level">Level {{ gig.creator.level }} <span>|</span></p>
           <p class="rating">{{ getStars }} {{ gig.rating }}</p>
           <p class="reviews-count">({{ gig.reviews.length }})</p>
         </section>
@@ -114,6 +115,7 @@
 </template>
 
 <script>
+import loader from "@/components/loader";
 import { gigService } from "../services/gig.service.js";
 import packagePrice from "@/components/package-price";
 import reviewList from "@/components/review-list";
@@ -130,6 +132,9 @@ export default {
     };
   },
   computed: {
+    isLoading() {
+      return this.$store.getters.isLoading;
+    },
     getStars() {
       // TODO-GETSTARS - 10
       let stars;
@@ -228,6 +233,7 @@ export default {
     reviewList,
     gigList,
     reviewsStats,
+    loader
   },
 };
 </script>

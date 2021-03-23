@@ -41,7 +41,7 @@ function getEmptyReview() {
     by: {
       _id: utilService.makeId(),
       txt: '',
-      rate: 0,
+      rate: 1,
     }
   }
 }

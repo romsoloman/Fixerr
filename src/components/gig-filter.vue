@@ -32,7 +32,7 @@
       <button @click="setFilter">Apply</button>
     </div>
     <div class="rating-search">
-      rating
+      Rating
       <select name="ratings" v-model.number="filterBy.rating">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -43,7 +43,7 @@
       <button @click="setFilter">Apply</button>
     </div>
     <div class="seller-level">
-      seller level
+      Seller level
       <select name="levels" v-model.number="filterBy.level">
         <option value="1">1</option>
         <option value="2">2</option>

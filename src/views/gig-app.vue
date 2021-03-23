@@ -1,5 +1,6 @@
 <template>
-  <section class="container gig-app-container">
+  <loader v-if="isLoading" />
+  <section v-else class="container gig-app-container">
     <gig-filter @setFilter="setFilter" />
     <gig-list :gigs="gigs" />
   </section>
@@ -9,6 +10,7 @@
 import { gigService } from "../services/gig.service.js";
 import gigList from "@/components/gig-list";
 import gigFilter from "@/components/gig-filter";
+import loader from "@/components/loader";
 export default {
   data() {
     return {
@@ -18,6 +20,9 @@ export default {
   computed: {
     gigs() {
       return this.$store.getters.gigs;
+    },
+    isLoading() {
+      return this.$store.getters.isLoading;
     },
   },
   created() {
@@ -43,6 +48,7 @@ export default {
   components: {
     gigList,
     gigFilter,
+    loader
   },
 };
 </script>

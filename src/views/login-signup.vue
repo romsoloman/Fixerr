@@ -1,5 +1,6 @@
 <template>
-  <div ref="register" class="container register" @click.stop="backToHomePage" >
+  <loader v-if="isLoading" />
+  <div v-else ref="register" class="container register" @click.stop="backToHomePage" >
     <section class="register-modal-container">
       <p>{{ msg }}</p>
       <div v-if="loggedinUser">
@@ -15,7 +16,7 @@
         <form @submit.prevent="doLogin">
           <input type="text" v-model="loginCred.username" placeholder="Username" />
           <input
-            type="text"
+            type="password"
             v-model="loginCred.password"
             placeholder="Password"
           />
@@ -32,7 +33,7 @@
           <div class="separator">OR</div>
           <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
           <input
-            type="text"
+            type="password"
             v-model="signupCred.password"
             placeholder="Password"
           />
@@ -53,6 +54,7 @@
 </template>
 
 <script>
+import loader from "@/components/loader";
 export default {
   name: "login-signup",
   data() {
@@ -70,6 +72,9 @@ export default {
     },
     loggedinUser() {
       return this.$store.getters.loggedinUser;
+    },
+    isLoading() {
+      return this.$store.getters.isLoading;
     },
   },
   created() {
@@ -130,6 +135,9 @@ export default {
     //     this.msg = 'Failed to remove user'
     //   }
     // }
+  },
+  components:{
+    loader
   }
 };
 </script>

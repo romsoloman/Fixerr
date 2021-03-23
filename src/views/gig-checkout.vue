@@ -14,7 +14,7 @@
         <img class="gig-checkout-img" :src="gig.imgUrls[0]" alt="" />
         <div class="gig-about">
           <h4>{{ gig.title }}</h4>
-          <span>⭐️⭐️⭐️{{ gig.rating }}</span>
+          <span class="rating">{{getStars}} {{ gig.rating }}</span>
         </div>
       </div>
       <div class="gig-pricing">
@@ -85,6 +85,24 @@ export default {
     totalPrice() {
       return this.gig.price + this.serviceFee;
     },
+    getStars() {
+      // TODO-GETSTARS - 10
+      let stars;
+      if (this.gig.rating >= 0 && this.gig.rating <= 0.5) {
+        stars = "✩✩✩✩✩";
+      } else if (this.gig.rating >= 0.5 && this.gig.rating <= 1.5) {
+        stars = "★✩✩✩✩";
+      } else if (this.gig.rating >= 1.5 && this.gig.rating <= 2.5) {
+        stars = "★★✩✩✩";
+      } else if (this.gig.rating >= 2.5 && this.gig.rating <= 3.5) {
+        stars = "★★★✩✩";
+      } else if (this.gig.rating >= 3.5 && this.gig.rating <= 4.5) {
+        stars = "★★★★✩";
+      } else if (this.gig.rating >= 4.5) {
+        stars = "★★★★★";
+      }
+      return stars;
+    },
   },
   methods: {
    async checkout() {
@@ -105,7 +123,7 @@ export default {
         } catch(err){
           console.log('err to save order', err);
         }
-    }
+    },
   },
 };
 </script>
