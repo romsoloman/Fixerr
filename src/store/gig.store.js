@@ -73,7 +73,7 @@ export const gigStore = {
         })
     },
     loadGig({ commit }, { userId }) {
-      gigService.getById(userId)
+      gigService.getByUserId(userId)
         .then(gig => {
           commit({ type: 'setGig', gig });
         })
