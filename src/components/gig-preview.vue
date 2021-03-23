@@ -35,8 +35,6 @@ export default {
     gig: Object,
   },
   computed: {},
-  created() {
-    console.log("this.gig", this.gig);
-  },
+  created() {},
 };
 </script>

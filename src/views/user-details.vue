@@ -21,7 +21,8 @@
       </div>
       <div class="orders">
         <!-- ORDERS LIST CMP -->
-        <h1>ORDERS LIST WILL BE HERE</h1>
+        <h1>ORDER LIST</h1>
+        <order-list :orders="orders"></order-list>
       </div>
       <div class="gigs">
         <!-- GIGS CREATED BY USER -->
@@ -34,21 +35,20 @@
 <script>
 import { userService } from "../services/user.service.js";
 import chart from "@/components/chart.vue";
+import orderList from "@/components/order-list.vue";
 export default {
   data() {
     return {
       user: null,
-      orderList: null,
     };
   },
-  computed: {},
   created() {
     const userId = this.$route.params.userId;
     userService.getById(userId).then((newUser) => {
       console.log("newUser", newUser);
       this.user = newUser;
-      this.orderList = newUser.orders;
     });
+    this.$store.dispatch({ type: "loadOrders", userId });
   },
   computed: {
     gigsCountes() {
@@ -59,14 +59,19 @@ export default {
         return acc;
       }, {});
     },
+    orders() {
+      return this.$store.getters.orders;
+    },
   },
   methods: {
     doLogout() {
       this.$store.dispatch({ type: "logout" });
+      this.$router.push("/");
     },
   },
   components: {
     chart,
+    orderList,
   },
 };
 </script>

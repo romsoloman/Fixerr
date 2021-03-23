@@ -3,15 +3,17 @@
     display: flex;
     justify-content: space-between;
     transition: background-color .7s;
-    border-bottom: 1px solid #eee;
+    padding: 32px 1rem 0;
     &.change_color{
         color: $clr1;
         background-color: $clr6;
         z-index: 2;
+        border-bottom: 1px solid #eee;
     }
     h1{
         letter-spacing: -3.7px;
-        // color:$clr6;    
+        color:$clr1;   
+        // &.change_color{color:$clr3 ;} 
     }
     nav {
         width: 40%;
@@ -21,8 +23,9 @@
         margin: auto 0 auto auto;
         padding: 0 0 10px;
         & a {
-            // color:$clr6;
-            font-weight: 500;    
+            color:$clr1;
+            font-weight: 500; 
+            // &.change_color{color:$clr3 ;} 
         }
     }
     nav .active {

@@ -16,9 +16,9 @@ export const orderService = {
 // _createOrders()
 const ORDER_URL = 'order/'
 // TODO: support paging and filtering and sorting
-async function query() {
+async function query(userId) {
     try {
-        const orders = await httpService.get(ORDER_URL)
+        const orders = await httpService.get(ORDER_URL, { userId })
         localStorage.setItem(KEY, JSON.stringify(orders))
         return orders
     } catch (err) {

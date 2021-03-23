@@ -46,9 +46,9 @@ export const orderStore = {
         },
     },
     actions: {
-        loadOrders({ commit }) {
+        loadOrders({ commit }, { userId }) {
             commit({ type: 'setIsLoading', isLoading: true });
-            orderService.query()
+            orderService.query(userId)
                 .then(orders => {
                     commit({ type: 'setOrders', orders });
                 })
