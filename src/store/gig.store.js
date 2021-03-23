@@ -8,6 +8,7 @@ Vue.use(Vuex)
 
 export const gigStore = {
   state: {
+    gig: null,
     gigs: null,
     filter: null,
     lastPath: null,
@@ -33,8 +34,13 @@ export const gigStore = {
     setGigs(state, { gigs }) {
       state.gigs = gigs;
     },
+<<<<<<< HEAD
     setIsLoading(state, { isLoading }) {
       state.isLoading = isLoading;
+=======
+    setGigs(state, { gig }) {
+      state.gig = gig;
+>>>>>>> 412eb7fcf6966e0ff208ce07d9c807ded224cabc
     },
     removeGig(state, { gigId }) {
       const idxToRemove = state.gigs.findIndex(gig => {
@@ -78,6 +84,16 @@ export const gigStore = {
           throw new Error('Cannot load gigs');
         })
         .finally(() => commit({ type: 'setIsLoading', isLoading: false }));
+    },
+    loadGig({ commit }, { userId }) {
+      gigService.getById(userId)
+        .then(gig => {
+          commit({ type: 'setGig', gig });
+        })
+        .catch(err => {
+          console.log('Store: Cannot load gigs', err);
+          throw new Error('Cannot load gigs');
+        })
     },
     saveGigs(context, { gig }) {
       // gig: support EDIT

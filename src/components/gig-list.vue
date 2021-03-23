@@ -2,7 +2,7 @@
   <section class="gig-app-container">
     <ul class="container gig-list-container">
       <li class="gig-container" v-for="gig in gigs" :key="gig._id">
-        <gig-preview :gig="gig" />
+        <gig-preview :gig="gig" :isProfile="isProfile" />
       </li>
     </ul>
   </section>
@@ -14,6 +14,9 @@ export default {
   props: {
     gigs: {
       type: Array,
+    },
+    isProfile: {
+      type: Boolean,
     },
   },
   components: {
