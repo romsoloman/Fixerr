@@ -90,7 +90,7 @@ export default {
     methods:{
       getPercentageOfRat(number1,number2){
          let reviewCount = this.gig.reviews.reduce((acc, review) => {
-        if(review.rate > number1 && review.rate < number2)
+        if(review.rate >= number1 && review.rate < number2)
         acc += 1
         return acc;
         }, 0);

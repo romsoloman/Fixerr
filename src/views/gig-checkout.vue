@@ -52,7 +52,9 @@
         <span>You won't be charged yet</span>
       </div>
     </div>
-    <div class="checkout-modal" v-if="isPurchase">congratulations !</div>
+    <div v-if="orderDone" class="checkout-modal-container">
+      <div class="checkout-modal">SAVED YOUR ORDER <i class="fas fa-bookmark"></i></div>
+    </div>
   </div>
 </template>
 
@@ -69,7 +71,8 @@ export default {
       gig: null,
       serviceFee: utilService.getRandomInt(3, 10),
       user:null,
-      orderToEdit:null
+      orderToEdit:null,
+      orderDone:false,
     };
   },
   async created() {
@@ -85,15 +88,23 @@ export default {
   },
   methods: {
    async checkout() {
-        this.orderToEdit.buyer = this.user;
-        this.orderToEdit.totalPrice = this.serviceFee + this.gig.price;
-        this.orderToEdit.seller._id = this.gig.creator._id;
-        this.orderToEdit.seller.name = this.gig.creator.fullname;
-        this.orderToEdit.seller.imgUrl = this.gig.creator.imgUrl;
-        this.orderToEdit.items[0]._id = this.gig._id;
-        this.orderToEdit.items[0].title = this.gig.title;
-        console.log('this.orderToEdit',this.orderToEdit );
-        this.$store.dispatch({ type: "saveOrder", order: this.orderToEdit});
+     try{
+          this.orderToEdit.buyer = this.user;
+          this.orderToEdit.totalPrice = this.serviceFee + this.gig.price;
+          this.orderToEdit.seller._id = this.gig.creator._id;
+          this.orderToEdit.seller.name = this.gig.creator.fullname;
+          this.orderToEdit.seller.imgUrl = this.gig.creator.imgUrl;
+          this.orderToEdit.items[0]._id = this.gig._id;
+          this.orderToEdit.items[0].title = this.gig.title;
+          console.log('this.orderToEdit',this.orderToEdit );
+          this.$store.dispatch({ type: "saveOrder", order: this.orderToEdit});
+          this.orderDone = true;
+          setTimeout(() => {
+          this.orderDone = false;
+          }, 1500);
+        } catch(err){
+          console.log('err to save order', err);
+        }
     }
   },
 };

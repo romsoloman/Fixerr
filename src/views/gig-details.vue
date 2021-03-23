@@ -133,17 +133,17 @@ export default {
     getStars() {
       // TODO-GETSTARS - 10
       let stars;
-      if (this.gig.rating > 0 && this.gig.rating < 0.5) {
+      if (this.gig.rating >= 0 && this.gig.rating <= 0.5) {
         stars = "✩✩✩✩✩";
-      } else if (this.gig.rating > 0.5 && this.gig.rating < 1.5) {
+      } else if (this.gig.rating >= 0.5 && this.gig.rating <= 1.5) {
         stars = "★✩✩✩✩";
-      } else if (this.gig.rating > 1.5 && this.gig.rating < 2.5) {
+      } else if (this.gig.rating >= 1.5 && this.gig.rating <= 2.5) {
         stars = "★★✩✩✩";
-      } else if (this.gig.rating > 2.5 && this.gig.rating < 3.5) {
+      } else if (this.gig.rating >= 2.5 && this.gig.rating <= 3.5) {
         stars = "★★★✩✩";
-      } else if (this.gig.rating > 3.5 && this.gig.rating < 4.5) {
+      } else if (this.gig.rating >= 3.5 && this.gig.rating <= 4.5) {
         stars = "★★★★✩";
-      } else if (this.gig.rating > 4.5) {
+      } else if (this.gig.rating >= 4.5) {
         stars = "★★★★★";
       }
       return stars;
@@ -158,17 +158,17 @@ export default {
       const avgReviews = reviewSum / this.gig.reviews.length;
       // return avgReviews.toFixed(2);
       let stars;
-      if (avgReviews > 0 && avgReviews < 0.5) {
+      if (avgReviews >= 0 && avgReviews <= 0.5) {
         stars = "✩✩✩✩✩";
-      } else if (avgReviews > 0.5 && avgReviews < 1.5) {
+      } else if (avgReviews >= 0.5 && avgReviews <= 1.5) {
         stars = "★✩✩✩✩";
-      } else if (avgReviews > 1.5 && avgReviews < 2.5) {
+      } else if (avgReviews >= 1.5 && avgReviews <= 2.5) {
         stars = "★★✩✩✩";
-      } else if (avgReviews > 2.5 && avgReviews < 3.5) {
+      } else if (avgReviews >= 2.5 && avgReviews <= 3.5) {
         stars = "★★★✩✩";
-      } else if (avgReviews > 3.5 && avgReviews < 4.5) {
+      } else if (avgReviews >= 3.5 && avgReviews <= 4.5) {
         stars = "★★★★✩";
-      } else if (avgReviews > 4.5) {
+      } else if (avgReviews >= 4.5) {
         stars = "★★★★★";
       }
       return stars + " " + avgReviews.toFixed(2);
