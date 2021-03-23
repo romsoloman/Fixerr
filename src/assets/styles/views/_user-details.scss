@@ -8,6 +8,7 @@
   & .user-info{
     grid-column: 1/1;
     border-right: 1px solid $clr2;
+    height: 82%;
     padding-right: 1rem;
     & .logout{
       width: 100%;
@@ -61,18 +62,20 @@
       align-items: flex-start;
     }
     & .orders{
-      height: 80%;
+      height: 70%;
       grid-template-columns: 1/2;
       border-radius: 10px;
       border: 1px solid $clr3;
-      text-align: center;
+      text-align: left;
+      padding: 2rem;
     }
     & .gigs{
-      height: 80%;
+      height: 70%;
       grid-template-columns: 2/3;
       border-radius: 10px;
       border: 1px solid $clr3;
-      text-align: center;
+      text-align: left;
+      padding: 2rem;
     }
   }
 }

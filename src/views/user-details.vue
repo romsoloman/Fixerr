@@ -21,12 +21,12 @@
       </div>
       <div class="orders">
         <!-- ORDERS LIST CMP -->
-        <h1>ORDER LIST</h1>
+        <h1>My Orders</h1>
         <order-list :orders="orders"></order-list>
       </div>
       <div class="gigs">
         <!-- GIGS CREATED BY USER -->
-        <h1>GIGS LIST WILL BE HERE</h1>
+        <h1>My Gigs</h1>
       </div>
     </article>
   </section>
