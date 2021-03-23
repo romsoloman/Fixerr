@@ -19,6 +19,9 @@ export const gigStore = {
     gigs(state) {
       return state.gigs
     },
+    gig(state) {
+      return state.gig
+    },
     getLastPath(state) {
       return state.lastPath;
     },
@@ -30,7 +33,7 @@ export const gigStore = {
     setGigs(state, { gigs }) {
       state.gigs = gigs;
     },
-    setGigs(state, { gig }) {
+    setGig(state, { gig }) {
       state.gig = gig;
     },
     removeGig(state, { gigId }) {
@@ -57,11 +60,6 @@ export const gigStore = {
     setFilter(state, { filterBy }) {
       state.filter = filterBy;
     },
-    // filterByCategory(state, { filterBy }) {
-    //   console.log('filterBy', filterBy);
-    //   if (!Object.keys(filterBy).length) filterBy = null;
-    //   state.filter = filterBy;
-    // }
   },
   actions: {
     loadGigs({ commit, state }) {

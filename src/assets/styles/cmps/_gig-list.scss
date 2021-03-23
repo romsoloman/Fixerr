@@ -6,3 +6,15 @@
   padding:0;
   margin-top: 2rem;
 }
+
+.profile-list{
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
+.profile-container{
+  height: 100%;
+}

@@ -1,6 +1,12 @@
 <template>
-  <section class="gig-app-container">
-    <ul class="container gig-list-container">
+  <section
+    class="gig-app-container"
+    :class="{ 'profile-container': isProfile }"
+  >
+    <ul
+      class="container gig-list-container"
+      :class="{ 'profile-list': isProfile }"
+    >
       <li class="gig-container" v-for="gig in gigs" :key="gig._id">
         <gig-preview :gig="gig" :isProfile="isProfile" />
       </li>

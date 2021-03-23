@@ -70,7 +70,30 @@
 }
 
 .profile-card{
-  height: 20px;
-  width: 40px;
+  width: 100%;
+  height: 10%;
   display: flex;
+  align-items: center;
+  padding: 1rem;
+  & header{
+    height: 50px;
+    & .gig-img{
+      height: 100%;
+      width: 3rem;
+    }
+  }
+  & .main-info{
+    height: 50px;
+    display: flex;
+    border: none;
+    & .user-details{
+      & .user-img{
+        display: none;
+      }
+      & .user-info {
+        border: none;
+        & .user-name, & .user-level{display: none;}
+      }
+    }
+  }
 }
