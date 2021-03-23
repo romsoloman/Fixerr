@@ -8,7 +8,6 @@ export const orderStore = {
     },
     getters: {
         orders(state) { return state.orders },
-        isLoading(state) { return state.isLoading },
         ordersSize(state) {
             return state.orders.length
         },

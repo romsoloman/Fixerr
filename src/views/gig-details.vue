@@ -1,6 +1,6 @@
 <template>
-<loader v-if="isLoading"/>
-  <div class="container gig-details-container container" v-else-if="gig && !isLoading">
+  <loader v-if="isLoadingGig"/>
+  <div class="container gig-details-container container" v-else-if="gig">
     <section class="gig-details">
       <p class="gig-title">{{ gig.title }}</p>
       <section class="main-gig-details">
@@ -129,6 +129,7 @@ export default {
     return {
       gig: null,
       mainImg: null,
+      isLoadingGig: true
     };
   },
   computed: {
@@ -192,9 +193,16 @@ export default {
   },
   created() {
     const gigId = this.$route.params.gigId;
+    // this.isLoadingGig = true;
+    console.log('Created!!');
     gigService.getById(gigId).then((newGig) => {
       this.gig = newGig;
       this.mainImg = this.gig.imgUrls[0];
+      console.log('getById is done!!');
+    }).finally(() => {
+      console.log('getById in finally!!');
+      console.log('this', this);
+      this.isLoadingGig = false;
     });
   },
   methods: {

@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     rateGig(rate){
-      this.editNewReview.rate = rate;
+      this.editNewReview = {...this.editNewReview, rate: rate};
       console.log('this.editNewReview', this.editNewReview);
     },
     onAddReview() {
