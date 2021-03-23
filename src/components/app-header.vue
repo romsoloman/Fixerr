@@ -1,7 +1,7 @@
 <template>
   <header
-    class="container app-header"
-    :class="{ change_color: scrollPosition > 50 }"
+    class="container app-header fixed"
+    :class="{ change_color: scrollPosition > 50 || routeName !== 'home' }"
   >
     <div class="logo">
       <!-- <img src="" alt=""> TODO: Replace the H1 in IMG-->
@@ -23,15 +23,27 @@
 </template>
 <script>
 export default {
+  props: {},
   data() {
+    console.log("data this.$route.name", this.$route.name);
     return {
       filterBy: {
         name: "",
       },
+      routeName: this.$route.name,
       scrollPosition: null,
     };
   },
+  watch: {
+    $route(to, from) {
+      console.log("to", to);
+      console.log("from", from);
+      // this.show = false;
+      this.routeName = to.name;
+    },
+  },
   mounted() {
+    // console.log("mounted this.$store", this.$store);
     window.addEventListener("scroll", this.updateScroll);
   },
   methods: {
@@ -39,7 +51,9 @@ export default {
       this.scrollPosition = window.scrollY;
     },
   },
-  created() {},
+  created() {
+    // console.log("this.$route.name", this.$route.name);
+  },
   computed: {
     getLoggedInUser() {
       return this.$store.getters.loggedinUser;
