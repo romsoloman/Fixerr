@@ -1,5 +1,5 @@
 <template>
-  <div class="container register" @click.stop="backToHomePage">
+  <div ref="register" class="container register" @click.stop="backToHomePage" >
     <section class="register-modal-container">
       <p>{{ msg }}</p>
       <div v-if="loggedinUser">
@@ -98,8 +98,11 @@ export default {
       }
     },
     backToHomePage(e){
-      if(e.screenX <650 && e.screenX >250 && e.screenY >167 && e.screenY < 712) return;
-      this.$router.push('/')
+      // console.log('this.$refs.register', this.$refs.register);
+      if(this.$refs.register === e.target){
+        this.$router.push('/')
+      }
+      return;
     },
     doLogout() {
       this.$store.dispatch({ type: "logout" });

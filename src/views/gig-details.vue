@@ -71,7 +71,7 @@
         </div>
         <div class="more-on-seller">
           <div class="detail seller-from">
-            <p>from</p>
+            <p>From</p>
             <h3>{{ gig.creator.location }}</h3>
           </div>
           <div class="detail member-since">
@@ -83,7 +83,7 @@
             <h3>{{ gig.creator.avgResponseTime }}</h3>
           </div>
           <div class="detail last-delivery">
-            <p>Last-delivery</p>
+            <p>Last delivery</p>
             <h3>{{ gig.creator.lastDelivery }}</h3>
           </div>
         </div>
