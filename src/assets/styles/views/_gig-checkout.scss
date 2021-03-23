@@ -55,13 +55,42 @@
         // & .item1{}
     }
 }
-.checkout-modal{
+.checkout-modal-container{
     display: flex;
-    height: 100px;
-    color: aliceblue;
-    background-color: rgb(105, 113, 153);
-    border-radius: 3px;
-    font-size: xx-large;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.495);
+
+     & .checkout-modal{
+         background-color: $clr5;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        align-self: center;
+        margin: auto;
+        border: 3px solid white;
+        border-radius: 3px;
+        animation: saved-order 0.75s ease-in-out infinite;
+
+        & .fa-bookmark{
+            color: rgb(126, 199, 16);
+        }
+    }
+}
+
+@keyframes saved-order {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
