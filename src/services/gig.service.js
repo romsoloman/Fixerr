@@ -12,7 +12,8 @@ export const gigService = {
   getById,
   remove,
   save,
-  getEmptyGig
+  getEmptyGig,
+  getByUserId,
 }
 
 async function query(filterBy) {
@@ -40,6 +41,15 @@ async function query(filterBy) {
 async function getById(id) {
   try {
     const gig = await httpService.get(GIG_URL + id)
+    return gig
+  } catch (err) {
+    console.log('Got err ', err)
+  }
+}
+
+async function getByUserId(id) {
+  try {
+    const gig = await httpService.get(`${GIG_URL + id}/profile`)
     return gig
   } catch (err) {
     console.log('Got err ', err)

@@ -10,6 +10,9 @@
         <p class="name">{{ user.fullname }}</p>
         <p class="level">Level {{ user.level }} Seller</p>
       </div>
+      <div class="notifications">
+        <h1>Notifications</h1>
+      </div>
     </article>
     <article class="user-dashboard">
       <div class="flex column justify-center welcome">
@@ -64,7 +67,7 @@ export default {
       return this.$store.getters.orders;
     },
     gigs() {
-      return this.$store.getters.gigs;
+      return [this.$store.getters.gig];
     },
   },
   methods: {

@@ -44,6 +44,9 @@
         font-size: 0.875rem;
       }
     }
+    & .notifications{
+      flex: 1;
+    }
   }
   & .user-dashboard{
     grid-column: 2/2;

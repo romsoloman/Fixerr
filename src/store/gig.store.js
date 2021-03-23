@@ -20,8 +20,13 @@ export const gigStore = {
     gigs(state) {
       return state.gigs
     },
+<<<<<<< HEAD
     isLoading(state) {
       return state.isLoading;
+=======
+    gig(state) {
+      return state.gig
+>>>>>>> eb916a74f45257c877e7fc496846b431f15911bb
     },
     getLastPath(state) {
       return state.lastPath;
@@ -34,10 +39,14 @@ export const gigStore = {
     setGigs(state, { gigs }) {
       state.gigs = gigs;
     },
+<<<<<<< HEAD
     setIsLoading(state, { isLoading }) {
       state.isLoading = isLoading;
     },
     setGigs(state, { gig }) {
+=======
+    setGig(state, { gig }) {
+>>>>>>> eb916a74f45257c877e7fc496846b431f15911bb
       state.gig = gig;
     },
     removeGig(state, { gigId }) {
@@ -64,11 +73,6 @@ export const gigStore = {
     setFilter(state, { filterBy }) {
       state.filter = filterBy;
     },
-    // filterByCategory(state, { filterBy }) {
-    //   console.log('filterBy', filterBy);
-    //   if (!Object.keys(filterBy).length) filterBy = null;
-    //   state.filter = filterBy;
-    // }
   },
   actions: {
     loadGigs({ commit, state }) {
@@ -84,7 +88,7 @@ export const gigStore = {
         .finally(() => commit({ type: 'setIsLoading', isLoading: false }));
     },
     loadGig({ commit }, { userId }) {
-      gigService.getById(userId)
+      gigService.getByUserId(userId)
         .then(gig => {
           commit({ type: 'setGig', gig });
         })

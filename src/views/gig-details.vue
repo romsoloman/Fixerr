@@ -93,7 +93,7 @@
           <gig-list :gigs="randomCategory"></gig-list>
         </div>
         <section class="review">
-        <h2 v-if="gig.reviews.length === 0"> Reviews </h2>
+          <h2 v-if="gig.reviews.length === 0">Reviews</h2>
           <h2 v-else class="review-title">
             {{ gig.reviews.length }} Review
             <span class="avg-rat"> {{ getAvgRat }}</span>
@@ -122,7 +122,7 @@ import reviewList from "@/components/review-list";
 import gigList from "@/components/gig-list";
 import reviewsStats from "@/components/reviews-stats";
 import { userService } from "../services/user.service.js";
-import moment from 'moment';
+import moment from "moment";
 export default {
   name: "gig-details",
   data() {
@@ -182,13 +182,13 @@ export default {
       });
       return randomCategory;
     },
-    getTimeOfMemberSince(){
+    getTimeOfMemberSince() {
       if (this.gig.creator.memberSince) {
         let currTime;
-        currTime = moment(this.gig.creator.memberSince).fromNow() // 3 days ago
+        currTime = moment(this.gig.creator.memberSince).fromNow(); // 3 days ago
         return currTime;
       }
-    }
+    },
   },
   created() {
     const gigId = this.$route.params.gigId;
