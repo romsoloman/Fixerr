@@ -8,6 +8,7 @@ Vue.use(Vuex)
 
 export const gigStore = {
   state: {
+    gig: null,
     gigs: null,
     filter: null,
     lastPath: null,
@@ -28,6 +29,9 @@ export const gigStore = {
   mutations: {
     setGigs(state, { gigs }) {
       state.gigs = gigs;
+    },
+    setGigs(state, { gig }) {
+      state.gig = gig;
     },
     removeGig(state, { gigId }) {
       const idxToRemove = state.gigs.findIndex(gig => {
@@ -64,6 +68,16 @@ export const gigStore = {
       gigService.query(state.filter || undefined)
         .then(gigs => {
           commit({ type: 'setGigs', gigs });
+        })
+        .catch(err => {
+          console.log('Store: Cannot load gigs', err);
+          throw new Error('Cannot load gigs');
+        })
+    },
+    loadGig({ commit }, { userId }) {
+      gigService.getById(userId)
+        .then(gig => {
+          commit({ type: 'setGig', gig });
         })
         .catch(err => {
           console.log('Store: Cannot load gigs', err);

@@ -20,13 +20,12 @@
         </p>
       </div>
       <div class="orders">
-        <!-- ORDERS LIST CMP -->
         <h1>My Orders</h1>
         <order-list :orders="orders"></order-list>
       </div>
       <div class="gigs">
-        <!-- GIGS CREATED BY USER -->
         <h1>My Gigs</h1>
+        <gig-list :gigs="gigs" :isProfile="true"></gig-list>
       </div>
     </article>
   </section>
@@ -36,6 +35,7 @@
 import { userService } from "../services/user.service.js";
 import chart from "@/components/chart.vue";
 import orderList from "@/components/order-list.vue";
+import gigList from "@/components/gig-list.vue";
 export default {
   data() {
     return {
@@ -49,6 +49,7 @@ export default {
       this.user = newUser;
     });
     this.$store.dispatch({ type: "loadOrders", userId });
+    this.$store.dispatch({ type: "loadGig", userId });
   },
   computed: {
     gigsCountes() {
@@ -62,6 +63,9 @@ export default {
     orders() {
       return this.$store.getters.orders;
     },
+    gigs() {
+      return this.$store.getters.gigs;
+    },
   },
   methods: {
     doLogout() {
@@ -72,6 +76,7 @@ export default {
   components: {
     chart,
     orderList,
+    gigList,
   },
 };
 </script>

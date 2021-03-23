@@ -1,6 +1,6 @@
 <template>
   <router-link class="gig-details-link" :to="'/gig/' + gig._id + '/details'">
-    <section class="card-container">
+    <section class="card-container" :class="{ 'profile-card': isProfile }">
       <header>
         <img class="gig-img" :src="gig.imgUrls[0]" />
       </header>
@@ -33,6 +33,7 @@
 export default {
   props: {
     gig: Object,
+    isProfile: Boolean,
   },
   computed: {},
   created() {},
