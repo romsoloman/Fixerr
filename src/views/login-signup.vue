@@ -73,9 +73,6 @@ export default {
     loggedinUser() {
       return this.$store.getters.loggedinUser;
     },
-    isLoading() {
-      return this.$store.getters.isLoading;
-    },
   },
   created() {
     this.loadUsers()

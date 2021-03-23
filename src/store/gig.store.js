@@ -34,13 +34,11 @@ export const gigStore = {
     setGigs(state, { gigs }) {
       state.gigs = gigs;
     },
-<<<<<<< HEAD
     setIsLoading(state, { isLoading }) {
       state.isLoading = isLoading;
-=======
+    },
     setGigs(state, { gig }) {
       state.gig = gig;
->>>>>>> 412eb7fcf6966e0ff208ce07d9c807ded224cabc
     },
     removeGig(state, { gigId }) {
       const idxToRemove = state.gigs.findIndex(gig => {

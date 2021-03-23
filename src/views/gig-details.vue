@@ -132,9 +132,6 @@ export default {
     };
   },
   computed: {
-    isLoading() {
-      return this.$store.getters.isLoading;
-    },
     getStars() {
       // TODO-GETSTARS - 10
       let stars;
