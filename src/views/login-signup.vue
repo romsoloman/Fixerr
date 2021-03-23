@@ -1,5 +1,5 @@
 <template>
-  <div class="container register">
+  <div class="container register" @click.stop="backToHomePage">
     <section class="register-modal-container">
       <p>{{ msg }}</p>
       <div v-if="loggedinUser">
@@ -96,6 +96,10 @@ export default {
           console.log(err)
           this.msg = "Failed to login"
       }
+    },
+    backToHomePage(e){
+      if(e.screenX <650 && e.screenX >250 && e.screenY >167 && e.screenY < 712) return;
+      this.$router.push('/')
     },
     doLogout() {
       this.$store.dispatch({ type: "logout" });
