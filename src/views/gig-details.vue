@@ -4,90 +4,15 @@
     <section class="gig-details">
       <p class="gig-title">{{ gig.title }}</p>
       <section class="main-gig-details">
-        <section class="user-details">
-          <img class="creator-img" :src="gig.creator.imgUrl" />
-          <p class="username">{{ gig.creator.fullname }}</p>
-          <p class="user-level">Level {{ gig.creator.level }} <span>|</span></p>
-          <p class="rating">{{ getStars }} {{ gig.rating }}</p>
-          <p class="reviews-count">({{ gig.reviews.length }})</p>
-        </section>
-        <section class="gig-imgs-container container">
-          <div class="main-img-container">
-            <img class="main-img" :src="mainImg" alt="" />
-          </div>
-          <div class="sub-img-container">
-            <img
-              class="sub-img"
-              :src="gig.imgUrls[0]"
-              :class="{ 'curr-img': mainImg === gig.imgUrls[0] }"
-              @click="changeMainImg(0)"
-              alt=""
-            />
-            <img
-              class="sub-img"
-              :src="gig.imgUrls[1]"
-              :class="{ 'curr-img': mainImg === gig.imgUrls[1] }"
-              @click="changeMainImg(1)"
-              alt=""
-            />
-            <img
-              class="sub-img"
-              :src="gig.imgUrls[2]"
-              :class="{ 'curr-img': mainImg === gig.imgUrls[2] }"
-              @click="changeMainImg(2)"
-              alt=""
-            />
-            <img
-              class="sub-img"
-              :src="gig.imgUrls[3]"
-              :class="{ 'curr-img': mainImg === gig.imgUrls[3] }"
-              @click="changeMainImg(3)"
-              alt=""
-            />
-          </div>
-        </section>
+        <gig-user-details :gig="gig"/>
+        <gig-details-imgs :gig="gig" @changeMainImg="changeMainImg"/>
         <div class="about-gig-container container">
           <h2 class="about-gig-title">About this Gig</h2>
           <p class="about">{{ gig.about }}</p>
         </div>
         <h2 class="about-seller-title">About the seller</h2>
-        <div class="about-seller-container">
-          <div class="seller-img-container">
-            <img class="seller-img" :src="gig.creator.imgUrl" />
-            <img class="badge" src="../assets/imgs/badge.svg" alt="" />
-          </div>
-          <div class="seller-details">
-            <div>
-              <div class="seller-username">{{ gig.creator.fullname }}</div>
-              <div class="about-user">{{ gig.creator.about }}</div>
-              <div class="seller-rating">
-                <span class="rating">{{ getStars }} {{ gig.rating }}</span> ({{
-                  gig.reviews.length
-                }}
-                reviews)
-              </div>
-            </div>
-            <div class="contect-button">Contact Me</div>
-          </div>
-        </div>
-        <div class="more-on-seller">
-          <div class="detail seller-from">
-            <p>From</p>
-            <h3>{{ gig.creator.location }}</h3>
-          </div>
-          <div class="detail member-since">
-            <p>Member since</p>
-            <h3>{{ getTimeOfMemberSince }}</h3>
-          </div>
-          <div class="detail avg-response-time">
-            <p>Avg response time</p>
-            <h3>{{ gig.creator.avgResponseTime }}</h3>
-          </div>
-          <div class="detail last-delivery">
-            <p>Last delivery</p>
-            <h3>{{ gig.creator.lastDelivery }}</h3>
-          </div>
-        </div>
+        <gig-about-seller-details :gig="gig"/>
+        <gig-seller-details :gig="gig"/>
         <div class="for-you">
           <h2>For you</h2>
           <gig-list :gigs="randomCategory"></gig-list>
@@ -115,14 +40,17 @@
 </template>
 
 <script>
+import gigSellerDetails from "@/components/gig-seller-details";
+import gigAboutSellerDetails from "@/components/gig-about-seller-details";
 import loader from "@/components/loader";
 import { gigService } from "../services/gig.service.js";
 import packagePrice from "@/components/package-price";
+import gigUserDetails from "@/components/gig-user-details";
 import reviewList from "@/components/review-list";
 import gigList from "@/components/gig-list";
 import reviewsStats from "@/components/reviews-stats";
+import gigDetailsImgs from "@/components/gig-details-imgs";
 import { userService } from "../services/user.service.js";
-import moment from "moment";
 export default {
   name: "gig-details",
   data() {
@@ -159,7 +87,6 @@ export default {
       }, 0);
 
       const avgReviews = reviewSum / this.gig.reviews.length;
-      // return avgReviews.toFixed(2);
       let stars;
       if (avgReviews >= 0 && avgReviews <= 0.5) {
         stars = "✩✩✩✩✩";
@@ -183,25 +110,12 @@ export default {
       });
       return randomCategory;
     },
-    getTimeOfMemberSince() {
-      if (this.gig.creator.memberSince) {
-        let currTime;
-        currTime = moment(this.gig.creator.memberSince).fromNow(); // 3 days ago
-        return currTime;
-      }
-    },
   },
   created() {
     const gigId = this.$route.params.gigId;
-    // this.isLoadingGig = true;
-    console.log('Created!!');
     gigService.getById(gigId).then((newGig) => {
       this.gig = newGig;
-      this.mainImg = this.gig.imgUrls[0];
-      console.log('getById is done!!');
     }).finally(() => {
-      console.log('getById in finally!!');
-      console.log('this', this);
       this.isLoadingGig = false;
     });
   },
@@ -238,7 +152,11 @@ export default {
     reviewList,
     gigList,
     reviewsStats,
-    loader
+    loader,
+    gigDetailsImgs,
+    gigUserDetails,
+    gigAboutSellerDetails,
+    gigSellerDetails
   },
 };
 </script>

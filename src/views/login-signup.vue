@@ -1,6 +1,5 @@
 <template>
-  <loader v-if="isLoading" />
-  <div v-else ref="register" class="container register" @click.stop="backToHomePage" >
+  <div ref="register" class="container register" @click.stop="backToHomePage" >
     <section class="register-modal-container">
       <p>{{ msg }}</p>
       <div v-if="loggedinUser">
@@ -54,7 +53,6 @@
 </template>
 
 <script>
-import loader from "@/components/loader";
 export default {
   name: "login-signup",
   data() {
@@ -134,7 +132,7 @@ export default {
     // }
   },
   components:{
-    loader
+
   }
 };
 </script>

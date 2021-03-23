@@ -1,5 +1,6 @@
 <template>
-  <section v-if="user" class="container user-details-container">
+  <loader v-if="isLoadingUser"/>
+  <section v-else-if="user" class="container user-details-container">
     <article class="flex column align-center user-info">
       <div class="flex logout">
         <button @click="doLogout">Logout</button>
@@ -35,6 +36,7 @@
 </template>
 
 <script>
+import loader from "@/components/loader";
 import { userService } from "../services/user.service.js";
 import chart from "@/components/chart.vue";
 import orderList from "@/components/order-list.vue";
@@ -43,6 +45,7 @@ export default {
   data() {
     return {
       user: null,
+      isLoadingUser:true
     };
   },
   created() {
@@ -50,6 +53,8 @@ export default {
     userService.getById(userId).then((newUser) => {
       console.log("newUser", newUser);
       this.user = newUser;
+    }).finally(() => {
+      this.isLoadingUser = false;
     });
     this.$store.dispatch({ type: "loadOrders", userId });
     this.$store.dispatch({ type: "loadGig", userId });
@@ -80,6 +85,7 @@ export default {
     chart,
     orderList,
     gigList,
+    loader
   },
 };
 </script>
