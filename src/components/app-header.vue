@@ -15,7 +15,7 @@
       <router-link v-if="!getLoggedInUser" to="/login">Sign in</router-link>
       <router-link
         v-if="getLoggedInUser"
-        :to="'/user/' + getLoggedInUserId + '/details'"
+        :to="'/user/' + getLoggedInUserId + '/profile'"
         >Profile</router-link
       >
     </nav>

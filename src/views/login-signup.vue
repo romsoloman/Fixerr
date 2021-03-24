@@ -1,15 +1,7 @@
 <template>
-  <div ref="register" class="container register" @click.stop="backToHomePage">
+  <div ref="register" class=" register" @click.stop="backToHomePage">
     <section class="register-modal-container">
-      <p>{{ msg }}</p>
-      <div v-if="loggedinUser">
-        <h3>
-          Loggedin User:
-          {{ loggedinUser.username }}
-          <button @click="doLogout">continue</button>
-        </h3>
-      </div>
-      <div class="login-signup-container" v-else-if="!loggedinUser && isMember">
+      <div class="login-signup-container" v-if="!loggedinUser && isMember">
         <h4 class="title">Sign in to fixerr</h4>
         <div class="separator">OR</div>
         <form @submit.prevent="doLogin">

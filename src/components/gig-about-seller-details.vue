@@ -16,10 +16,12 @@
           </div>
         </div>
         <div class="contect-button">Contact Me</div>
+        <app-chat/>
       </div>
     </div>
 </template>
 <script>
+import appChat from "@/components/app-chat";
 export default {
   props: {
       gig: Object,
@@ -57,6 +59,9 @@ export default {
       return stars;
     },
   },
+  components:{
+    appChat
+  }
 };
 </script>
 

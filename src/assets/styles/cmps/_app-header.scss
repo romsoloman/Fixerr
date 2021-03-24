@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     transition: background-color .3s;
-    padding: 32px 1rem 0;
+    padding: 32px 31px 0;
     left: 0;
     right: 0;
     max-width: initial;
@@ -14,7 +14,7 @@
         background-color: $clr6;
         z-index: 2;
         border-bottom: 1px solid #eee;
-        h1{ 
+        h1{
             color:$clr3 ;
         }
         nav {
@@ -25,7 +25,7 @@
     }
     h1{
         letter-spacing: -3.7px;
-        color:$clr6;   
+        color:$clr6;
         transition: color .3s;
     }
     nav {
@@ -37,12 +37,12 @@
         padding: 0 0 10px;
         & a {
             color:$clr6;
-            font-weight: 500; 
+            font-weight: 500;
             transition: color .3s;
         }
     }
     nav .active {
         color: $clr1;
     }
-    
+
 }
