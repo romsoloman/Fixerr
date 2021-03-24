@@ -2,11 +2,12 @@
   <loader v-if="isLoading" />
   <section v-else class="container gig-app-container">
     <gig-filter @setFilter="setFilter" />
-    <gig-list :gigs="gigs" />
+    <gig-list :gigs="gigs" @cardLiked="cardLiked"/>
   </section>
 </template>
 
 <script>
+import {socketService} from '../services/socket.service.js';
 import { gigService } from "../services/gig.service.js";
 import gigList from "@/components/gig-list";
 import gigFilter from "@/components/gig-filter";
@@ -15,6 +16,7 @@ export default {
   data() {
     return {
       gigToEdit: gigService.getEmptyGig(),
+      topic:null,
     };
   },
   computed: {
@@ -31,6 +33,10 @@ export default {
     this.$store.dispatch({ type: "loadGigs" });
   },
   methods: {
+    cardLiked(gig){
+      console.log('gig', gig);
+    },
+
     removeGig(gigId) {
       this.$store.dispatch({ type: "remove", gigId });
     },
@@ -48,7 +54,8 @@ export default {
   components: {
     gigList,
     gigFilter,
-    loader
+    loader,
+    socketService
   },
 };
 </script>
