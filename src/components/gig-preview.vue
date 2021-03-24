@@ -34,7 +34,7 @@
 export default {
   props: {
     gig: {
-      type: Object,
+      gig: Object,
     },
     isProfile: Boolean,
   },

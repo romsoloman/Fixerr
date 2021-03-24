@@ -1,6 +1,7 @@
 <template>
   <loader v-if="isLoading" />
   <section v-else class="container gig-app-container">
+    <h1 v-if="currLike">{{loggedinUser.fullname}} Liked gig of {{currLike.creator.fullname}}</h1>
     <gig-filter @setFilter="setFilter" />
     <gig-list :gigs="gigs" @cardLiked="cardLiked"/>
   </section>
@@ -8,6 +9,7 @@
 
 <script>
 import {socketService} from '../services/socket.service.js';
+import {userService} from '../services/user.service.js';
 import { gigService } from "../services/gig.service.js";
 import gigList from "@/components/gig-list";
 import gigFilter from "@/components/gig-filter";
@@ -16,7 +18,8 @@ export default {
   data() {
     return {
       gigToEdit: gigService.getEmptyGig(),
-      topic:null,
+      currLike:null,
+      loggedinUser:null
     };
   },
   computed: {
@@ -28,6 +31,10 @@ export default {
     },
   },
   created() {
+    this.loggedinUser = userService.getLoggedinUser();
+    console.log('this.loggedinUser',this.loggedinUser );
+    socketService.setup();
+    socketService.on('like-addLike', this.addLike)
     const { filterBy } = this.$route.params;
     const filter = {
       name: "",
@@ -42,8 +49,12 @@ export default {
     this.$store.dispatch({ type: "loadGigs" });
   },
   methods: {
+    addLike(like) {
+      console.log('like', like);
+      this.currLike = like;
+    },
     cardLiked(gig){
-      console.log('gig', gig);
+      socketService.emit('like', gig)
     },
 
     removeGig(gigId) {
@@ -64,7 +75,7 @@ export default {
     gigList,
     gigFilter,
     loader,
-    socketService
+    socketService,
   },
 };
 </script>
