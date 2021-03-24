@@ -66,6 +66,12 @@
       padding: 2px 0 0;
      }
    }
+   & .like-button{
+     cursor: pointer;
+   }
+   & .like{
+     color: red;
+   }
   }
 }
 

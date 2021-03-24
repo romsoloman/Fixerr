@@ -64,86 +64,7 @@
          color: #62646a;
         font: 400 16px/24px "Macan","Helvetica Neue",Helvetica,Arial,sans-serif;
      }
-     & .about-seller-container{
-         display: flex;
-         justify-content: space-between;
-         margin-bottom: 50px;
-         align-items: center;
-         height: 155px;
-         & .seller-img-container{
-             height: 155px;
-             position: relative;
-             & .seller-img{
-                 border-radius: 50%;
-                 width: 110px;
-                 height: 110px;
-                 object-fit: cover;
-                }
-                & .badge{
-                    position: absolute;
-                    bottom: 9px;
-                    left: 76px;
 
-                }
-         }
-         & .seller-details{
-             display: flex;
-             flex-direction: column;
-             justify-content: space-between;
-             width: 76%;
-             z-index: 0;
-            & .seller-username{
-                color: #62646a;
-                font-weight: 700;
-            }
-            & .about-user{
-                font-size: 14px;
-            }
-            & .seller-rating{
-                color: #62646a;
-                & .rating{
-                    color: #ffc100;
-                }
-            }
-            & .contect-button{
-                font-size: 14px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-top: 15px;
-                width: 130px;
-                height: 40px;
-                color: #62646a;
-                border: 1px solid #62646a;
-                border-radius: 4px;
-                cursor: pointer;
-                transition: .15s ease-in-out;
-            }
-            & .contect-button:hover{
-                background: #7a7d85;
-                color: white;
-            }
-         }
-     }
-     & .more-on-seller{
-         display: grid;
-         grid-template-columns: 1fr 1fr;
-         grid-template-rows: 1fr 1fr;
-         text-align: center;
-         border: 1px solid #dadbdd;;
-         border-radius: 3px;
-         margin-bottom: 50px;
-         & h3{
-             color: #62646a;
-            }
-        & p {
-            color:#7a7d85;
-            padding-bottom: 7px;
-        }
-         & .detail{
-             padding: 10px;
-         }
-     }
      & .gig-app-container{
         padding:0;
         display: flex;
@@ -155,34 +76,6 @@
      }
      & .avg-rat{
         color:#ffb33e;
-     }
-     & .gig-imgs-container{
-         display: flex;
-         flex-direction: column;
-         img {
-             border-radius: 4px;
-         }
-        & .main-img-container{
-            & img{
-                width: 100%;
-                height: 400px;
-                margin-bottom: 10px;
-            }
-        }
-        & .sub-img-container{
-            display: flex;
-            justify-content: space-between;
-            cursor: pointer;
-            & img{
-                border-radius: 3px;
-                filter: brightness(50%);
-                width: 24%;
-                height: 80px;
-            }
-            & .curr-img{
-                filter: brightness(100%);
-            }
-        }
      }
      & .review{
          margin-top: 2rem;

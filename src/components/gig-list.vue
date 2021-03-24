@@ -8,7 +8,7 @@
       :class="{ 'profile-list': isProfile }"
     >
       <li class="gig-container" v-for="gig in gigs" :key="gig._id">
-        <gig-preview :gig="gig" :isProfile="isProfile" />
+        <gig-preview :gig="gig" :isProfile="isProfile" @cardLiked="cardLiked"/>
       </li>
     </ul>
   </section>
@@ -24,6 +24,11 @@ export default {
     isProfile: {
       type: Boolean,
     },
+  },
+  methods:{
+    cardLiked(gig){
+      this.$emit("cardLiked", gig);
+    }
   },
   components: {
     gigPreview,

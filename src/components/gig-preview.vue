@@ -1,6 +1,6 @@
 <template>
-  <router-link class="gig-details-link" :to="'/gig/' + gig._id + '/details'">
     <section class="card-container" :class="{ 'profile-card': isProfile }">
+      <router-link class="gig-details-link" :to="'/gig/' + gig._id + '/details'">
       <header>
         <img class="gig-img" :src="gig.imgUrls[0]" />
       </header>
@@ -19,12 +19,13 @@
           <span class="reviews-count">({{ gig.reviews.length }})</span>
         </div>
       </main>
+      </router-link>
       <footer class="flex align-center footer-info">
-        <i class="far fa-heart"></i>
+        <i v-if="!isLiked" class="far fa-heart like-button" @click="toggleLike"></i>
+        <i v-else class="fas fa-heart like-button" :class="{ 'like': isLiked }" @click="toggleLike"></i>
         <div class="price"><small>starting at</small> ${{ gig.price }}</div>
       </footer>
     </section>
-  </router-link>
 </template>
 
 
@@ -33,9 +34,22 @@
 export default {
   props: {
     gig: {
-      type: Object,
+      gig: Object,
     },
     isProfile: Boolean,
+  },
+  data(){
+    return{
+      isLiked:false,
+    }
+  },
+  methods:{
+    toggleLike(){
+      this.isLiked = !this.isLiked
+      if(this.isLiked){
+        this.$emit("cardLiked", this.gig);
+      }
+    }
   },
   computed: {},
   created() {},
