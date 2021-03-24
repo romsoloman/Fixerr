@@ -25,7 +25,6 @@
 export default {
   props: {},
   data() {
-    console.log("data this.$route.name", this.$route.name);
     return {
       filterBy: {
         name: "",
@@ -36,23 +35,16 @@ export default {
   },
   watch: {
     $route(to, from) {
-      console.log("to", to);
-      console.log("from", from);
-      // this.show = false;
       this.routeName = to.name;
     },
   },
   mounted() {
-    // console.log("mounted this.$store", this.$store);
     window.addEventListener("scroll", this.updateScroll);
   },
   methods: {
     updateScroll() {
       this.scrollPosition = window.scrollY;
     },
-  },
-  created() {
-    // console.log("this.$route.name", this.$route.name);
   },
   computed: {
     getLoggedInUser() {
