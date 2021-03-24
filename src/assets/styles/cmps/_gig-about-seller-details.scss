@@ -1,0 +1,61 @@
+.about-seller-container{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  align-items: center;
+  height: 155px;
+  & .seller-img-container{
+      height: 155px;
+      position: relative;
+      & .seller-img{
+          border-radius: 50%;
+          width: 110px;
+          height: 110px;
+          object-fit: cover;
+        }
+        & .badge{
+            position: absolute;
+            bottom: 9px;
+            left: 76px;
+
+        }
+  }
+  & .seller-details{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 76%;
+      z-index: 0;
+    & .seller-username{
+        color: #62646a;
+        font-weight: 700;
+    }
+    & .about-user{
+        font-size: 14px;
+    }
+    & .seller-rating{
+        color: #62646a;
+        & .rating{
+            color: #ffc100;
+        }
+    }
+    & .contect-button{
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+        width: 130px;
+        height: 40px;
+        color: #62646a;
+        border: 1px solid #62646a;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: .15s ease-in-out;
+    }
+    & .contect-button:hover{
+        background: #7a7d85;
+        color: white;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+ .user-info{
+    grid-column: 1/1;
+    border-right: 1px solid $clr2;
+    height: 82%;
+    padding-right: 1rem;
+    & .logout{
+      width: 100%;
+      justify-content: space-between;
+      flex: 1;
+      & button{
+        text-align: center;
+        height: 30%;
+        border: 1px solid $clr2;
+        border-radius: 5px;
+        background-color: white;
+        color: $clr1;
+        font-size: 0.875rem;
+      }
+    }
+    & .img{
+      flex: 5;
+      & img{
+        height: 30%;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 2rem;
+      }
+      & .name {
+        color: $clr1;
+        text-transform: capitalize;
+        font-weight: 500;
+      }
+      & .level{
+        color:$clr3;
+        text-transform: capitalize;
+        opacity: 0.8;
+        font-size: 0.875rem;
+      }
+    }
+    & .notifications{
+      flex: 1;
+    }
+  }

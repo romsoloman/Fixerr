@@ -20,27 +20,27 @@
      grid-template-rows: 30% 1fr;
      border-bottom: 1px solid #eee;
      padding: 2px 1rem;
-     & .user-details {
-       grid-row: 1/1;
-       & .user-img {
-        height: 70%;
-        width: 10%;
-        background: red;
-        border-radius: 50%;
-       }
-       & .user-info {
-         padding-left: 5px ;
-         height: 100%;
-         font-size: 0.875rem;
-         flex: 1;
-         & .user-name:hover{
-           text-decoration: underline;
-         }
-         & .user-level {
-          color: $clr2;
-         }
-       }
-     }
+    //  & .user-details {
+    //    grid-row: 1/1;
+    //    & .user-img {
+    //     height: 70%;
+    //     width: 10%;
+    //     background: red;
+    //     border-radius: 50%;
+    //    }
+    //    & .user-info {
+    //      padding-left: 5px ;
+    //      height: 100%;
+    //      font-size: 0.875rem;
+    //      flex: 1;
+    //      & .user-name:hover{
+    //        text-decoration: underline;
+    //      }
+    //      & .user-level {
+    //       color: $clr2;
+    //      }
+    //    }
+    //  }
      & .gig-description {transition: color .4s; font-size:0.95rem; margin-top:5px;}
      & .gig-description:hover {color: $clr5;}
      & .rating-info {

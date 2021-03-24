@@ -16,7 +16,7 @@
           </div>
         </div>
         <div class="contect-button">Contact Me</div>
-        <app-chat/>
+        <!-- <app-chat/> -->
       </div>
     </div>
 </template>
