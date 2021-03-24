@@ -30,13 +30,14 @@ export default {
     const filter = {
       name: "",
       price: { minPrice: 0, maxPrice: 5000 },
-      rating: 0,
+      rating: null,
+      level: null,
     };
     if (typeof filterBy === "string") {
       filter.name = filterBy;
-      console.log("filter.name", filter.name);
       this.$store.commit({ type: "setFilter", filter });
     } else this.$store.commit({ type: "setFilter", filterBy });
+    console.log("filterBy", filterBy);
     this.$store.dispatch({ type: "loadGigs" });
   },
   methods: {

@@ -4,12 +4,7 @@
       <div class="search-icon">
         <i class="fas fa-search"></i>
       </div>
-      <input
-        type="text"
-        v-model="filterBy.name"
-        @input="setFilter"
-        class="search-input"
-      />
+      <input type="text" v-model="filterBy.name" class="search-input" />
       <button @click="setFilter" class="search-button">Search</button>
     </div>
     <div class="flex align-center price-search">
@@ -66,8 +61,8 @@ export default {
           minPrice: 0,
           maxPrice: 5000,
         },
-        rating: 0,
-        level: 0,
+        rating: null,
+        level: null,
       },
     };
   },
