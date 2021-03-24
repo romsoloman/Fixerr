@@ -20,7 +20,7 @@
       </div>
       <div class="item-4">
         <button class="fiverr-button checkout-btn" @click.prevent="checkout()">
-          Continue to Checkout
+          Checkout
         </button>
         <span>You won't be charged yet</span>
       </div>

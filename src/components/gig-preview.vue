@@ -32,7 +32,9 @@
 // import { utilService } from '../services/util.service.js'
 export default {
   props: {
-    gig: Object,
+    gig: {
+      type: Object,
+    },
     isProfile: Boolean,
   },
   computed: {},
