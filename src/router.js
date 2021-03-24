@@ -6,7 +6,7 @@ import gigDetails from './views/gig-details.vue'
 import gigEdit from './views/gig-edit.vue'
 import checkout from './views/gig-checkout.vue'
 import loginSignup from './views/login-signup.vue'
-import userDetails from './views/user-details.vue'
+import userProfile from './views/user-profile.vue'
 
 Vue.use(Router)
 
@@ -45,9 +45,9 @@ export const router = new Router({
             component: loginSignup
         },
         {
-            path: '/user/:userId/details',
-            name: 'user-details',
-            component: userDetails
+            path: '/user/:userId/Profile',
+            name: 'user-profile',
+            component: userProfile
         }
 
     ]
