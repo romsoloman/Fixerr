@@ -27,6 +27,7 @@
     & .img{
       flex: 5;
       & img{
+        z-index: 1;
         height: 80px;
         width: 80px;
         border-radius: 50%;
