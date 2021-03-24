@@ -29,7 +29,16 @@ export default {
   },
   created() {
     const { filterBy } = this.$route.params;
-    this.$store.commit({ type: "setFilter", filterBy });
+    const filter = {
+      name: "",
+      price: { minPrice: 0, maxPrice: 5000 },
+      rating: 0,
+    };
+    if (typeof filterBy === "string") {
+      filter.name = filterBy;
+      console.log("filter.name", filter.name);
+      this.$store.commit({ type: "setFilter", filter });
+    } else this.$store.commit({ type: "setFilter", filterBy });
     this.$store.dispatch({ type: "loadGigs" });
   },
   methods: {

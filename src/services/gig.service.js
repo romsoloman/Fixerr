@@ -30,7 +30,7 @@ async function query(filterBy) {
   // }
   // return storageService.query(KEY);
   try {
-    const gigs = await httpService.get(GIG_URL)
+    const gigs = await httpService.get(GIG_URL, filterBy)
     localStorage.setItem(KEY, JSON.stringify(gigs))
     return gigs
   } catch (err) {

@@ -14,33 +14,31 @@
           </div>
           <input
             type="text"
-            placeholder="Try 'building mobile app'"
+            placeholder="Try  'Music and Audio'"
             v-model="filterBy.name"
             class="search-input"
           />
           <router-link
             class="flex justify-center align-center search-button"
-            :to="{ name: 'gig', params: { filterBy: filterBy } }"
+            :to="{ name: 'gig', params: { filterBy } }"
           >
             Search
           </router-link>
         </div>
         <div class="flex popular-search">
           <span>Popular:</span>
-          <!-- TODO: need to insert the category name into filterBy object -->
-          <router-link :to="{ name: 'gig', params: { filterBy: filterBy } }">
+          <router-link :to="{ name: 'gig', params: { filterBy: 'buisness' } }">
             Business
           </router-link>
-          <!-- TODO: need to insert the category name into filterBy object -->
-          <router-link :to="{ name: 'gig', params: { filterBy: filterBy } }">
+          <router-link :to="{ name: 'gig', params: { filterBy: 'gaming' } }">
             Gaming
           </router-link>
-          <!-- TODO: need to insert the category name into filterBy object -->
-          <router-link :to="{ name: 'gig', params: { filterBy: filterBy } }">
+          <router-link
+            :to="{ name: 'gig', params: { filterBy: 'programming and tech' } }"
+          >
             Programming and Tech
           </router-link>
-          <!-- TODO: need to insert the category name into filterBy object -->
-          <router-link :to="{ name: 'gig', params: { filterBy: filterBy } }">
+          <router-link :to="{ name: 'gig', params: { filterBy: 'data' } }">
             Data
           </router-link>
         </div>
