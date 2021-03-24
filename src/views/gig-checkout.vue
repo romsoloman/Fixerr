@@ -9,59 +9,20 @@
       <a href="#">Ok,got It!</a>
     </div>
     <h3>Customize Your Package</h3>
-    <div class="flex gig-info">
-      <div class="flex gig-details">
-        <img class="gig-checkout-img" :src="gig.imgUrls[0]" alt="" />
-        <div class="gig-about">
-          <h4>{{ gig.title }}</h4>
-          <span class="rating">{{getStars}} {{ gig.rating }}</span>
-        </div>
-      </div>
-      <div class="gig-pricing">
-        <label>Qty</label>
-        <select name="qty">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
-        <span>${{ gig.price }}</span>
-      </div>
-    </div>
-    <div class="flex column summary">
-      <h4>Summary</h4>
-      <div class="flex justify-between item item-1">
-        <p>Subtotal</p>
-        <p>${{ gig.price }}</p>
-      </div>
-      <div class="flex justify-between item item-2">
-        <p>Service Fee</p>
-        <p>$ {{ serviceFee }}</p>
-      </div>
-      <div class="flex justify-between item item-3">
-        <p>Total</p>
-        <p>$ {{ totalPrice }}</p>
-      </div>
-      <div class="flex justify-between item item4">
-        <p>Delivery Time</p>
-        <p>7 Days</p>
-      </div>
-      <div class="item-4">
-        <button class="fiverr-button checkout-btn" @click.prevent="checkout()">
-          Continue to Checkout
-        </button>
-        <span>You won't be charged yet</span>
-      </div>
-    </div>
-    <div v-if="orderDone" class="checkout-modal-container">
-      <div class="checkout-modal">SAVED YOUR ORDER <i class="fas fa-bookmark"></i></div>
-    </div>
+    <gig-checkout-info :gig="gig"></gig-checkout-info>
+    <gig-summary
+      :gig="gig"
+      :user="user"
+      :orderToEdit="orderToEdit"
+    ></gig-summary>
   </div>
 </template>
 
 <script>
 import { gigService } from "../services/gig.service.js";
 import { orderService } from "../services/order.service.js";
-import { utilService } from "../services/util.service.js";
+import gigCheckoutInfo from "@/components/gig-checkout-info.vue";
+import gigSummary from "@/components/gig-summary.vue";
 
 export default {
   name: "gig-checkout",
@@ -69,10 +30,8 @@ export default {
     return {
       isPurchase: false,
       gig: null,
-      serviceFee: utilService.getRandomInt(3, 10),
-      user:null,
-      orderToEdit:null,
-      orderDone:false,
+      user: null,
+      orderToEdit: null,
     };
   },
   async created() {
@@ -81,49 +40,9 @@ export default {
     this.user = this.$store.getters.loggedinUser;
     this.orderToEdit = orderService.getEmptyOrder();
   },
-  computed: {
-    totalPrice() {
-      return this.gig.price + this.serviceFee;
-    },
-    getStars() {
-      // TODO-GETSTARS - 10
-      let stars;
-      if (this.gig.rating >= 0 && this.gig.rating <= 0.5) {
-        stars = "✩✩✩✩✩";
-      } else if (this.gig.rating >= 0.5 && this.gig.rating <= 1.5) {
-        stars = "★✩✩✩✩";
-      } else if (this.gig.rating >= 1.5 && this.gig.rating <= 2.5) {
-        stars = "★★✩✩✩";
-      } else if (this.gig.rating >= 2.5 && this.gig.rating <= 3.5) {
-        stars = "★★★✩✩";
-      } else if (this.gig.rating >= 3.5 && this.gig.rating <= 4.5) {
-        stars = "★★★★✩";
-      } else if (this.gig.rating >= 4.5) {
-        stars = "★★★★★";
-      }
-      return stars;
-    },
-  },
-  methods: {
-   async checkout() {
-     try{
-          this.orderToEdit.buyer = this.user;
-          this.orderToEdit.totalPrice = this.serviceFee + this.gig.price;
-          this.orderToEdit.seller._id = this.gig.creator._id;
-          this.orderToEdit.seller.name = this.gig.creator.fullname;
-          this.orderToEdit.seller.imgUrl = this.gig.creator.imgUrl;
-          this.orderToEdit.items[0]._id = this.gig._id;
-          this.orderToEdit.items[0].title = this.gig.title;
-          console.log('this.orderToEdit',this.orderToEdit );
-          this.$store.dispatch({ type: "saveOrder", order: this.orderToEdit});
-          this.orderDone = true;
-          setTimeout(() => {
-          this.orderDone = false;
-          }, 1500);
-        } catch(err){
-          console.log('err to save order', err);
-        }
-    },
+  components: {
+    gigCheckoutInfo,
+    gigSummary,
   },
 };
 </script>

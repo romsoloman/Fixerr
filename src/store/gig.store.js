@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import { gigService } from "../services/gig.service.js";
 import { utilService } from '../services/util.service.js';
-import { orderStore } from "./order.store.js";
+// import { orderStore } from "./order.store.js";
 
 Vue.use(Vuex)
 
@@ -117,6 +117,6 @@ export const gigStore = {
     },
   },
   modules: {
-    orderStore
+    // orderStore
   }
 }
