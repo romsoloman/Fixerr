@@ -7,8 +7,15 @@
       <input type="text" v-model="filterBy.name" class="search-input" />
       <button @click="setFilter" class="search-button">Search</button>
     </div>
-    <div class="flex align-center price-search">
-      <h5>Min.</h5>
+    <div
+      class="flex align-center price-search"
+      :class="{ 'floating-menu': isClicked }"
+    >
+      <h5>Budget</h5>
+      <button @click="isClicked = !isClicked">
+        <span><i class="fas fa-arrow-down"></i></span>
+      </button>
+      <!-- <h5>Min.</h5>
       <input
         type="number"
         placeholder="Any"
@@ -24,7 +31,7 @@
         max="5000"
         v-model.number="filterBy.price.maxPrice"
       />
-      <button @click="setFilter">Apply</button>
+      <button @click="setFilter">Apply</button> -->
     </div>
     <div class="rating-search">
       Rating
@@ -55,6 +62,7 @@
 export default {
   data() {
     return {
+      isClicked: false,
       filterBy: {
         name: "",
         price: {

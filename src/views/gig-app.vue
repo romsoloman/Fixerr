@@ -1,15 +1,18 @@
 <template>
   <loader v-if="isLoading" />
   <section v-else class="container gig-app-container">
-    <h1 v-if="currLike">{{loggedinUser.fullname}} Liked gig of {{currLike.creator.fullname}}</h1>
+    <h1 v-if="currLike">
+      {{ currLike.currUser.fullname }} Liked gig of
+      {{ currLike.creator.fullname }}
+    </h1>
     <gig-filter @setFilter="setFilter" />
-    <gig-list :gigs="gigs" @cardLiked="cardLiked"/>
+    <gig-list :gigs="gigs" @cardLiked="cardLiked" />
   </section>
 </template>
 
 <script>
-import {socketService} from '../services/socket.service.js';
-import {userService} from '../services/user.service.js';
+import { socketService } from "../services/socket.service.js";
+import { userService } from "../services/user.service.js";
 import { gigService } from "../services/gig.service.js";
 import gigList from "@/components/gig-list";
 import gigFilter from "@/components/gig-filter";
@@ -18,8 +21,8 @@ export default {
   data() {
     return {
       gigToEdit: gigService.getEmptyGig(),
-      currLike:null,
-      loggedinUser:null
+      currLike: null,
+      loggedinUser: null,
     };
   },
   computed: {
@@ -32,9 +35,9 @@ export default {
   },
   created() {
     this.loggedinUser = userService.getLoggedinUser();
-    console.log('this.loggedinUser',this.loggedinUser );
+    console.log("this.loggedinUser", this.loggedinUser);
     socketService.setup();
-    socketService.on('like-addLike', this.addLike)
+    socketService.on("like-addLike", this.addLike);
     const { filterBy } = this.$route.params;
     const filter = {
       name: "",
@@ -51,11 +54,14 @@ export default {
   },
   methods: {
     addLike(like) {
-      console.log('like', like);
+      console.log("like", like);
       this.currLike = like;
     },
-    cardLiked(gig){
-      socketService.emit('like', gig)
+    cardLiked(gig) {
+      const currUser = sessionStorage.getItem("loggedinUser");
+      const likedGig = { ...gig };
+      likedGig.currUser = currUser;
+      socketService.emit("like", likedGig);
     },
 
     removeGig(gigId) {

@@ -1,5 +1,6 @@
 .filter-search{
     justify-content: space-between;
+    margin-bottom: 1rem;
     & .search-icon{
         flex: 1;
         color: grey;
@@ -15,7 +16,16 @@
     & button {
         margin:0;
     }
-    & .price-search h5{
-        margin: 0;
+    & .price-search {
+        font-weight: 600;
+        color: #222325;
+        min-width: 50px;
+        padding: 6px 12px;
+        border-radius: 4px;
+        border: 1px solid #dadbdd;
+        transition: border-color .12s
+        & button {
+            background-color: red;
+        }
     }
 }
