@@ -16,7 +16,7 @@
             <div class="category-card">
               <img :src="require(`../assets/imgs/${category.imgUrl}`)" />
               <router-link
-                :to="{ name: 'gig', params: { filterBy: filterBy } }"
+                :to="{ name: 'gig', params: { filterBy: category.name } }"
               >
                 {{ category.name }}
               </router-link>
@@ -34,9 +34,8 @@
         <h1>Explore Marketplace:</h1>
         <ul class="flex categories-list">
           <li v-for="(category, idx) in categories" :key="idx">
-            <!-- TODO: need to insert the category name into filterBy object -->
             <router-link
-              :to="{ name: 'gig', params: { filterBy: filterBy } }"
+              :to="{ name: 'gig', params: { filterBy: category.name } }"
               class="flex align-center justify-center column"
             >
               <img :src="require(`../assets/imgs/${category.imgUrl}`)" />
@@ -146,7 +145,6 @@ export default {
       return trendingCategory.slice(0, 7);
     },
   },
-  methods: {},
   components: { appHero, gigList },
 };
 </script>

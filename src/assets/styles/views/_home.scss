@@ -7,7 +7,7 @@
     height: 400px;
     overflow-x: scroll;
     overflow-y: hidden;
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
     & .gig-list-container{
         display:flex;
         width:100%;
@@ -31,6 +31,7 @@
             object-fit: cover;
             filter: brightness(60%);
             border-radius: 10px;
+            transition: filter .7s;
         }
         & a {
             font-weight: 500;

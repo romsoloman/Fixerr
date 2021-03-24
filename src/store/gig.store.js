@@ -64,8 +64,14 @@ export const gigStore = {
     keepEditChanges(state, { newEditChanges }) {
       state.editChanges = newEditChanges;
     },
-    setFilter(state, { filterBy }) {
-      state.filter = filterBy;
+    setFilter(state, payload) {
+      if (payload.filterBy) {
+        const { filterBy } = payload;
+        state.filter = filterBy;
+      } else {
+        const { filter } = payload;
+        state.filter = filter;
+      }
     },
   },
   actions: {
