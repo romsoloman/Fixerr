@@ -3,7 +3,7 @@
     <div class="order-details">
       <p>Order#: <span>522429</span></p>
       <p>
-        {{ order.createdAt }}
+        {{ moment(order.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss a") }}
       </p>
     </div>
     <div class="delivery-time">
@@ -23,7 +23,14 @@
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
+  data() {
+    return {
+      moment,
+    };
+  },
   props: {
     order: Object,
   },

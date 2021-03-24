@@ -1,21 +1,21 @@
 <template>
-   <article class="user-dashboard">
-      <div class="flex column justify-center welcome">
-        <p class="welcome-msg">Welcome back {{ user.fullname }}!</p>
-        <p>
-          You've sold 80% of your goal this week! Keep it up and improve your
-          results!
-        </p>
-      </div>
-      <div class="orders">
-        <h1>My Orders</h1>
-        <order-list :orders="orders"></order-list>
-      </div>
-      <div class="gigs">
-        <h1>My Gigs</h1>
-        <gig-list :gigs="gigs" :isProfile="true"></gig-list>
-      </div>
-    </article>
+  <article class="user-dashboard">
+    <div class="flex column justify-center welcome">
+      <p class="welcome-msg">Welcome back {{ user.fullname }}!</p>
+      <p>
+        You've sold 80% of your goal this week! Keep it up and improve your
+        results!
+      </p>
+    </div>
+    <div class="orders">
+      <h1>My Orders</h1>
+      <order-list :orders="orders"></order-list>
+    </div>
+    <div class="gigs">
+      <h1>My Gigs</h1>
+      <gig-list :gigs="gigs" :isProfile="true"></gig-list>
+    </div>
+  </article>
 </template>
 
 <script>
@@ -26,28 +26,16 @@ export default {
     user: {
       type: Object,
     },
-    orders:{
-      type:Array
+    orders: {
+      type: Array,
     },
-    gigs:{
-      type:Array
+    gigs: {
+      type: Array,
     },
-  },
-  data() {
-    return {
-
-    };
-  },
-
-  computed: {
-
-  },
-  methods: {
-
   },
   components: {
-  orderList,
-  gigList
+    orderList,
+    gigList,
   },
 };
 </script>
