@@ -26,7 +26,7 @@
           </router-link>
         </div>
         <div class="flex popular-search">
-          <span>popular:</span>
+          <span>Popular:</span>
           <!-- TODO: need to insert the category name into filterBy object -->
           <router-link :to="{ name: 'gig', params: { filterBy: filterBy } }">
             Business

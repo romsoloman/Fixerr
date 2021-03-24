@@ -1,18 +1,18 @@
 <template>
-  <loader v-if="isLoadingGig"/>
+  <loader v-if="isLoadingGig" />
   <div class="container gig-details-container container" v-else-if="gig">
     <section class="gig-details">
       <p class="gig-title">{{ gig.title }}</p>
       <section class="main-gig-details">
-        <gig-user-details :gig="gig"/>
-        <gig-details-imgs :gig="gig" @changeMainImg="changeMainImg"/>
+        <gig-user-details :gig="gig" />
+        <gig-details-imgs :gig="gig" @changeMainImg="changeMainImg" />
         <div class="about-gig-container container">
           <h2 class="about-gig-title">About this Gig</h2>
           <p class="about">{{ gig.about }}</p>
         </div>
         <h2 class="about-seller-title">About the seller</h2>
-        <gig-about-seller-details :gig="gig"/>
-        <gig-seller-details :gig="gig"/>
+        <gig-about-seller-details :gig="gig" />
+        <gig-seller-details :gig="gig" />
         <div class="for-you">
           <h2>For you</h2>
           <gig-list :gigs="randomCategory"></gig-list>
@@ -57,7 +57,7 @@ export default {
     return {
       gig: null,
       mainImg: null,
-      isLoadingGig: true
+      isLoadingGig: true,
     };
   },
   computed: {
@@ -113,11 +113,14 @@ export default {
   },
   created() {
     const gigId = this.$route.params.gigId;
-    gigService.getById(gigId).then((newGig) => {
-      this.gig = newGig;
-    }).finally(() => {
-      this.isLoadingGig = false;
-    });
+    gigService
+      .getById(gigId)
+      .then((newGig) => {
+        this.gig = newGig;
+      })
+      .finally(() => {
+        this.isLoadingGig = false;
+      });
   },
   methods: {
     changeMainImg(imgIdx) {
@@ -131,7 +134,6 @@ export default {
       const reviewToAdd = newReview;
       reviewToAdd.by = userService.getLoggedinUser();
       this.gig.reviews.push(reviewToAdd);
-      console.log("this.gig", this.gig);
       await this.$store.dispatch({
         type: "saveGigs",
         gig: JSON.parse(JSON.stringify(this.gig)),
@@ -156,7 +158,7 @@ export default {
     gigDetailsImgs,
     gigUserDetails,
     gigAboutSellerDetails,
-    gigSellerDetails
+    gigSellerDetails,
   },
 };
 </script>
