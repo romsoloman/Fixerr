@@ -8,52 +8,82 @@
       <button @click="setFilter" class="search-button">Search</button>
     </div>
     <div
-      class="flex align-center price-search"
-      :class="{ 'floating-menu': isClicked }"
+      class="flex align-center justify-center border-filter price-search"
+      @click="isBudgClicked = !isBudgClicked"
     >
-      <h5>Budget</h5>
-      <button @click="isClicked = !isClicked">
+      <h5 class="budget">Budget</h5>
+      <button class="arrow-btn">
         <span><i class="fas fa-arrow-down"></i></span>
       </button>
-      <!-- <h5>Min.</h5>
-      <input
-        type="number"
-        placeholder="Any"
-        min="0"
-        max="5000"
-        v-model.number="filterBy.price.minPrice"
-      />
-      <h5>Max.</h5>
-      <input
-        type="number"
-        placeholder="Any"
-        min="0"
-        max="5000"
-        v-model.number="filterBy.price.maxPrice"
-      />
-      <button @click="setFilter">Apply</button> -->
+      <div v-if="isBudgClicked" class="flex column floating-menu">
+        <div class="flex min-max">
+          <div class="min-price">
+            <h5>Min.</h5>
+            <input
+              type="number"
+              placeholder="Any"
+              min="0"
+              max="5000"
+              v-model.number="filterBy.price.minPrice"
+            />
+          </div>
+          <div class="max-price">
+            <h5>Max.</h5>
+            <input
+              type="number"
+              placeholder="Any"
+              min="0"
+              max="5000"
+              v-model.number="filterBy.price.maxPrice"
+            />
+          </div>
+        </div>
+        <div class="flex button-apply">
+          <button @click="setFilter">Apply</button>
+        </div>
+      </div>
     </div>
-    <div class="rating-search">
-      Rating
-      <select name="ratings" v-model.number="filterBy.rating">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <button @click="setFilter">Apply</button>
+    <div
+      class="flex align-center justify-center border-filter rating-search"
+      @click="isRateClicked = !isRateClicked"
+    >
+      <h5>Rating</h5>
+      <button class="arrow-btn">
+        <span><i class="fas fa-arrow-down"></i></span>
+      </button>
+      <div v-if="isRateClicked" class="floating-menu">
+        <div class="flex align-center rating-value">
+          <input
+            type="range"
+            v-model.number="filterBy.rating"
+            min="1"
+            max="5"
+          />
+          <span>Rating : {{ filterBy.rating }}</span>
+        </div>
+        <div class="flex button-apply">
+          <button @click="setFilter">Apply</button>
+        </div>
+      </div>
     </div>
-    <div class="seller-level">
-      Seller level
-      <select name="levels" v-model.number="filterBy.level">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <button @click="setFilter">Apply</button>
+
+    <div
+      class="flex align-center justify-center border-filter level"
+      @click="isLevelClicked = !isLevelClicked"
+    >
+      <h5>Seller level</h5>
+      <button class="arrow-btn">
+        <span><i class="fas fa-arrow-down"></i></span>
+      </button>
+      <div v-if="isLevelClicked" class="floating-menu">
+        <div class="flex align-center justify-center level-value">
+          <input type="range" v-model.number="filterBy.level" min="1" max="5" />
+          <span>Level : {{ filterBy.level }}</span>
+        </div>
+        <div class="flex button-apply">
+          <button @click="setFilter">Apply</button>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -62,7 +92,9 @@
 export default {
   data() {
     return {
-      isClicked: false,
+      isRateClicked: false,
+      isBudgClicked: false,
+      isLevelClicked: false,
       filterBy: {
         name: "",
         price: {

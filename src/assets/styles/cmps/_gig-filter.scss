@@ -17,15 +17,36 @@
         margin:0;
     }
     & .price-search {
-        font-weight: 600;
-        color: #222325;
-        min-width: 50px;
-        padding: 6px 12px;
-        border-radius: 4px;
-        border: 1px solid #dadbdd;
-        transition: border-color .12s
-        & button {
-            background-color: red;
+        & .budget{margin: 0;}
+        .floating-menu{
+            & .min-max{
+                padding: 10px;
+                justify-content: space-between;
+                border-bottom: 1px solid #eee;
+                & input {border-left: 1px solid #eee; width: 6rem;}
+            }
         }
     }
-}
+    & .rating-search{
+        & .floating-menu {
+            & .rating-value{
+                height: 50%;
+                padding: 10px;
+                & span {font-size: 0.875rem; margin-left: 10px;}
+            }
+            & .button-apply{height:50%; padding: 10px;}
+        }
+    }
+    & .level {
+        & .floating-menu{
+            left: -127px;
+            right: 0;
+            & .level-value{
+                height: 50%;
+                padding: 10px;
+                & span {font-size: 0.875rem; margin-left: 10px;}
+            }
+            & .button-apply{height:50%; padding: 10px;}
+        }
+    }
+    }
