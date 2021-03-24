@@ -55,6 +55,7 @@ async function save(order) {
             return updatedOrder
         } else {
             const savedOrder = await httpService.post(ORDER_URL, order)
+            console.log('savedOrder', savedOrder);
             return savedOrder;
         }
     } catch (err) {

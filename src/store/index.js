@@ -15,7 +15,7 @@ export const store = new Vuex.Store({
     userStore,
     // socketStore,
     reviewStore,
-    // orderStore,
+    orderStore,
     gigStore
   },
   state: {
