@@ -1,5 +1,5 @@
 <template>
-  <div ref="register" class="container register" @click.stop="backToHomePage">
+  <div ref="register" class=" register" @click.stop="backToHomePage">
     <section class="register-modal-container">
       <div class="login-signup-container" v-if="!loggedinUser && isMember">
         <h4 class="title">Sign in to fixerr</h4>
