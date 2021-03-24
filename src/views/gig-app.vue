@@ -48,7 +48,7 @@ export default {
   components: {
     gigList,
     gigFilter,
-    loader
+    loader,
   },
 };
 </script>
