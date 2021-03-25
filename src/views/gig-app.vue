@@ -1,16 +1,7 @@
 <template>
   <loader v-if="isLoading" />
   <section v-else class="container gig-app-container">
-    <section class="like-msg-container" v-if="currLike&&showLikeMsg">
-      <header>
-        <div class="user-made-like">
-          <img :src="currLike.currUser.imgUrl" alt="">
-          <p>{{currLike.currUser.fullname}}</p>
-        </div>
-        <p>NEW</p>
-      </header>
-      <div class="like-msg">{{currLike.currUser.fullname}} Liked {{currLike.creator.fullname}}'s gig</div>
-    </section>
+    <like :currLike="currLike" :showLikeMsg="showLikeMsg"/>
     <gig-filter @setFilter="setFilter" />
     <gig-list :gigs="gigs" @cardLiked="cardLiked" />
   </section>
@@ -20,6 +11,7 @@
 import { socketService } from "../services/socket.service.js";
 import { userService } from "../services/user.service.js";
 import { gigService } from "../services/gig.service.js";
+import like from "@/components/like";
 import gigList from "@/components/gig-list";
 import gigFilter from "@/components/gig-filter";
 import loader from "@/components/loader";
@@ -91,6 +83,7 @@ export default {
     gigFilter,
     loader,
     socketService,
+    like
   },
 };
 </script>
