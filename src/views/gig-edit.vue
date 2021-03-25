@@ -25,13 +25,7 @@
       ></textarea>
     </div>
     <div class="edit-tags">
-      <h4>Add tags</h4>
-      <input
-        class="edit-inputs"
-        type="text"
-        placeholder="Add tags..."
-        v-model="gigToEdit.tags"
-      />
+      <select-tags @updateGigEditFromSelect="updateGigEditFromSelect"></select-tags>
     </div>
     <div class="edit-imgs">
       <h4>Add imgs</h4>
@@ -83,6 +77,7 @@
 
 <script>
 import { gigService } from "../services/gig.service.js";
+import selectTags from "@/components/select-tags"
 export default {
   data() {
     return {
@@ -90,6 +85,10 @@ export default {
     };
   },
   methods: {
+     updateGigEditFromSelect(value){
+        this.gigToEdit.tags = value;
+        console.log('this.gigToEdit',this.gigToEdit );
+      },
     saveGig() {
       if (!this.$store.getters.loggedinUser) {
         this.$store.commit({
@@ -114,7 +113,9 @@ export default {
       return this.$router.push("/gig");
     },
   },
-  components: {},
+  components: {
+    selectTags
+  },
   created() {
     if (this.$store.getters.getLastPath === "/login") {
       this.gigToEdit = this.$store.getters.getEditChanges;
