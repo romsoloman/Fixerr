@@ -1,8 +1,10 @@
 .filter-search{
     justify-content: space-between;
-    padding: 3rem 22px 1.5rem;
+    padding: 3rem 0 1.5rem;
+    & .category-search{width: 55%;}
+    & .filter-search{width: 25%; }
     & .search-icon{
-        flex: 1;
+        // flex: 1;
         color: grey;
         border:1px solid #eee;
         border-right:none;
@@ -28,6 +30,7 @@
         }
     }
     & .rating-search{
+        margin-left: 2rem;
         & .floating-menu {
             & .rating-value{
                 height: 50%;
@@ -38,6 +41,7 @@
         }
     }
     & .level {
+        margin-left: 2rem;
         & .floating-menu{
             left: -127px;
             right: 0;

@@ -25,7 +25,10 @@
       ></textarea>
     </div>
     <div class="edit-tags">
-      <select-tags @updateGigEditFromSelect="updateGigEditFromSelect"></select-tags>
+      <h4>Add Tags</h4>
+      <select-tags
+        @updateGigEditFromSelect="updateGigEditFromSelect"
+      ></select-tags>
     </div>
     <div class="edit-imgs">
       <h4>Add imgs</h4>
@@ -77,7 +80,7 @@
 
 <script>
 import { gigService } from "../services/gig.service.js";
-import selectTags from "@/components/select-tags"
+import selectTags from "@/components/select-tags";
 export default {
   data() {
     return {
@@ -85,10 +88,10 @@ export default {
     };
   },
   methods: {
-     updateGigEditFromSelect(value){
-        this.gigToEdit.tags = value;
-        console.log('this.gigToEdit',this.gigToEdit );
-      },
+    updateGigEditFromSelect(value) {
+      this.gigToEdit.tags = value;
+      console.log("this.gigToEdit", this.gigToEdit);
+    },
     saveGig() {
       if (!this.$store.getters.loggedinUser) {
         this.$store.commit({
@@ -114,7 +117,7 @@ export default {
     },
   },
   components: {
-    selectTags
+    selectTags,
   },
   created() {
     if (this.$store.getters.getLastPath === "/login") {
