@@ -3,6 +3,7 @@
   <section v-else-if="user" class="container user-details-container">
     <user-info :user="user" @doLogout="doLogout"/>
     <user-dashboard :user="user" :gigs="gigs" :orders="orders" />
+    <notification-list :likes="likes"/>
   </section>
 </template>
 
@@ -12,14 +13,18 @@ import userDashboard from "@/components/user-dashboard";
 import loader from "@/components/loader";
 import { userService } from "../services/user.service.js";
 import chart from "@/components/chart.vue";
+import notificationList from '@/components/notification-list';
 export default {
   data() {
     return {
       user: null,
-      isLoadingUser:true
+      isLoadingUser:true,
+      likes:[]
     };
   },
   created() {
+    socketService.setup();
+    socketService.on("like-addLike", this.addLike);
     const userId = this.$route.params.userId;
     userService.getById(userId).then((newUser) => {
       console.log("newUser", newUser);
@@ -47,6 +52,9 @@ export default {
     },
   },
   methods: {
+    addLike(like) {
+      this.likes.unshift(like);
+    },
     doLogout() {
       this.$store.dispatch({ type: "logout" });
       this.$router.push("/");
@@ -56,7 +64,8 @@ export default {
     chart,
     loader,
     userInfo,
-    userDashboard
+    userDashboard,
+    notificationList
   },
 };
 </script>
