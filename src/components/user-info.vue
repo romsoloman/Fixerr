@@ -9,9 +9,9 @@
         <p class="name">{{ user.fullname }}</p>
         <p class="level">Level {{ user.level }} Seller</p>
       </div>
-      <div class="notifications">
+      <!-- <div class="notifications">
         <h1>Notifications</h1>
-      </div>
+      </div> -->
     </article>
 </template>
 
