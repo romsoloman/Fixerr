@@ -1,11 +1,16 @@
 <template>
   <loader v-if="isLoading" />
-  <section v-else class="container gig-app-container">
+  <section v-else class="container gig-app">
     <h1 v-if="currLike">
       {{ currLike.currUser.fullname }} Liked gig of
       {{ currLike.creator.fullname }}
     </h1>
     <gig-filter @setFilter="setFilter" />
+    <h1 class="category-name">{{ currCategory }}</h1>
+    <h4 v-if="currCategory" class="subtitle-category">
+      Your story's unique. Tell it differently with
+      <span>{{ currCategory }}</span> services.
+    </h4>
     <gig-list :gigs="gigs" @cardLiked="cardLiked" />
   </section>
 </template>
@@ -23,6 +28,7 @@ export default {
       gigToEdit: gigService.getEmptyGig(),
       currLike: null,
       loggedinUser: null,
+      currCategory: null,
     };
   },
   computed: {
@@ -47,8 +53,12 @@ export default {
     };
     if (typeof filterBy === "string") {
       filter.name = filterBy;
+      this.currCategory = filter.name;
       this.$store.commit({ type: "setFilter", filter });
-    } else this.$store.commit({ type: "setFilter", filterBy });
+    } else {
+      this.currCategory = filterBy.name;
+      this.$store.commit({ type: "setFilter", filterBy });
+    }
     console.log("filterBy", filterBy);
     this.$store.dispatch({ type: "loadGigs" });
   },

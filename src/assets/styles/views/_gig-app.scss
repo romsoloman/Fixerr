@@ -1,4 +1,3 @@
-
 .loader-container{
     width: 100%;
     height: 80vh;
@@ -10,4 +9,22 @@
         transform: translateX(-50%);
     }
 
+}
+
+.gig-app{
+    padding: 0 22px;
+    & .category-name{
+        text-align: center;
+        text-transform: capitalize;
+        color: $clr3;
+        margin: 2rem 0 1rem;
+    }
+    & .subtitle-category{
+        color: $clr2;
+        font-weight: 400;
+        font-size: 0.875rem;
+        text-align: center;
+        & span{text-transform: capitalize;}
+        margin-bottom: 1rem;
+    }
 }
