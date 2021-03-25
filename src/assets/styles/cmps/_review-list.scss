@@ -32,23 +32,11 @@
         }
     }
     & .add-review-button{
-      background-color: white;
-      font-size: 14px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 15px;
-      width: 130px;
-      height: 40px;
-      color: #62646a;
-      border: 1px solid #62646a;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: .15s ease-in-out;
-      margin: auto;
+      width: 25%;
+      transition: .10s ease-in-out;
     }
     & .add-review-button:hover{
-        background: #7a7d85;
+        background: #1ea063;
         color: white;
     }
   }

@@ -7,19 +7,21 @@
     </ul>
     <div class="flex column add-new-review" v-if="editNewReview">
       <div class="stars">
-        <span class="star1 gold-star" :class="{'draw-star':editNewReview.rate>0}" @click="rateGig(1)">★</span>
-        <span class="star2 gold-star" :class="{'draw-star':editNewReview.rate>1}" @click="rateGig(2)">★</span>
-        <span class="star3 gold-star" :class="{'draw-star':editNewReview.rate>2}" @click="rateGig(3)">★</span>
-        <span class="star4 gold-star" :class="{'draw-star':editNewReview.rate>3}" @click="rateGig(4)">★</span>
-        <span class="star5 gold-star" :class="{'draw-star':editNewReview.rate>4}" @click="rateGig(5)">★</span>
-        <span class="star6 black-star" :class="{'remove-star':editNewReview.rate>0}" @click="rateGig(1)">✩</span>
-        <span class="star7 black-star" :class="{'remove-star':editNewReview.rate>1}" @click="rateGig(2)">✩</span>
-        <span class="star8 black-star" :class="{'remove-star':editNewReview.rate>2}" @click="rateGig(3)">✩</span>
-        <span class="star9 black-star" :class="{'remove-star':editNewReview.rate>3}" @click="rateGig(4)">✩</span>
-        <span class="star10 black-star" :class="{'remove-star':editNewReview.rate>4}" @click="rateGig(5)">✩</span>
+        <div class="block">
+          <el-rate
+            v-model.number="editNewReview.rate"
+            @change="rateGig(editNewReview.rate)"
+          ></el-rate>
+        </div>
       </div>
-      <textarea type="text" v-model="editNewReview.txt" placeholder="Add review..."/>
-      <button class="add-review-button" @click="onAddReview">Add review</button>
+      <textarea
+        type="text"
+        v-model="editNewReview.txt"
+        placeholder="Add review..."
+      />
+      <button class="fiverr-button add-review-button" @click="onAddReview">
+        Add review
+      </button>
     </div>
   </section>
 </template>
@@ -36,15 +38,16 @@ export default {
   data() {
     return {
       editNewReview: null,
+      colors: ["#99A9BF", "#F7BA2A", "#FF9900"],
     };
   },
   methods: {
-    rateGig(rate){
-      this.editNewReview = {...this.editNewReview, rate: rate};
-      console.log('this.editNewReview', this.editNewReview);
+    rateGig(rate) {
+      this.editNewReview = { ...this.editNewReview, rate: rate };
     },
     onAddReview() {
       this.$emit("addReview", this.editNewReview);
+      this.editNewReview = reviewService.getEmptyReview();
     },
     removeReview(reviewId) {
       this.$emit("removeReview", reviewId);

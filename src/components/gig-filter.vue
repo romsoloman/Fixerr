@@ -52,14 +52,11 @@
           <span><i class="fas fa-arrow-down"></i></span>
         </button>
         <div v-if="isRateClicked" class="floating-menu">
-          <div class="flex align-center rating-value">
-            <input
-              type="range"
-              v-model.number="filterBy.rating"
-              min="1"
-              max="5"
-            />
+          <div class="flex align-center column rating-value">
             <span>Rating : {{ filterBy.rating }}</span>
+            <div class="block">
+              <el-rate v-model="filterBy.rating"></el-rate>
+            </div>
           </div>
           <div class="flex button-apply">
             <button @click="setFilter">Apply</button>
@@ -74,13 +71,11 @@
         </button>
         <div v-if="isLevelClicked" class="floating-menu">
           <div class="flex align-center justify-center level-value">
-            <input
-              type="range"
-              v-model.number="filterBy.level"
-              min="1"
-              max="5"
-            />
-            <span>Level : {{ filterBy.level }}</span>
+            <el-input-number
+              v-model="filterBy.level"
+              :min="1"
+              :max="5"
+            ></el-input-number>
           </div>
           <div class="flex button-apply">
             <button @click="setFilter">Apply</button>

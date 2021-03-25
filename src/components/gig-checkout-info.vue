@@ -4,7 +4,15 @@
       <img class="gig-checkout-img" :src="gig.imgUrls[0]" alt="" />
       <div class="gig-about">
         <h4>{{ gig.title }}</h4>
-        <span class="rating">{{ getStars }} {{ gig.rating }}</span>
+        <!-- <span class="rating">{{ getStars }} {{ gig.rating }}</span> -->
+        <el-rate
+          v-model="gig.rating"
+          disabled
+          show-score
+          text-color="#ff9900"
+          score-template="{value}"
+        >
+        </el-rate>
       </div>
     </div>
     <div class="gig-pricing">

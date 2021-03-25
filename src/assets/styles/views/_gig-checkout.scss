@@ -25,6 +25,7 @@
         justify-content:space-between;
         & .gig-checkout-img{height: 90px;margin-right:2rem;}
         & .gig-details{
+            padding: 0;
             width:50%;
             & h4{color:$clr3;font-size:1rem;}
         }

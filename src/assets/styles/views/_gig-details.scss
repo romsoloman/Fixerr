@@ -1,16 +1,31 @@
 .gig-details-container{
-    padding: 20px;
+    padding: 19px;
     & .main-gig-details{
         width: 56%;
+        & .for-you {
+            & .gig-app-container{
+               & .gig-list-container{
+                   display: flex;
+                   overflow: scroll;
+                   width: 100%;
+                   height: 400px;
+                   & .card-container{
+                       height: 370px;
+                       & .main-info .rating-info {margin: 0;}
+                   }
+               }
+            }
+        }
     }
     & .gig-title{
-        font-size: 35px;
+        font-size: 28px;
         grid-row: 1/1;
         grid-column: 1/-1;
-        padding: 1.1rem 12px 0;
+        padding:0 0 1rem;
         width: 56%;
         font-weight: 700;
         color: #404145;
+        line-height: 130%;
     }
      & .gig-imgs-container{
          height: 500px;
@@ -18,7 +33,13 @@
      }
      & .about-gig-container{
          margin-bottom: 50px;
-     }
+        }
+    & h2{
+        color: $clr1;
+        font-size: 20px;
+        line-height: 28px;
+        padding-bottom: 25px;
+    }
      & .user-details{
         display: flex;
         width: 80%;
@@ -65,12 +86,6 @@
          color: #62646a;
         font: 400 16px/24px "Macan","Helvetica Neue",Helvetica,Arial,sans-serif;
      }
-
-     & .gig-app-container{
-        display: flex;
-        overflow: scroll;
-        width: 100%;
-     }
      & .review-title{
          font-size: 20px;
      }
@@ -79,5 +94,8 @@
      }
      & .review{
          margin-top: 2rem;
+         & h2{
+             padding: 0;
+         }
      }
 }

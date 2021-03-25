@@ -1,6 +1,6 @@
 <template>
   <loader v-if="isLoadingGig" />
-  <div class="container gig-details-container container" v-else-if="gig">
+  <div class="container gig-details-container" v-else-if="gig">
     <section class="gig-details">
       <p class="gig-title">{{ gig.title }}</p>
       <section class="main-gig-details">
