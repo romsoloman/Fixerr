@@ -47,6 +47,7 @@ export default {
       price: { minPrice: 0, maxPrice: 5000 },
       rating: null,
       level: null,
+      topic:null,
     };
     if (typeof filterBy === "string") {
       filter.name = filterBy;
@@ -67,9 +68,12 @@ export default {
       }, 2500);
     },
     cardLiked(gig) {
+      // this.topic = gig.creator._id;
+
       const currUser = sessionStorage.getItem("loggedinUser");
       const likedGig = { ...gig };
       likedGig.currUser = currUser;
+      socketService.emit('like topic', this.topic)
       socketService.emit("like", likedGig);
     },
 
