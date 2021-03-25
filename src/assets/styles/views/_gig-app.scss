@@ -9,5 +9,57 @@
         left:50%;
         transform: translateX(-50%);
     }
+}
 
+.like-msg-container{
+    display: flex;
+    justify-items: start;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 300px;
+    font-size: 14px;
+    height: 100px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 7px #eee;
+    float: right;
+    position: fixed;
+    background: white;
+    right: 20px;
+    z-index: 1;
+    border-radius: 4px;
+    transform: translatex(-300px);
+    animation: diving 1.5s ease-in-out forwards;
+    & header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & .user-made-like{
+            display: flex;
+            width: 100px;
+            justify-content: space-between;
+            align-items: center;
+            & img{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+            }
+        }
+    }
+    & .like-msg{
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+    }
+}
+
+@keyframes diving {
+  0% {
+    transform: translateY(0px) translateX(300px);
+  }
+  50% {
+    transform: translateY(0px) translateX(-10px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
 }

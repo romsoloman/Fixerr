@@ -1,10 +1,16 @@
 <template>
   <loader v-if="isLoading" />
   <section v-else class="container gig-app-container">
-    <h1 v-if="currLike">
-      {{ currLike.currUser.fullname }} Liked gig of
-      {{ currLike.creator.fullname }}
-    </h1>
+    <section class="like-msg-container" v-if="currLike&&showLikeMsg">
+      <header>
+        <div class="user-made-like">
+          <img :src="currLike.currUser.imgUrl" alt="">
+          <p>{{currLike.currUser.fullname}}</p>
+        </div>
+        <p>NEW</p>
+      </header>
+      <div class="like-msg">{{currLike.currUser.fullname}} Liked {{currLike.creator.fullname}}'s gig</div>
+    </section>
     <gig-filter @setFilter="setFilter" />
     <gig-list :gigs="gigs" @cardLiked="cardLiked" />
   </section>
@@ -23,6 +29,7 @@ export default {
       gigToEdit: gigService.getEmptyGig(),
       currLike: null,
       loggedinUser: null,
+      showLikeMsg:false,
     };
   },
   computed: {
@@ -34,8 +41,6 @@ export default {
     },
   },
   created() {
-    this.loggedinUser = userService.getLoggedinUser();
-    console.log("this.loggedinUser", this.loggedinUser);
     socketService.setup();
     socketService.on("like-addLike", this.addLike);
     const { filterBy } = this.$route.params;
@@ -54,8 +59,11 @@ export default {
   },
   methods: {
     addLike(like) {
-      console.log("like", like);
       this.currLike = like;
+      this.showLikeMsg = true;
+      setTimeout(() => {
+        this.showLikeMsg = false;
+        }, 2500);
     },
     cardLiked(gig) {
       const currUser = sessionStorage.getItem("loggedinUser");
