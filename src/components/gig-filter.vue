@@ -7,12 +7,9 @@
       <input type="text" v-model="filterBy.name" class="search-input" />
       <button @click="setFilter" class="search-button">Search</button>
     </div>
-    <div
-      class="flex align-center justify-center border-filter price-search"
-      @click="isBudgClicked = !isBudgClicked"
-    >
+    <div class="flex align-center justify-center border-filter price-search">
       <h5 class="budget">Budget</h5>
-      <button class="arrow-btn">
+      <button class="arrow-btn" @click="isBudgClicked = !isBudgClicked">
         <span><i class="fas fa-arrow-down"></i></span>
       </button>
       <div v-if="isBudgClicked" class="flex column floating-menu">
@@ -43,12 +40,9 @@
         </div>
       </div>
     </div>
-    <div
-      class="flex align-center justify-center border-filter rating-search"
-      @click="isRateClicked = !isRateClicked"
-    >
+    <div class="flex align-center justify-center border-filter rating-search">
       <h5>Rating</h5>
-      <button class="arrow-btn">
+      <button class="arrow-btn" @click="isRateClicked = !isRateClicked">
         <span><i class="fas fa-arrow-down"></i></span>
       </button>
       <div v-if="isRateClicked" class="floating-menu">
@@ -67,12 +61,9 @@
       </div>
     </div>
 
-    <div
-      class="flex align-center justify-center border-filter level"
-      @click="isLevelClicked = !isLevelClicked"
-    >
+    <div class="flex align-center justify-center border-filter level">
       <h5>Seller level</h5>
-      <button class="arrow-btn">
+      <button class="arrow-btn" @click="isLevelClicked = !isLevelClicked">
         <span><i class="fas fa-arrow-down"></i></span>
       </button>
       <div v-if="isLevelClicked" class="floating-menu">
