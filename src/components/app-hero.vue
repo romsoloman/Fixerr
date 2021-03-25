@@ -3,7 +3,7 @@
     <div class="hero-backgrounds">
       <img :src="require(`../assets/imgs/${mainImageSrc}`)" />
     </div>
-    <div class="hero-container">
+    <div class="container hero-container">
       <h1 class="title">
         Find the perfect <i>freelance</i> services for your business
       </h1>
@@ -25,7 +25,7 @@
             Search
           </router-link>
         </div>
-        <div class="flex popular-search">
+        <div class="popular-search">
           <span>Popular:</span>
           <router-link :to="{ name: 'gig', params: { filterBy: 'buisness' } }">
             Business
