@@ -9,6 +9,7 @@
       <span>{{ currCategory }}</span> services.
     </h4>
     <gig-list :gigs="gigs" @cardLiked="cardLiked" />
+    <h1 v-if="gigs.length === 0" class="not-found">Sorry, no gigs to show.</h1>
   </section>
 </template>
 
@@ -32,6 +33,7 @@ export default {
   },
   computed: {
     gigs() {
+      console.log("this.$store,getters.gigs", this.$store.getters.gigs);
       return this.$store.getters.gigs;
     },
     isLoading() {
@@ -47,7 +49,7 @@ export default {
       price: { minPrice: 0, maxPrice: 5000 },
       rating: null,
       level: null,
-      topic:null,
+      topic: null,
     };
     if (typeof filterBy === "string") {
       filter.name = filterBy;
@@ -73,7 +75,7 @@ export default {
       const currUser = sessionStorage.getItem("loggedinUser");
       const likedGig = { ...gig };
       likedGig.currUser = currUser;
-      socketService.emit('like topic', this.topic)
+      socketService.emit("like topic", this.topic);
       socketService.emit("like", likedGig);
     },
 
