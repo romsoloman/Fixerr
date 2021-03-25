@@ -1,8 +1,13 @@
 <template>
   <loader v-if="isLoading" />
-  <section v-else class="container gig-app-container">
-    <like :currLike="currLike" :showLikeMsg="showLikeMsg"/>
+  <section v-else class="container gig-app">
+    <like :currLike="currLike" :showLikeMsg="showLikeMsg" />
     <gig-filter @setFilter="setFilter" />
+    <h1 v-if="currCategory" class="category-name">{{ currCategory }}</h1>
+    <h4 v-if="currCategory" class="subtitle-category">
+      Your story's unique. Tell it differently with
+      <span>{{ currCategory }}</span> services.
+    </h4>
     <gig-list :gigs="gigs" @cardLiked="cardLiked" />
   </section>
 </template>
@@ -21,7 +26,8 @@ export default {
       gigToEdit: gigService.getEmptyGig(),
       currLike: null,
       loggedinUser: null,
-      showLikeMsg:false,
+      currCategory: null,
+      showLikeMsg: false,
     };
   },
   computed: {
@@ -44,8 +50,11 @@ export default {
     };
     if (typeof filterBy === "string") {
       filter.name = filterBy;
+      this.currCategory = filter.name;
       this.$store.commit({ type: "setFilter", filter });
-    } else this.$store.commit({ type: "setFilter", filterBy });
+    } else {
+      this.$store.commit({ type: "setFilter", filterBy });
+    }
     console.log("filterBy", filterBy);
     this.$store.dispatch({ type: "loadGigs" });
   },
@@ -55,7 +64,7 @@ export default {
       this.showLikeMsg = true;
       setTimeout(() => {
         this.showLikeMsg = false;
-        }, 2500);
+      }, 2500);
     },
     cardLiked(gig) {
       const currUser = sessionStorage.getItem("loggedinUser");
@@ -83,7 +92,7 @@ export default {
     gigFilter,
     loader,
     socketService,
-    like
+    like,
   },
 };
 </script>

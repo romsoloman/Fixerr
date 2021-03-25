@@ -1,5 +1,5 @@
 <template>
-  <section class="review-container container">
+  <section class="review-container">
     <div class="user-image-container">
       <img class="user-image" :src="review.by.imgUrl" alt="" />
     </div>

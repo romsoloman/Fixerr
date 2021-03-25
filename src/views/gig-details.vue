@@ -6,7 +6,7 @@
       <section class="main-gig-details">
         <gig-user-details :gig="gig" />
         <gig-details-imgs :gig="gig" @changeMainImg="changeMainImg" />
-        <div class="about-gig-container container">
+        <div class="about-gig-container">
           <h2 class="about-gig-title">About this Gig</h2>
           <p class="about">{{ gig.about }}</p>
         </div>
