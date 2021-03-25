@@ -4,7 +4,6 @@
       <img class="gig-checkout-img" :src="gig.imgUrls[0]" alt="" />
       <div class="gig-about">
         <h4>{{ gig.title }}</h4>
-        <!-- <span class="rating">{{ getStars }} {{ gig.rating }}</span> -->
         <el-rate
           v-model="gig.rating"
           disabled

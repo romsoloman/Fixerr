@@ -9,6 +9,7 @@
         v-model="filterBy.name"
         class="search-input"
         placeholder="Find Services"
+        @keyup.enter="setFilter"
       />
       <button @click="setFilter" class="search-button">Search</button>
     </div>
