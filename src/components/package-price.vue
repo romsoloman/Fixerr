@@ -4,7 +4,7 @@
       <h3>Package Price</h3>
       <p class="price">$ {{ gig.price }}</p>
     </header>
-    <p class="package-about">{{ gig.about }}</p>
+    <p class="package-about">{{ gig.title }}</p>
     <div class="delivery-time">
       <i class="far fa-clock"></i> {{ gig.deliveryTime }} Delivery time
     </div>
