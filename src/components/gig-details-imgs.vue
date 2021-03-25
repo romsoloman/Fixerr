@@ -1,5 +1,5 @@
 <template>
-   <section class="gig-imgs-container container">
+   <section class="gig-imgs-container">
           <div class="main-img-container">
             <img class="main-img" :src="mainImg" alt="" />
           </div>
