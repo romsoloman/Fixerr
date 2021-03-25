@@ -1,6 +1,6 @@
 <template>
    <section class="gig-imgs-container">
-          <div class="main-img-container">
+          <!-- <div class="main-img-container">
             <img class="main-img" :src="mainImg" alt="" />
           </div>
           <div class="sub-img-container">
@@ -32,17 +32,25 @@
               @click="changeMainImg(3)"
               alt=""
             />
+          </div> -->
+           <div class="block">
+            <span class="demonstration"></span>
+            <el-carousel class="carousel">
+              <el-carousel-item class="carusel-item" v-for="item in 4" :key="item">
+                <img class="main-img" :src="gigImgs[item]" alt="" />
+              </el-carousel-item>
+            </el-carousel>
           </div>
         </section>
 </template>
 <script>
 export default {
   props: {
-      gig: Object,
+      gigImgs: Array,
     },
   data() {
     return {
-      mainImg: null,
+      // mainImg: null,
     };
   },
   mounted() {
