@@ -44,5 +44,11 @@ a {
 a:hover {
     text-decoration: none;
 }
+input:focus{
+    outline: none;
+}
+button:focus{
+    outline: none;
+}
 
 img{width:150px;}
