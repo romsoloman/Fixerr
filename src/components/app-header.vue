@@ -1,6 +1,6 @@
 <template>
   <header
-    class="container app-header fixed"
+    class="container flex align-center app-header fixed"
     :class="{ change_color: scrollPosition > 50 || routeName !== 'home' }"
   >
     <div class="logo">

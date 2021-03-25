@@ -38,6 +38,7 @@
               :to="{ name: 'gig', params: { filterBy: category.name } }"
               class="flex align-center justify-center column"
             >
+              <span class="green-line"></span>
               <img :src="require(`../assets/imgs/${category.imgUrl}`)" />
               {{ category.name }}
             </router-link>
