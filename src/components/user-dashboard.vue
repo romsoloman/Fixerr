@@ -1,19 +1,29 @@
 <template>
   <article class="user-dashboard">
-    <div class="flex column justify-center welcome">
-      <p class="welcome-msg">Welcome back {{ user.fullname }}!</p>
-      <p>
-        You've sold 80% of your goal this week! Keep it up and improve your
-        results!
-      </p>
-    </div>
     <div class="orders">
       <h1>My Orders</h1>
-      <order-list :orders="orders"></order-list>
+      <!-- <order-list :orders="orders"></order-list> -->
+      <el-table :data="orders">
+        <el-table-column prop="buyer.fullname" label="Name" width="280">
+        </el-table-column>
+        <el-table-column prop="createdAt" label="Date" width="330">
+        </el-table-column>
+        <el-table-column prop="deliveryTime" label="Delivery Time" width="330">
+        </el-table-column>
+        <el-table-column prop="totalPrice" label="Price"> </el-table-column>
+      </el-table>
     </div>
     <div class="gigs">
       <h1>My Gigs</h1>
       <gig-list :gigs="gigs" :isProfile="true"></gig-list>
+    </div>
+    <div class="price-by-day">
+      <h1>Price Summary</h1>
+      <chart />
+    </div>
+    <div class="gig-category">
+      <h1>Gig Category</h1>
+      <chart />
     </div>
   </article>
 </template>
@@ -21,6 +31,7 @@
 <script>
 import orderList from "@/components/order-list.vue";
 import gigList from "@/components/gig-list.vue";
+import chart from "@/components/chart.vue";
 export default {
   props: {
     user: {
@@ -33,9 +44,11 @@ export default {
       type: Array,
     },
   },
+  computed: {},
   components: {
     orderList,
     gigList,
+    chart,
   },
 };
 </script>

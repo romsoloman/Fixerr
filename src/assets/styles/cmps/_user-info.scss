@@ -3,20 +3,23 @@
     height: 82%;
     padding-right: 1rem;
     & .logout{
-      width: 100%;
-      justify-content: space-between;
-      flex: 1;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      height: 30px;
+      margin-bottom: 2rem;
+      transition: background-color .7s;
       & button{
         text-align: center;
-        height: 30%;
         border-radius: 5px;
         background-color: white;
         color: $clr1;
         font-size: 0.875rem;
+        transition: background-color .7s;
       }
     }
+    & .logout:hover{background-color: $clr5;  & button{background-color: $clr5; color: $clr6;}}
     & .img{
-      flex: 5;
+      margin-bottom: 2rem;
       & img{
         height: 70px;
         width: 70px;
@@ -37,6 +40,6 @@
       }
     }
     & .notifications{
-      flex: 1;
+      text-align: center;
     }
   }

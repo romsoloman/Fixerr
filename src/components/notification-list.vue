@@ -1,25 +1,21 @@
 <template>
   <ul class="notifications-list-container">
     <li class="notification-container" v-for="like in likes" :key="like._id">
-        <notification-preview :like="like"/>
+      <notification-preview :like="like" />
     </li>
   </ul>
 </template>
 
 
 <script>
-import notificationPreview from '@/components/notification-preview';
+import notificationPreview from "./notification-preview";
 export default {
   props: {
     likes: Array,
   },
-  methods: {
-
-
-
-  },
+  methods: {},
   components: {
-    notificationPreview
+    notificationPreview,
   },
 };
 </script>
