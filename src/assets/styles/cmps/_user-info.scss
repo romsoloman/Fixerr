@@ -1,6 +1,5 @@
  .user-info{
     grid-column: 1/1;
-    // border-right: 1px solid $clr2;
     height: 82%;
     padding-right: 1rem;
     & .logout{
@@ -10,7 +9,6 @@
       & button{
         text-align: center;
         height: 30%;
-        // border: 1px solid $clr2;
         border-radius: 5px;
         background-color: white;
         color: $clr1;
@@ -20,7 +18,8 @@
     & .img{
       flex: 5;
       & img{
-        height: 30%;
+        height: 70px;
+        width: 70px;
         border-radius: 50%;
         object-fit: cover;
         margin-bottom: 2rem;
