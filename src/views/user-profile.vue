@@ -11,7 +11,6 @@ import userInfo from "@/components/user-info";
 import userDashboard from "@/components/user-dashboard";
 import loader from "@/components/loader";
 import { userService } from "../services/user.service.js";
-import chart from "@/components/chart.vue";
 export default {
   data() {
     return {
@@ -56,7 +55,6 @@ export default {
     },
   },
   components: {
-    chart,
     loader,
     userInfo,
     userDashboard,
