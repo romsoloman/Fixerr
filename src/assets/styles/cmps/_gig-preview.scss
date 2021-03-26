@@ -48,7 +48,8 @@
        font-weight: 600;
        font-size:1rem;
        & span {margin-right:5px;}
-       & .reviews-count {color:$clr2; font-weight: 400; padding-left: 5px; font-size: 14px;align-self: center;}
+       & .reviews-count {color:$clr2; font-weight: 400; padding-left: 5px; font-size: 14px;align-self: center;line-height: 26px;
+       }
      }
   }
   & .footer-info {
@@ -80,27 +81,42 @@
   width: 100%;
   height: 10%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  & header{
-    height: 50px;
-    & .gig-img{
-      height: 100%;
-      width: 3rem;
+  & .gig-details-link{
+    display: flex;
+    & header{
+      grid-column: 1/1;
+      // height: 50px;
+      & .gig-img{
+        height: 100%;
+        width: 3rem;
+      }
+    }
+    & .main-info{
+      grid-column: 2/2;
+      // height: 50px;
+      display: flex;
+      border: none;
+      & .user-details{
+        & .user-img{
+          display: none;
+        }
+        & .user-info {
+          border: none;
+          & .user-name, & .user-level{display: none;}
+        }
+      }
+      & .rating-info {
+        margin-left: 4rem;
+        margin-bottom: 0;
+        align-items: center;
+        & span {line-height: 27px;}
+      }
     }
   }
-  & .main-info{
-    height: 50px;
-    display: flex;
-    border: none;
-    & .user-details{
-      & .user-img{
-        display: none;
-      }
-      & .user-info {
-        border: none;
-        & .user-name, & .user-level{display: none;}
-      }
-    }
+  & .footer-info {
+    & .price{margin-left: 1rem;}
   }
 }

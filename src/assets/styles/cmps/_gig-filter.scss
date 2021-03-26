@@ -25,6 +25,7 @@
                 padding: 10px;
                 justify-content: space-between;
                 border-bottom: 1px solid #eee;
+                & .max-title,.min-title {margin-bottom: 10px;}
                 & input {border-left: 1px solid #eee; width: 6rem;}
             }
         }

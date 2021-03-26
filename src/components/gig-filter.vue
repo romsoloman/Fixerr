@@ -22,7 +22,7 @@
         <div v-if="isBudgClicked" class="flex column floating-menu">
           <div class="flex min-max">
             <div class="min-price">
-              <h5>Min.</h5>
+              <h5 class="min-title">Min.</h5>
               <input
                 type="number"
                 placeholder="Any"
@@ -32,7 +32,7 @@
               />
             </div>
             <div class="max-price">
-              <h5>Max.</h5>
+              <h5 class="max-title">Max.</h5>
               <input
                 type="number"
                 placeholder="Any"
