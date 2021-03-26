@@ -7,10 +7,22 @@
         <el-table-column prop="buyer.fullname" label="Name" width="280">
         </el-table-column>
         <el-table-column prop="createdAt" label="Date" width="330">
+          <template slot-scope="props">
+            {{
+              moment(props.row.createdAt).format(
+                "dddd, MMMM Do YYYY, h:mm:ss a"
+              )
+            }}
+          </template>
         </el-table-column>
-        <el-table-column prop="deliveryTime" label="Delivery Time" width="330">
+        <el-table-column prop="deliveryTime" label="Delivery Time" width="300">
+          <template slot-scope="props">
+            {{ props.row.deliveryTime }} Days
+          </template>
         </el-table-column>
-        <el-table-column prop="totalPrice" label="Price"> </el-table-column>
+        <el-table-column prop="totalPrice" label="Price">
+          <template slot-scope="props"> ${{ props.row.totalPrice }} </template>
+        </el-table-column>
       </el-table>
     </div>
     <div class="gigs">
@@ -32,6 +44,7 @@
 import orderList from "@/components/order-list.vue";
 import gigList from "@/components/gig-list.vue";
 import chart from "@/components/chart.vue";
+import moment from "moment";
 export default {
   props: {
     user: {
@@ -43,6 +56,11 @@ export default {
     gigs: {
       type: Array,
     },
+  },
+  data() {
+    return {
+      moment: moment,
+    };
   },
   computed: {},
   components: {

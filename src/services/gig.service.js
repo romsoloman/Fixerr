@@ -17,18 +17,6 @@ export const gigService = {
 }
 
 async function query(filterBy) {
-  // var gigsFromStorage = localStorage.getItem(KEY);
-  // if (!gigsFromStorage) localStorage.setItem(KEY, JSON.stringify(gGigs))
-  // if (!filterBy) gigsFromStorage = gGigs;
-  // else {
-  //   const gigs = JSON.parse(gigsFromStorage).filter(gig => {
-  //     return (gig.tags.includes(filterBy.name) || ((gig.tags.includes(filterBy.name)) && (gig.price >= filterBy.price.minPrice && gig.price <= filterBy.price.maxPrice) &&
-  //       (filterBy.rating === gig.rating) && (filterBy.level === gig.creator.level))
-  //     )
-  //   })
-  //   localStorage.setItem(KEY, JSON.stringify(gigs))
-  // }
-  // return storageService.query(KEY);
   try {
     const gigs = await httpService.get(GIG_URL, filterBy)
     localStorage.setItem(KEY, JSON.stringify(gigs))
