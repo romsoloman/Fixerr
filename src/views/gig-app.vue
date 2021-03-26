@@ -34,6 +34,10 @@ export default {
   computed: {
     gigs() {
       console.log("this.$store,getters.gigs", this.$store.getters.gigs);
+      // this.$store,getters.gigs.forEach((currGig) => {
+      //   console.log('currGig', currGig);
+      //   console.log('currGig.currUserLikedThisGig', currGig.currUserLikedThisGig);
+      // })
       return this.$store.getters.gigs;
     },
     isLoading() {
@@ -71,10 +75,10 @@ export default {
     },
     cardLiked(gig) {
       // this.topic = gig.creator._id;
-
       const currUser = sessionStorage.getItem("loggedinUser");
       const likedGig = { ...gig };
       likedGig.currUser = currUser;
+      this.$store.dispatch({ type: "addLike", like: likedGig });
       socketService.emit("like topic", this.topic);
       socketService.emit("like", likedGig);
     },

@@ -79,6 +79,7 @@ export const gigStore = {
       commit({ type: 'setIsLoading', isLoading: true });
       gigService.query(state.filter || undefined)
         .then(gigs => {
+          console.log('gigs from store', gigs);
           commit({ type: 'setGigs', gigs });
         })
         .catch(err => {

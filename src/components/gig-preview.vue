@@ -1,6 +1,7 @@
 <template>
     <section class="card-container" :class="{ 'profile-card': isProfile }">
       <router-link class="gig-details-link" :to="'/gig/' + gig._id + '/details'">
+      {{gig.currUserLikedThisGig}}
       <header>
         <img class="gig-img" :src="gig.imgUrls[0]" />
       </header>
