@@ -31,11 +31,11 @@
     </div>
     <div class="price-by-day">
       <h1>Price Summary</h1>
-      <chart />
+      <price-summary :orders="orders" />
     </div>
     <div class="gig-category">
       <h1>Gig Category</h1>
-      <chart />
+      <gig-category :orders="orders" />
     </div>
   </article>
 </template>
@@ -43,7 +43,8 @@
 <script>
 import orderList from "@/components/order-list.vue";
 import gigList from "@/components/gig-list.vue";
-import chart from "@/components/chart.vue";
+import gigCategory from "@/components/gig-category.vue";
+import priceSummary from "@/components/price-summary.vue";
 import moment from "moment";
 export default {
   props: {
@@ -66,7 +67,8 @@ export default {
   components: {
     orderList,
     gigList,
-    chart,
+    priceSummary,
+    gigCategory,
   },
 };
 </script>
