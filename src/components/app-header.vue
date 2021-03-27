@@ -1,8 +1,14 @@
 <template>
   <header
     class="container flex align-center app-header fixed"
-    :class="{ change_color: scrollPosition > 50 || routeName !== 'home' }"
+    :class="{
+      change_color: scrollPosition > 50 || routeName !== 'home',
+      mobile_version: widthPosition < 600,
+    }"
   >
+    <div class="bars">
+      <i class="fas fa-bars"></i>
+    </div>
     <div class="logo">
       <!-- <img src="" alt=""> TODO: Replace the H1 in IMG-->
       <router-link to="/">
@@ -31,6 +37,7 @@ export default {
       },
       routeName: this.$route.name,
       scrollPosition: null,
+      widthPosition: null,
     };
   },
   watch: {
@@ -40,6 +47,13 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.updateScroll);
+    // window.addEventListener("resize", () => {
+    //   this.widthPosition = window.innerWidth;
+    //   if (this.widthPosition > 600 && window.innerWidth === 1440)
+    //     document
+    //       .querySelector(".app-header")
+    //       .classList.remove("mobile_version");
+    // });
   },
   methods: {
     updateScroll() {

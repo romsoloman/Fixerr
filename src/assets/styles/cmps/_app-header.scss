@@ -6,7 +6,25 @@
     right: 0;
     max-width: initial;
     z-index: 1;
-
+    & .bars{
+        color: white;
+        display: none; 
+        font-size: 1.2rem;
+    }
+    // &.mobile_version{
+    //     color: $clr1;
+    //     background-color: $clr6;
+    //     z-index: 2;
+    //     border-bottom: 1px solid #eee;
+    //     h1{
+    //         color:$clr3 ;
+    //     }
+    //     nav {
+    //         a {
+    //             color:$clr3 ;
+    //         }
+    //     }
+    // }
     &.change_color{
         color: $clr1;
         background-color: $clr6;
@@ -41,3 +59,36 @@
     }
 
 }
+
+
+
+@media screen and (max-width:$narrow-breakpoint) {
+    .app-header{
+        & .nav-links a:not(:last-child){
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width:$mobile-breakpoint){
+    .app-header{
+        & .bars{
+            display: block;
+            cursor: pointer;
+        }
+        & .logo {
+            padding-left: 4rem;
+            font-size: 16px;
+         }
+    }
+}
+
+// @media screen and (max-width:$normal-breakpoint) {
+    
+// }
+
+// @media screen and (max-width:$narrow-breakpoint) {
+// }
+
+// @media screen and (max-width:$mobile-breakpoint){
+// }
