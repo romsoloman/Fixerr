@@ -1,6 +1,5 @@
 <template>
     <section class="card-container" :class="{ 'profile-card': isProfile }">
-      {{isLike}}
       <router-link class="gig-details-link" :to="'/gig/' + gig._id + '/details'">
       <header>
         <img class="gig-img" :src="gig.imgUrls[0]" />
@@ -47,31 +46,17 @@ export default {
   methods:{
     toggleLike(){
       this.isLike = !this.isLike;
+      this.gig = {...this.gig, currUserLikedThisGig:this.isLike}
+      this.$store.commit({ type:'updateGig', gig: this.gig })
       this.$emit("cardLiked", this.gig);
-    },
-    // gigIsLike(){
-    //   const currUser = sessionStorage.getItem("loggedinUser");
-    //   var likes =  this.$store.getters.likes;
-    //   console.log('likes in gigIsLike', likes);
-    //   likes.forEach(like=>{
-    //     console.log('trueeeeeee');
-    //     if(like.userThatLikedId === currUser && like.likedGigId === gig._id){
-    //       return true;
-    //     }
-    //     else{
-    //       return false;
-    //     }
-    //   })
-    // }
+    }
   },
-    created() {
-      const currUser = sessionStorage.getItem("loggedinUser");
-      var likes =  this.$store.getters.likes;
-      likes.forEach(like=> {
-        if(like.userThatLikedId === JSON.parse(currUser)._id  && like.likedGigId === this.gig._id){
-         return this.isLike = true;
-        }
-      })
-    },
+  computed: {
+  },
+  created() {
+    if(this.gig.currUserLikedThisGig){
+      this.isLike = true;
+    }
+  },
 };
 </script>

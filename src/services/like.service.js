@@ -7,7 +7,8 @@ export const likeService = {
   add,
   query,
   remove,
-  getEmptyLike
+  getEmptyLike,
+  findLikeId
 }
 
 
@@ -35,6 +36,14 @@ async function add(like) {
   // const addedlike = storageService.post('like', like)
 
   return addedLike
+}
+function findLikeId(gigId, user, likes) {
+  const idToRemove = likes.find(like => {
+    if (like.likedGigId === gigId && like.userThatLikedId === JSON.parse(user)._id) {
+      return like
+    }
+  });
+  return idToRemove
 }
 
 function getEmptyLike() {
