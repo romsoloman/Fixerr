@@ -1,4 +1,4 @@
-import {socketService} from '../services/socket.service.js'
+import { socketService } from '../services/socket.service.js'
 
 export const socketStore = {
     state: {
@@ -6,16 +6,16 @@ export const socketStore = {
     getters: {
     },
     mutations: {
-        setJob(state, {job}) {
+        setJob(state, { job }) {
             state.job = job;
         }
     },
     actions: {
         // TODO: show on
-        sendMsg(context, {msg}) {
+        sendMsg(context, { msg }) {
             socketService.emit('sendMsg', msg)
         },
-        getChatHistory(context, {chatId}) {
+        getChatHistory(context, { chatId }) {
             socketService.emit('getHistory', chatId)
         }
     }

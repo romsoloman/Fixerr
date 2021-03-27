@@ -33,13 +33,13 @@ export default {
   },
   computed: {
     gigs() {
-      console.log("this.$store,getters.gigs", this.$store.getters.gigs);
-      // this.$store,getters.gigs.forEach((currGig) => {
-      //   console.log('currGig', currGig);
-      //   console.log('currGig.currUserLikedThisGig', currGig.currUserLikedThisGig);
-      // })
+      // console.log("this.$store,getters.gigs", this.$store.getters.gigs);
       return this.$store.getters.gigs;
     },
+    // likes() {
+    //   console.log("this.$store,getters.likes", this.$store.getters.likes);
+    //   return this.$store.getters.likes;
+    // },
     isLoading() {
       return this.$store.getters.isLoading;
     },
@@ -64,6 +64,7 @@ export default {
     }
     console.log("filterBy", filterBy);
     this.$store.dispatch({ type: "loadGigs" });
+    this.$store.dispatch({ type: "loadLikes" });
   },
   methods: {
     addLike(like) {
@@ -74,12 +75,17 @@ export default {
       }, 2500);
     },
     cardLiked(gig) {
-      // this.topic = gig.creator._id;
       const currUser = sessionStorage.getItem("loggedinUser");
       const likedGig = { ...gig };
       likedGig.currUser = currUser;
-      this.$store.dispatch({ type: "addLike", like: likedGig });
+      if(!gig.currUserLikedThisGig){
+        this.$store.dispatch({ type: "addLike", like: likedGig });
+      }else{
+        this.$store.dispatch({ type: "removeLike", like: likedGig });
+      }
+      this.$store.dispatch({ type: "saveGigs", gig });
       socketService.emit("like topic", this.topic);
+      console.log('likedGig', likedGig);
       socketService.emit("like", likedGig);
     },
 

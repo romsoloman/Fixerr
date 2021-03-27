@@ -34,6 +34,8 @@ export default {
       this.$emit("cardLiked", gig);
     },
   },
+  computed:{
+  },
   components: {
     gigPreview,
   },

@@ -1,7 +1,7 @@
 <template>
     <section class="card-container" :class="{ 'profile-card': isProfile }">
+      {{isLike}}
       <router-link class="gig-details-link" :to="'/gig/' + gig._id + '/details'">
-      {{gig.currUserLikedThisGig}}
       <header>
         <img class="gig-img" :src="gig.imgUrls[0]" />
       </header>
@@ -22,8 +22,8 @@
       </main>
       </router-link>
       <footer class="flex align-center footer-info">
-        <i v-if="!isLiked" class="far fa-heart like-button" @click="toggleLike"></i>
-        <i v-else class="fas fa-heart like-button" :class="{ 'like': isLiked }" @click="toggleLike"></i>
+        <i v-if="!isLike" class="far fa-heart like-button" @click="toggleLike"></i>
+        <i v-else class="fas fa-heart like-button" :class="{ 'like': isLike }" @click="toggleLike"></i>
         <div class="price"><small>starting at</small> ${{ gig.price }}</div>
       </footer>
     </section>
@@ -35,24 +35,43 @@
 export default {
   props: {
     gig: {
-      gig: Object,
+      type: Object,
     },
     isProfile: Boolean,
   },
   data(){
     return{
-      isLiked:false,
+      isLike:false,
     }
   },
   methods:{
     toggleLike(){
-      this.isLiked = !this.isLiked
-      if(this.isLiked){
-        this.$emit("cardLiked", this.gig);
-      }
-    }
+      this.isLike = !this.isLike;
+      this.$emit("cardLiked", this.gig);
+    },
+    // gigIsLike(){
+    //   const currUser = sessionStorage.getItem("loggedinUser");
+    //   var likes =  this.$store.getters.likes;
+    //   console.log('likes in gigIsLike', likes);
+    //   likes.forEach(like=>{
+    //     console.log('trueeeeeee');
+    //     if(like.userThatLikedId === currUser && like.likedGigId === gig._id){
+    //       return true;
+    //     }
+    //     else{
+    //       return false;
+    //     }
+    //   })
+    // }
   },
-  computed: {},
-  created() {},
+    created() {
+      const currUser = sessionStorage.getItem("loggedinUser");
+      var likes =  this.$store.getters.likes;
+      likes.forEach(like=> {
+        if(like.userThatLikedId === JSON.parse(currUser)._id  && like.likedGigId === this.gig._id){
+         return this.isLike = true;
+        }
+      })
+    },
 };
 </script>

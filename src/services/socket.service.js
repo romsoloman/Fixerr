@@ -20,27 +20,27 @@ function createSocketService() {
   var socket = null;
   const socketService = {
     async setup() {
-      console.log('1');
+      // console.log('1');
       if (socket) return
       await httpService.get('setup-session')
       socket = io(baseUrl, { reconnection: false })
       socketIsReady = true;
     },
     async on(eventName, cb) {
-      console.log('2');
+      // console.log('2');
       if (!socket) await socketService.setup()
       socket.on(eventName, cb)
     },
     async off(eventName, cb = null) {
-      console.log('3');
+      // console.log('3');
       if (!socket) await socketService.setup()
       if (!cb) socket.removeAllListeners(eventName)
       else socket.off(eventName, cb)
     },
     async emit(eventName, data) {
       console.log('4');
-      console.log('eventName', eventName);
-      console.log('data', data);
+      // console.log('eventName', eventName);
+      // console.log('data', data);
       if (!socket) await socketService.setup()
       socket.emit(eventName, data)
     },

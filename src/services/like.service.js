@@ -17,7 +17,7 @@ export const likeService = {
 
 function query(filterBy) {
   // var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
-  return httpService.get(`like${queryStr}`)
+  return httpService.get(`like`)
   // return storageService.query('like')
 }
 

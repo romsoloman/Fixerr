@@ -16,6 +16,7 @@ export const likeStore = {
     },
     addLike(state, { like }) {
       state.likes.push(like)
+      console.log('state.likes', state.likes);
     },
     removeLike(state, { likeId }) {
       state.likes = state.likes.filter(like => like._id !== likeId)
@@ -24,11 +25,8 @@ export const likeStore = {
   actions: {
     async addLike(context, { like }) {
       try {
-        console.log('like', like);
-        console.log('IN ADD LIKE!!!!');
         like = await likeService.add(like)
-        console.log('like', like);
-        context.commit({ type: 'addlike', like })
+        context.commit({ type: 'addLike', like: { likedGigId: like._id, userThatLikedId: JSON.parse(like.currUser)._id } })
         return like;
       } catch (err) {
         console.log('likeStore: Error in addlike', err)
@@ -38,11 +36,8 @@ export const likeStore = {
     async loadLikes(context) {
       try {
         const likes = await likeService.query();
+        console.log('likes', likes);
         context.commit({ type: 'setLikes', likes })
-        socketService.off(SOCKET_EVENT_LIKE_ADDED)
-        socketService.on(SOCKET_EVENT_LIKE_ADDED, like => {
-          context.commit({ type: 'addLike', like })
-        })
 
       } catch (err) {
         console.log('likeStore: Error in loadlikes', err)
