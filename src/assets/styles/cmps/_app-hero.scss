@@ -22,7 +22,7 @@
         margin: 0;
         z-index: 0;
         & .title {
-            font-size: 2.5rem;
+            font-size: 3rem;
             width: 29ch;
             color: white;
         }
@@ -67,4 +67,35 @@
             }
         }
     }
+}
+
+@media screen and (max-width:$normal-breakpoint) {
+    .hero-app .hero-container .title {
+       font-size: 2.5rem;
+   }
+}
+
+@media screen and (max-width:$narrow-breakpoint) {
+    .hero-app{
+        height: 60vh;
+        & .hero-container{
+            .title{width: 95%;}
+            & .popular-search {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:$mobile-breakpoint){
+        .container{
+            padding: 0 1rem;
+        }
+        .hero-app{
+            height: 54vh;
+            & .hero-container{
+                .title{width: 29ch; font-size: 1.9rem;word-spacing: 5px;
+                }
+            }
+        }
 }
