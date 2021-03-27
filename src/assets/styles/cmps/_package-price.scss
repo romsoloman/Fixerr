@@ -33,3 +33,22 @@
     }
   }
 }
+
+@media (max-width : 1050px ){
+  .package-price-container{
+    width: 360px;
+  }
+}
+
+@media (max-width : 900px ){
+  .package-price-container{
+    position: static;
+    border: none;
+    padding: 0;
+    padding-bottom: 50px;
+    width: 90%;
+    & button{
+      margin: auto;
+    }
+  }
+}
