@@ -45,6 +45,9 @@
         justify-content:flex-start;
         align-items: center;
         padding-bottom: 25px;
+        & .creator-info{
+          display: flex;
+      }
         & .creator-img{
             width: 30px;
             height: 30px;
@@ -107,5 +110,20 @@
         & .gig-title{
             width: 100%;
         }
+    }
+}
+
+
+@media (max-width : 600px ){
+    & .user-details{
+        & .creator-info{
+            flex-direction: column;
+        }
+        & .creator-info >*{
+            display: flex;
+        }
+    }
+    & .review-title{
+        text-align: center;
     }
 }

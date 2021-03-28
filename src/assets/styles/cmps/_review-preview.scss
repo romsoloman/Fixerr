@@ -48,3 +48,9 @@
     font: 400 16px/24px "Macan","Helvetica Neue",Helvetica,Arial,sans-serif;
   }
 }
+
+@media (max-width : 600px ){
+  & .user-location{
+      padding-bottom: 5px;
+  }
+}
