@@ -120,3 +120,11 @@
     & .price{margin-left: 1rem;}
   }
 }
+
+
+
+@media screen and (max-width:$mobile-breakpoint){
+  .card-container{
+    width: 100%;
+  }
+}

@@ -87,3 +87,9 @@
     text-align: center;
     margin-top: 4rem;
 }
+
+@media screen and (max-width:$mobile-breakpoint){
+    .gig-app{
+        padding: 0;
+    }
+  }
