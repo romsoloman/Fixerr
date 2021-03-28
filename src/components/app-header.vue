@@ -6,7 +6,7 @@
       mobile_version: widthPosition < 600,
     }"
   >
-    <div class="bars">
+    <div class="bars" @click="openNavbar">
       <i class="fas fa-bars"></i>
     </div>
     <div class="logo">
@@ -15,7 +15,7 @@
         <h1>Fixerr</h1>
       </router-link>
     </div>
-    <nav class="nav-links">
+    <nav class="nav-links" :class="{ open_navbar: toggleNav }">
       <router-link to="/gig">Explore</router-link>
       <router-link to="/gig/edit">Become a Seller</router-link>
       <router-link v-if="!getLoggedInUser" to="/login">Sign in</router-link>
@@ -38,6 +38,7 @@ export default {
       routeName: this.$route.name,
       scrollPosition: null,
       widthPosition: null,
+      toggleNav: false,
     };
   },
   watch: {
@@ -58,6 +59,9 @@ export default {
   methods: {
     updateScroll() {
       this.scrollPosition = window.scrollY;
+    },
+    openNavbar() {
+      this.toggleNav = !this.toggleNav;
     },
   },
   computed: {
