@@ -55,3 +55,26 @@
         }
     }
     }
+
+
+// @media screen and (max-width:$normal-breakpoint) {
+    
+// }
+
+@media screen and (max-width:$narrow-breakpoint) {
+    .filter-search {
+        flex-direction: column;
+        & .category-search{
+            width: 55%;
+            margin: 0 auto 2rem;
+        }
+    }
+}
+
+@media screen and (max-width:$mobile-breakpoint){
+    .filter-search {
+        & .category-search{
+            width: 80%;
+        }
+    }
+}
