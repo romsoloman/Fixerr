@@ -11,25 +11,12 @@
         display: none; 
         font-size: 1.2rem;
     }
-    // &.mobile_version{
-    //     color: $clr1;
-    //     background-color: $clr6;
-    //     z-index: 2;
-    //     border-bottom: 1px solid #eee;
-    //     h1{
-    //         color:$clr3 ;
-    //     }
-    //     nav {
-    //         a {
-    //             color:$clr3 ;
-    //         }
-    //     }
-    // }
     &.change_color{
         color: $clr1;
         background-color: $clr6;
         z-index: 2;
         border-bottom: 1px solid #eee;
+        & .bars {color: $clr3;}
         h1{
             color:$clr3 ;
         }
