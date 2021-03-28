@@ -1,10 +1,16 @@
 <template>
   <section class="user-details">
     <img class="creator-img" :src="gig.creator.imgUrl" />
-    <p class="username">{{ gig.creator.fullname }}</p>
-    <p class="user-level">Level {{ gig.creator.level }} <span>|</span></p>
-    <p class="rating">{{ getStars }} {{ gig.rating }}</p>
-    <p class="reviews-count">({{ gig.reviews.length }})</p>
+    <div class="creator-info">
+      <div>
+        <p class="username">{{ gig.creator.fullname }}</p>
+        <p class="user-level">Level {{ gig.creator.level }} <span>|</span></p>
+      </div>
+      <div>
+        <p class="rating">{{ getStars }} {{ gig.rating }}</p>
+        <p class="reviews-count">({{ gig.reviews.length }})</p>
+      </div>
+    </div>
   </section>
 </template>
 <script>

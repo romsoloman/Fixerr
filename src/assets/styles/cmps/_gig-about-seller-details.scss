@@ -3,9 +3,7 @@
   justify-content: space-between;
   margin-bottom: 50px;
   align-items: center;
-  height: 155px;
   & .seller-img-container{
-      height: 155px;
       position: relative;
       & .seller-img{
           border-radius: 50%;
@@ -15,7 +13,7 @@
         }
         & .badge{
             position: absolute;
-            bottom: 9px;
+            bottom: -25px;
             left: 76px;
 
         }
@@ -56,6 +54,21 @@
     & .contect-button:hover{
         background: #7a7d85;
         color: white;
+    }
+  }
+}
+
+@media (max-width : 600px ){
+  .about-seller-container{
+    flex-direction: column;
+    // height: 300px;
+    align-items: center;
+    & .seller-details{
+        text-align: center;
+        align-items: center;
+        & .contect-button{
+            width: 100%;
+        }
     }
   }
 }

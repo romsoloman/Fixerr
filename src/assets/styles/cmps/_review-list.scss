@@ -42,3 +42,13 @@
   }
 
 }
+
+@media (max-width : 600px ){
+  .review-app-container{
+    & .add-new-review{
+      & .add-review-button {
+        width: 97%;
+      }
+    }
+  }
+}

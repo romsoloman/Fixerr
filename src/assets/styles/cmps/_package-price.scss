@@ -52,3 +52,14 @@
     }
   }
 }
+
+@media (max-width : 600px ){
+  .package-price-container{
+    & .delivery-time{
+      width: 60%;
+    }
+    & button{
+      font-size: 15px;
+    }
+  }
+}
