@@ -15,6 +15,7 @@
 
 <script>
 import { socketService } from "../services/socket.service.js";
+import { likeService } from "../services/like.service.js";
 import { userService } from "../services/user.service.js";
 import { gigService } from "../services/gig.service.js";
 import like from "@/components/like";
@@ -33,7 +34,6 @@ export default {
   },
   computed: {
     gigs() {
-      // console.log("this.$store,getters.gigs", this.$store.getters.gigs);
       return this.$store.getters.gigs;
     },
     // likes() {
@@ -78,14 +78,16 @@ export default {
       const currUser = sessionStorage.getItem("loggedinUser");
       const likedGig = { ...gig };
       likedGig.currUser = currUser;
-      if(!gig.currUserLikedThisGig){
+      if(gig.currUserLikedThisGig){
+        this.$store.dispatch({ type: "saveGigs", gig });
         this.$store.dispatch({ type: "addLike", like: likedGig });
       }else{
-        this.$store.dispatch({ type: "removeLike", like: likedGig });
+        const likes = this.$store.getters.likes;
+        const likeIdToRemove = likeService.findLikeId(likedGig._id,likedGig.currUser,likes);
+        console.log('likeIdToRemove._id', likeIdToRemove._id);
+        this.$store.dispatch({ type: "removeLike", likeId: likeIdToRemove._id });
       }
-      this.$store.dispatch({ type: "saveGigs", gig });
       socketService.emit("like topic", this.topic);
-      console.log('likedGig', likedGig);
       socketService.emit("like", likedGig);
     },
 

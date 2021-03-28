@@ -1,5 +1,4 @@
 .gig-details-container{
-    padding: 19px;
     & .main-gig-details{
         width: 56%;
         & .for-you {
@@ -98,4 +97,15 @@
              padding: 0;
          }
      }
+}
+
+@media (max-width : 900px ){
+    .gig-details-container{
+            & .main-gig-details{
+            width: 100%;
+        }
+        & .gig-title{
+            width: 100%;
+        }
+    }
 }

@@ -6,6 +6,9 @@
       <section class="main-gig-details">
         <gig-user-details :gig="gig" />
         <gig-details-imgs :gigImgs="gig.imgUrls" @changeMainImg="changeMainImg" />
+        <section class="package-price">
+          <package-price :gig="gig"></package-price>
+        </section>
         <div class="about-gig-container">
           <h2 class="about-gig-title">About this Gig</h2>
           <p class="about">{{ gig.about }}</p>
@@ -29,10 +32,6 @@
             @addReview="addReview"
             @removeReview="removeReview"
           />
-        </section>
-
-        <section class="package-price">
-          <package-price :gig="gig"></package-price>
         </section>
       </section>
     </section>

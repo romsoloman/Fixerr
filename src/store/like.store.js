@@ -36,7 +36,6 @@ export const likeStore = {
     async loadLikes(context) {
       try {
         const likes = await likeService.query();
-        console.log('likes', likes);
         context.commit({ type: 'setLikes', likes })
 
       } catch (err) {
