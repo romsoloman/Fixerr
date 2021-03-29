@@ -15,16 +15,16 @@
         <h1>Fixerr</h1>
       </router-link>
     </div>
-    <nav class="nav-links" :class="{ open_navbar: toggleNav }">
-      <router-link to="/gig">Explore</router-link>
-      <router-link to="/gig/edit">Become a Seller</router-link>
-      <router-link v-if="!getLoggedInUser" to="/login">Sign in</router-link>
-      <router-link
-        v-if="getLoggedInUser"
-        :to="'/user/' + getLoggedInUserId + '/profile'"
-        >Profile</router-link
-      >
-    </nav>
+      <nav class="nav-links" :class="{ open_navbar: toggleNav }">
+          <router-link to="/gig">Explore</router-link>
+          <router-link to="/gig/edit">Become a Seller</router-link>
+          <router-link v-if="!getLoggedInUser" to="/login">Sign in</router-link>
+          <router-link
+            v-if="getLoggedInUser"
+            :to="'/user/' + getLoggedInUserId + '/profile'"
+            >Profile</router-link
+          >
+      </nav>
   </header>
 </template>
 <script>
@@ -62,6 +62,9 @@ export default {
     },
     openNavbar() {
       this.toggleNav = !this.toggleNav;
+      // if(this.toggleNav){
+      //   document.querySelector(currPage).classList.add('darkness');
+      // } else  document.querySelector(currPage).classList.remove('darkness');
     },
   },
   computed: {
