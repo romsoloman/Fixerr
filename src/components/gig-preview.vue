@@ -47,7 +47,7 @@ export default {
     toggleLike(){
       var currGig = JSON.parse(JSON.stringify(this.gig));
       this.isLike = !this.isLike;
-      currGig = {...currGig, currUserLikedThisGig:this.isLike}
+      currGig = {...currGig, isLike:this.isLike}
       this.$store.commit({ type:'updateGig', gig: currGig })
       this.$emit("cardLiked", currGig);
     }
@@ -55,7 +55,7 @@ export default {
   computed: {
   },
   created() {
-    if(this.gig.currUserLikedThisGig){
+    if(this.gig.isLike){
       this.isLike = true;
     }
   },

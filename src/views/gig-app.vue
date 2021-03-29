@@ -78,7 +78,7 @@ export default {
       const currUser = sessionStorage.getItem("loggedinUser");
       const likedGig = { ...gig };
       likedGig.currUser = currUser;
-      if(gig.currUserLikedThisGig){
+      if(gig.isLike){
         this.$store.dispatch({ type: "saveGigs", gig });
         this.$store.dispatch({ type: "addLike", like: likedGig });
       }else{
