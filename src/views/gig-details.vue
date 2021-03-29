@@ -5,7 +5,7 @@
       <p class="gig-title">{{ gig.title }}</p>
       <section class="main-gig-details">
         <gig-user-details :gig="gig" />
-        <gig-details-imgs :gigImgs="gig.imgUrls" @changeMainImg="changeMainImg" />
+        <gig-details-imgs :gig="gig" @changeMainImg="changeMainImg" />
         <section class="package-price">
           <package-price :gig="gig"></package-price>
         </section>
