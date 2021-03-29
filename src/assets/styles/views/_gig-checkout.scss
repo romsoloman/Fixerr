@@ -101,6 +101,11 @@
         & .gig-info{
             width: 100%;
             justify-content: space-around;
+            & .gig-details{
+                & h4{
+                    margin: 15px 0px;
+                }
+            }
         }
     }
 }
