@@ -45,10 +45,11 @@ export default {
   },
   methods:{
     toggleLike(){
+      var currGig = JSON.parse(JSON.stringify(this.gig));
       this.isLike = !this.isLike;
-      this.gig = {...this.gig, currUserLikedThisGig:this.isLike}
-      this.$store.commit({ type:'updateGig', gig: this.gig })
-      this.$emit("cardLiked", this.gig);
+      currGig = {...currGig, currUserLikedThisGig:this.isLike}
+      this.$store.commit({ type:'updateGig', gig: currGig })
+      this.$emit("cardLiked", currGig);
     }
   },
   computed: {
