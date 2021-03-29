@@ -6,8 +6,6 @@
     right: 0;
     max-width: initial;
     z-index: 1;
-    & .open_navbar{
-    }
     & .bars{
         color: white;
         display: none;
@@ -28,11 +26,17 @@
             }
         }
     }
-    h1{
-        letter-spacing: -3.7px;
-        color:$clr6;
+    h1{letter-spacing: -3.7px;
         transition: color .3s;
         margin: 0;
+        color: $clr6;
+    }
+        h1 span::before{
+            content: '🟢';
+            color:$clr5;
+            font-size: 6px;
+            margin-left: 2px;
+            filter: brightness(90%);
     }
     nav {
         align-items: center;

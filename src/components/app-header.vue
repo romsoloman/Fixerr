@@ -12,19 +12,19 @@
     <div class="logo">
       <!-- <img src="" alt=""> TODO: Replace the H1 in IMG-->
       <router-link to="/">
-        <h1>Fixerr</h1>
+        <h1>Fixerr<span></span></h1>
       </router-link>
     </div>
-      <nav class="nav-links" :class="{ open_navbar: toggleNav }">
-          <router-link to="/gig">Explore</router-link>
-          <router-link to="/gig/edit">Become a Seller</router-link>
-          <router-link v-if="!getLoggedInUser" to="/login">Sign in</router-link>
-          <router-link
-            v-if="getLoggedInUser"
-            :to="'/user/' + getLoggedInUserId + '/profile'"
-            >Profile</router-link
-          >
-      </nav>
+    <nav class="nav-links" :class="{ open_navbar: toggleNav }">
+      <router-link to="/gig">Explore</router-link>
+      <router-link to="/gig/edit">Become a Seller</router-link>
+      <router-link v-if="!getLoggedInUser" to="/login">Sign in</router-link>
+      <router-link
+        v-if="getLoggedInUser"
+        :to="'/user/' + getLoggedInUserId + '/profile'"
+        >Profile</router-link
+      >
+    </nav>
   </header>
 </template>
 <script>
