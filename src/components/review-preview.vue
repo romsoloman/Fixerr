@@ -6,7 +6,7 @@
     <div class="by-user">
       <div class="info">
         <h5>{{ review.by.fullname }}</h5>
-        <p>★ {{ review.rate }}</p>
+        <p>★ {{ rating }}</p>
       </div>
       <div class="user-location">
         <div>{{ review.by.flag }}</div>
@@ -32,6 +32,10 @@ export default {
       this.$emit("removeReview", this.review.id);
     },
   },
-  computed: {},
+  computed: {
+    rating() {
+      return this.review.rate.toFixed(1);
+    },
+  },
 };
 </script>

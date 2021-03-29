@@ -27,8 +27,8 @@
         </div>
         <div class="popular-search">
           <span>Popular:</span>
-          <router-link :to="{ name: 'gig', params: { filterBy: 'buisness' } }">
-            Business
+          <router-link :to="{ name: 'gig', params: { filterBy: 'data' } }">
+            Data
           </router-link>
           <router-link :to="{ name: 'gig', params: { filterBy: 'gaming' } }">
             Gaming
@@ -38,8 +38,10 @@
           >
             Programming and Tech
           </router-link>
-          <router-link :to="{ name: 'gig', params: { filterBy: 'data' } }">
-            Data
+          <router-link
+            :to="{ name: 'gig', params: { filterBy: 'digital marketing' } }"
+          >
+            Digital Marketing
           </router-link>
         </div>
       </form>

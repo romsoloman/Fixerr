@@ -43,8 +43,7 @@
      & .gig-description {transition: color .4s; font-size:0.95rem; margin-top:5px;}
      & .gig-description:hover {color: $clr5;}
      & .rating-info {
-       margin-bottom: 1rem;
-       color: gold;
+       color: #ffbe5b;
        font-weight: 600;
        font-size:1rem;
        & span {margin-right:5px;}
@@ -53,6 +52,7 @@
      }
   }
   & .footer-info {
+    height: 52px;
     padding: 0 1rem;
     grid-row: 3/3;
     justify-content: space-between;

@@ -3,13 +3,13 @@
     <app-hero></app-hero>
     <section class="container gig-categories">
       <article class="every-category trending">
-        <h1>Top Selling Gigs:</h1>
+        <h1>Top Selling Gigs</h1>
         <div class="category">
           <gig-list :gigs="trendingCategory"></gig-list>
         </div>
       </article>
       <article class="every-category top-rated-categories">
-        <h1>Top rated categories:</h1>
+        <h1>Top rated categories</h1>
         <ul class="flex categories-links">
           <li v-for="(category, idx) in top5Cat" :key="idx">
             <!-- TODO: need to insert the category name into filterBy object -->
@@ -25,13 +25,13 @@
         </ul>
       </article>
       <article class="every-category random-category">
-        <h1>Gaming:</h1>
+        <h1>Gaming</h1>
         <div class="category">
           <gig-list :gigs="randomCategory"></gig-list>
         </div>
       </article>
       <article class="every-category explore-categories">
-        <h1>Explore Marketplace:</h1>
+        <h1>Explore Marketplace</h1>
         <ul class="flex categories-list">
           <li v-for="(category, idx) in categories" :key="idx">
             <router-link
