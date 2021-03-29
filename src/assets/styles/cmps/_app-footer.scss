@@ -23,3 +23,29 @@
         }
     }
 }
+
+
+@media screen and (max-width:$narrow-breakpoint) {
+    .app-footer {
+        & .logo{
+            width: 50%;
+        }
+        & .nav-links {
+            width: 20%;
+        }
+    }
+}
+
+@media screen and (max-width:$mobile-breakpoint){
+    .app-footer {
+       height: 100px;
+       & .logo{
+           & p {
+               margin-left: 30px;
+           }
+    }
+    & .nav-links {
+        width: 30%;
+    }
+    }
+}

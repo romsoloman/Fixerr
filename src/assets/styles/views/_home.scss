@@ -82,3 +82,64 @@
         }
     }
 }
+
+
+@media screen and (max-width:$normal-breakpoint) {
+    .gig-categories{
+        & .every-category {
+            & .categories-links{
+                & li {
+                    & .category-card {
+                        width: 210px;
+                    }
+                }
+            }
+            & .categories-list{
+                & li {
+                    font-size: 13px;
+                    & .green-line{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width:$narrow-breakpoint) {
+    .gig-categories{
+        & .every-category {
+            & .categories-links{
+                display: flex;
+                width: 100%;
+                overflow-x: scroll;
+                & li {
+                    & .category-card {
+                        width: 320px;
+                        margin-right: 20px;
+                    }
+                }
+            }
+            & .categories-list{
+                height: 700px;
+                & li {
+                    width: 50%;
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:$mobile-breakpoint){
+    .gig-categories{
+        & .every-category {
+         & .categories-list{
+                & li {
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
+}

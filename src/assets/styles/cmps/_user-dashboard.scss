@@ -30,3 +30,23 @@
       padding: 10px;
     }
   }
+
+@media screen and (max-width:$normal-breakpoint) {
+  html{
+    overflow-x: hidden;
+  }
+  & .user-dashboard {
+    & .orders {
+      & .el-table{
+        width: 60%;
+        overflow: scroll;
+      }
+    }
+  }
+}
+
+// @media screen and (max-width:$narrow-breakpoint) {
+// }
+
+// @media screen and (max-width:$mobile-breakpoint){
+// }
