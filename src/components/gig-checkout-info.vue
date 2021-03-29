@@ -33,25 +33,7 @@ export default {
       type: Object,
     },
   },
-  computed: {
-    getStars() {
-      let stars;
-      if (this.gig.rating >= 0 && this.gig.rating <= 0.5) {
-        stars = "✩✩✩✩✩";
-      } else if (this.gig.rating >= 0.5 && this.gig.rating <= 1.5) {
-        stars = "★✩✩✩✩";
-      } else if (this.gig.rating >= 1.5 && this.gig.rating <= 2.5) {
-        stars = "★★✩✩✩";
-      } else if (this.gig.rating >= 2.5 && this.gig.rating <= 3.5) {
-        stars = "★★★✩✩";
-      } else if (this.gig.rating >= 3.5 && this.gig.rating <= 4.5) {
-        stars = "★★★★✩";
-      } else if (this.gig.rating >= 4.5) {
-        stars = "★★★★★";
-      }
-      return stars;
-    },
-  },
+  computed: {},
 };
 </script>
 

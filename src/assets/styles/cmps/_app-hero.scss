@@ -94,8 +94,21 @@
         .hero-app{
             height: 54vh;
             & .hero-container{
-                .title{width: 29ch; font-size: 1.9rem;word-spacing: 5px;
+                .title{width: 28ch; font-size: 1.9rem;word-spacing: 5px;
                 }
             }
         }
+}
+
+@media screen and (max-width:370px){
+    .hero-app{
+        & .hero-backgrounds {
+            & img {
+                width: 80%;
+            }
+        }
+        & .hero-container{
+            .title{width: 20ch;font-size: 1.5rem;}
+        }
+    }
 }

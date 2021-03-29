@@ -27,7 +27,7 @@
     </div>
     <div v-if="orderDone" class="checkout-modal-container">
       <div class="checkout-modal">
-        SAVED YOUR ORDER <i class="fas fa-bookmark"></i>
+        Order Successfully Sent <i class="fas fa-bookmark"></i>
       </div>
     </div>
   </section>
