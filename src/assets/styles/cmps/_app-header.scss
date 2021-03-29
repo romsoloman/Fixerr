@@ -49,16 +49,6 @@
 
 }
 
-
-
-@media screen and (max-width:$narrow-breakpoint) {
-    .app-header{
-        & .nav-links a:not(:last-child){
-            display: none;
-        }
-    }
-}
-
 @media screen and (max-width:$mobile-breakpoint){
     .app-header{
         & .bars{
