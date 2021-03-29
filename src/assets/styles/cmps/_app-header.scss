@@ -61,6 +61,7 @@
 
 @media screen and (max-width:$mobile-breakpoint){
     .app-header{
+        margin: 0;
         & .bars{
             display: block;
             cursor: pointer;
@@ -69,17 +70,34 @@
             padding-left: 4rem;
             font-size: 16px;
          }
+         & .nav-links a{
+             font-size: 1rem;
+         }
     }
 }
 
 
 
-// @media screen and (max-width:$normal-breakpoint) {
-    
-// }
+@media screen and (max-width:420px) {
+    body{
+        width: 71.5vh;
+    }
+    .app-header{
+        width: 80%;
+    }
+}
 
-// @media screen and (max-width:$narrow-breakpoint) {
-// }
+@media screen and (max-width:330px) {
+    
+    .app-header{
+        & .logo{
+            & h1{
+                font-size: 1.5rem;
+            }
+        }
+
+    }
+}
 
 // @media screen and (max-width:$mobile-breakpoint){
 // }
