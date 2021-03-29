@@ -16,14 +16,16 @@
       </router-link>
     </div>
     <nav class="nav-links" :class="{ open_navbar: toggleNav }">
-      <router-link to="/gig">Explore</router-link>
-      <router-link to="/gig/edit">Become a Seller</router-link>
-      <router-link v-if="!getLoggedInUser" to="/login">Sign in</router-link>
-      <router-link
-        v-if="getLoggedInUser"
-        :to="'/user/' + getLoggedInUserId + '/profile'"
-        >Profile</router-link
-      >
+      <!-- <div class="items"> -->
+        <router-link to="/gig">Explore</router-link>
+        <router-link to="/gig/edit">Become a Seller</router-link>
+        <router-link v-if="!getLoggedInUser" to="/login">Sign in</router-link>
+        <router-link
+          v-if="getLoggedInUser"
+          :to="'/user/' + getLoggedInUserId + '/profile'"
+          >Profile</router-link
+        >
+      <!-- </div> -->
     </nav>
   </header>
 </template>
