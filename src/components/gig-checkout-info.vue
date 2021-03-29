@@ -16,12 +16,12 @@
     </div>
     <div class="gig-pricing">
       <label>Qty</label>
-      <select name="qty">
+      <select name="qty" v-model="qtyVal">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
       </select>
-      <span>${{ gig.price }}</span>
+      <span>${{ price }}</span>
     </div>
   </div>
 </template>
@@ -33,7 +33,16 @@ export default {
       type: Object,
     },
   },
-  computed: {},
+  data() {
+    return {
+      qtyVal: 1,
+    };
+  },
+  computed: {
+    price() {
+      return this.gig.price * this.qtyVal;
+    },
+  },
 };
 </script>
 
