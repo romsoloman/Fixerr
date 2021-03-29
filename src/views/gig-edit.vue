@@ -62,7 +62,7 @@
       <input
         class="edit-inputs"
         type="number"
-        v-model="gigToEdit.price"
+        v-model.number="gigToEdit.price"
         placeholder="Add price..."
       />
     </div>
