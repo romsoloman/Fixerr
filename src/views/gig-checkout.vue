@@ -1,5 +1,5 @@
 <template>
-  <div v-if="gig" class="container flex column details">
+  <div v-if="gig" class="container flex column checkout-details-container">
     <div class="requirements">
       <i class="fas fa-info-circle"></i>
       <span

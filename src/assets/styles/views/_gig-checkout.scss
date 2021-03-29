@@ -1,4 +1,4 @@
-.details{
+.checkout-details-container{
     height: 100vh;
     & .requirements{
         width: fit-content;
@@ -87,6 +87,33 @@
 .rating{
     color: #ffbf00;
 }
+
+@media screen and (max-width:850px) {
+    .checkout-details-container{
+        & .gig-details{
+            flex-direction: column;
+        }
+        & .summary{
+            position: static;
+            width: 100%;
+            border: none;
+        }
+        & .gig-info{
+            width: 100%;
+            justify-content: space-around;
+        }
+    }
+}
+
+@media screen and (max-width:$mobile-breakpoint){
+    .checkout-details-container{
+        & .requirements{
+            text-align: center;
+        }
+    }
+}
+
+
 
 @keyframes saved-order {
   0% {
