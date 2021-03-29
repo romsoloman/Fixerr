@@ -131,7 +131,6 @@ export default {
         });
         return this.$router.push("/gig/edit");
       }
-      this.$router.push("/");
     },
     loadUsers() {
       this.$store.dispatch({ type: "loadUsers" });

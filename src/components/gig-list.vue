@@ -12,7 +12,7 @@
         v-for="gig in gigs"
         :key="gig._id"
       >
-        <gig-preview :gig="gig" :isProfile="isProfile" @cardLiked="cardLiked" />
+        <gig-preview v-if="gig" :gig="gig" :isProfile="isProfile" @cardLiked="cardLiked" />
       </li>
     </ul>
   </section>

@@ -61,6 +61,13 @@ export default {
   methods: {
     async checkout() {
       try {
+        if(!this.user){
+          this.$store.commit({
+          type: "updateLastPath",
+          path: this.$router.history.current.path,
+        });
+          return this.$router.push(`/login`);
+        }
         this.orderToEdit.buyer = this.user;
         this.orderToEdit.totalPrice = this.serviceFee + this.gig.price;
         this.orderToEdit.seller._id = this.gig.creator._id;
