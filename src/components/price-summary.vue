@@ -41,6 +41,8 @@ export default {
         labels: this.labels,
         datasets: [
           {
+            backgroundColor: ["#1DBF73"],
+            borderColor: ["#404145"],
             label: "Price Per User",
             data: this.prices,
           },

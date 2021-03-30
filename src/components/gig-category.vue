@@ -11,29 +11,31 @@ export default {
   },
   created() {},
   computed: {
-    labels() {
-      const orders = this.orders || [];
-      const usernames = orders.map((order) => {
-        return order.buyer.fullname;
-      });
-      return usernames;
+    topSellingGig() {
+      return this.$store.getters.topSellingGig;
     },
-    prices() {
-      const orders = this.orders || [];
-      const userPrices = orders.map((order) => {
-        return order.totalPrice;
-      });
-      return userPrices;
+    gigsTitle() {
+      const gigsObj = this.topSellingGig;
+      const gigsTitle = [];
+      for (const title in gigsObj) {
+        gigsTitle.push(title);
+      }
+      return gigsTitle;
     },
   },
   mounted() {
     this.renderChart(
       {
-        labels: this.labels,
+        labels: this.gigsTitle,
         datasets: [
           {
-            label: "Price Per User",
-            data: this.prices,
+            data: Object.values(this.topSellingGig),
+            backgroundColor: [
+              "rgb(245, 203, 124)",
+              "rgb(163, 244, 156)",
+              "rgb(169, 173, 227)",
+              "rgb(250, 156, 181)",
+            ],
           },
         ],
       },

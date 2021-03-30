@@ -75,6 +75,7 @@ export default {
         this.orderToEdit.seller.imgUrl = this.gig.creator.imgUrl;
         this.orderToEdit.items[0]._id = this.gig._id;
         this.orderToEdit.items[0].title = this.gig.title;
+        this.orderToEdit.tags = this.gig.tags;
         console.log("this.orderToEdit", this.orderToEdit);
         this.$store.dispatch({ type: "saveOrder", order: this.orderToEdit });
         this.orderDone = true;

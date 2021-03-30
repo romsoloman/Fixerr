@@ -40,6 +40,21 @@ export const orderStore = {
         },
         ordersTotalForDisplay(state, getters) {
             return getters.ordersTotal.toLocaleString()
+        },
+        topSellingGig(state) {
+            const bestGig = state.orders.map((order) => {
+                return order.items[0].title;
+            });
+            var wordsObj = {};
+
+            for (var word of bestGig) {
+                if (!wordsObj[word]) {
+                    wordsObj[word] = 1;
+                } else {
+                    wordsObj[word]++;
+                }
+            }
+            return wordsObj;
         }
     },
     // Mutations should be SYNC and PURE functions (a pure function does not cause any side effects)
@@ -69,7 +84,7 @@ export const orderStore = {
             if (res === 'Approve') {
                 state.currOrder.status = 'done';
             } else state.currOrder.status = 'cancel';
-        }
+        },
     },
     actions: {
         loadOrders({ commit }, { userId }) {

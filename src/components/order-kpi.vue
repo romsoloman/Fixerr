@@ -51,7 +51,7 @@ export default {
       return this.$store.getters.ordersTotalForDisplay;
     },
     avgPrice() {
-      return this.$store.getters.avgPrice;
+      return this.$store.getters.avgPrice.toFixed(2);
     },
     bestBuyer() {
       return this.$store.getters.bestBuyer;
