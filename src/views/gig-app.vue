@@ -69,6 +69,10 @@ export default {
   },
   methods: {
     addLike(like) {
+      const currUser = JSON.parse(sessionStorage.getItem("loggedinUser"));
+      console.log("currUser", currUser._id);
+      console.log("like.currUser._id", like.currUser._id);
+      if (like.currUser._id === currUser._id) return;
       this.currLike = like;
       this.showLikeMsg = true;
       setTimeout(() => {
