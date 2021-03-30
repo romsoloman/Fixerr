@@ -12,9 +12,29 @@ export const orderStore = {
         ordersSize(state) {
             return state.orders.length
         },
+        avgPrice(state, getters) {
+            const total = state.orders.reduce((sum, order) => {
+                return sum + order.totalPrice
+            }, 0)
+            const avg = total / getters.ordersSize;
+            return avg;
+        },
+        bestBuyer(state) {
+
+            var bestObj = {};
+
+            for (var order of state.orders) {
+                if (!bestObj[order.buyer.fullname]) {
+                    bestObj[order.buyer.fullname] = 1;
+                } else {
+                    bestObj[order.buyer.fullname]++;
+                }
+            }
+            return Object.keys(bestObj)[0];
+        },
         ordersTotal(state) {
             const total = state.orders.reduce((sum, order) => {
-                return sum + order.price
+                return sum + order.totalPrice
             }, 0)
             return total
         },

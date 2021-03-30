@@ -3,28 +3,28 @@
     padding-left: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 1fr 1fr;
+    grid-template-rows: 150px 1fr 1fr;
     gap: 20px ;
     & .orders-kpi{
       grid-column: 1/3;
       grid-row: 1/1;
       & h1{padding: 10px;}
     }
-    & .gigs{
+    & .orders-table{
       grid-column: 1/3;
-      grid-row: 3/3;
-      padding: 10px;
-    }
-    & .price-by-day{
-      grid-column: 2/3;
       grid-row: 2/2;
-      padding: 10px;
+      & h1{padding: 10px;}
     }
-    & .gig-category{
-      grid-column: 1/2;
-      grid-row: 2/2;
-      padding: 10px;
-    }
+    // & .price-by-day{
+    //   grid-column: 2/3;
+    //   grid-row: 2/2;
+    //   padding: 10px;
+    // }
+    // & .gig-category{
+    //   grid-column: 1/2;
+    //   grid-row: 2/2;
+    //   padding: 10px;
+    // }
   }
 
 @media screen and (max-width:$normal-breakpoint) {
