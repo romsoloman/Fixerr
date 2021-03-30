@@ -1,7 +1,11 @@
 <template>
   <section class="hero-app">
     <div class="hero-backgrounds">
-      <img :src="require(`../assets/imgs/${mainImageSrc}`)" />
+      <img :class="{ 'visible': currentVisibleImageIndex === 0 }" :src="require('../assets/imgs/bg-hero-1.png')" />
+      <img :class="{ 'visible': currentVisibleImageIndex === 1 }" :src="require('../assets/imgs/bg-hero-2.png')" />
+      <img :class="{ 'visible': currentVisibleImageIndex === 2 }" :src="require('../assets/imgs/bg-hero-3.png')" />
+      <img :class="{ 'visible': currentVisibleImageIndex === 3 }" :src="require('../assets/imgs/bg-hero-4.png')" />
+      <img :class="{ 'visible': currentVisibleImageIndex === 4 }" :src="require('../assets/imgs/bg-hero-5.png')" />
     </div>
     <div class="container hero-container">
       <h1 class="title">
@@ -62,6 +66,7 @@ export default {
         rating: 0,
         level: 0,
       },
+      currentVisibleImageIndex: 0,
       mainImageSrc: "bg-hero-1.png",
     };
   },
@@ -87,8 +92,8 @@ export default {
     ];
 
     setInterval(function () {
-      self.mainImageSrc =
-        self.images[Math.floor(Math.random() * self.images.length)].image;
+      self.currentVisibleImageIndex =
+        Math.floor(Math.random() * self.images.length);
     }, 3000);
   },
 };

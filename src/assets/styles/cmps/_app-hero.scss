@@ -14,9 +14,16 @@
             width: 100%;
             z-index: -1;
             background: #8c1e1e;
-            transition:  .9s;
+            // transition:  .9s;
             object-fit: cover;
-            transition: 0.2s;
+            // transition: 0.2s;
+            transition: 1s opacity ease-in-out;
+            opacity: 0;
+            position: absolute;
+
+            &.visible {
+                opacity: 1;
+            }
         }
     }
     & .hero-container{
