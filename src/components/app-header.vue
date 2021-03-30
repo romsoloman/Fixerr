@@ -24,10 +24,11 @@
         :to="'/user/' + getLoggedInUserId + '/profile'"
       >
         Profile
+        <img v-if="getLoggedInUser" :src="getLoggedInUser.imgUrl" />
       </router-link>
-      <div v-if="getLoggedInUser" class="header-img-profile">
+      <!-- <div v-if="getLoggedInUser" class="header-img-profile">
         <img :src="getLoggedInUser.imgUrl" />
-      </div>
+      </div> -->
     </nav>
   </header>
 </template>
