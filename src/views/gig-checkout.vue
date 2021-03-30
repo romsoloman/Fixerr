@@ -35,6 +35,7 @@ export default {
     };
   },
   async created() {
+    window.scrollTo(0, 0);
     const gigId = this.$route.params.gigId;
     this.gig = await gigService.getById(gigId);
     this.user = this.$store.getters.loggedinUser;

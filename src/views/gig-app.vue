@@ -45,6 +45,7 @@ export default {
     },
   },
   created() {
+    window.scrollTo(0, 0);
     socketService.setup();
     socketService.on("like-addLike", this.addLike);
     const { filterBy } = this.$route.params;
@@ -68,6 +69,10 @@ export default {
   },
   methods: {
     addLike(like) {
+      const currUser = JSON.parse(sessionStorage.getItem("loggedinUser"));
+      console.log("currUser", currUser._id);
+      console.log("like.currUser._id", like.currUser._id);
+      if (like.currUser._id === currUser._id) return;
       this.currLike = like;
       this.showLikeMsg = true;
       setTimeout(() => {
@@ -78,16 +83,23 @@ export default {
       const currUser = sessionStorage.getItem("loggedinUser");
       const likedGig = { ...gig };
       likedGig.currUser = currUser;
-      if(gig.isLike){
+      if (gig.isLike) {
         this.$store.dispatch({ type: "saveGigs", gig });
         this.$store.dispatch({ type: "addLike", like: likedGig });
         socketService.emit("like topic", this.topic);
         socketService.emit("like", likedGig);
-      }else{
+      } else {
         const likes = this.$store.getters.likes;
-        const likeIdToRemove = likeService.findLikeId(likedGig._id,likedGig.currUser,likes);
-        console.log('likeIdToRemove._id', likeIdToRemove._id);
-        this.$store.dispatch({ type: "removeLike", likeId: likeIdToRemove._id });
+        const likeIdToRemove = likeService.findLikeId(
+          likedGig._id,
+          likedGig.currUser,
+          likes
+        );
+        console.log("likeIdToRemove._id", likeIdToRemove._id);
+        this.$store.dispatch({
+          type: "removeLike",
+          likeId: likeIdToRemove._id,
+        });
       }
     },
 

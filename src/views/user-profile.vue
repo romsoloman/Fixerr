@@ -20,6 +20,7 @@ export default {
     };
   },
   created() {
+    window.scrollTo(0, 0);
     const userId = this.$route.params.userId;
     userService
       .getById(userId)
