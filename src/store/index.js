@@ -7,6 +7,8 @@ import { reviewStore } from './review.store.js'
 import { orderStore } from './order.store.js'
 import { gigStore } from './gig.store.js'
 import { likeStore } from './like.store.js'
+import { notificationStore } from './notification.store.js'
+import { notificationService } from '../services/notification.service.js'
 
 Vue.use(Vuex)
 
@@ -18,7 +20,8 @@ export const store = new Vuex.Store({
     reviewStore,
     orderStore,
     gigStore,
-    likeStore
+    likeStore,
+    notificationStore
   },
   state: {
   },

@@ -1,6 +1,7 @@
 <template>
   <loader v-if="isLoadingUser" />
   <section v-else-if="user" class="container user-details-container">
+  {{notifications}}
     <user-info :user="user" @doLogout="doLogout" />
     <user-dashboard :user="user" :gigs="gigs" :orders="orders" />
   </section>
@@ -31,6 +32,7 @@ export default {
       });
     this.$store.dispatch({ type: "loadOrders", userId });
     this.$store.dispatch({ type: "loadGig", userId });
+    this.$store.dispatch({ type: "loadNotifications" });
   },
   computed: {
     gigsCountes() {
@@ -46,6 +48,10 @@ export default {
     },
     gigs() {
       return [this.$store.getters.gig];
+    },
+    notifications() {
+      // console.log('this.$store.getters.notifications', this.$store.getters.notifications);
+      return this.$store.getters.notifications;
     },
   },
   methods: {
