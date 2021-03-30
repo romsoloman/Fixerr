@@ -55,17 +55,17 @@ export default {
   },
   computed: {
     totalPrice() {
-      return this.gig.price + this.serviceFee;
+      return (this.gig.price + this.serviceFee).toFixed(2);
     },
   },
   methods: {
     async checkout() {
       try {
-        if(!this.user){
+        if (!this.user) {
           this.$store.commit({
-          type: "updateLastPath",
-          path: this.$router.history.current.path,
-        });
+            type: "updateLastPath",
+            path: this.$router.history.current.path,
+          });
           return this.$router.push(`/login`);
         }
         this.orderToEdit.buyer = this.user;

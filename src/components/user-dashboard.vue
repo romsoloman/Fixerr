@@ -3,10 +3,11 @@
     <div class="orders">
       <h1>My Orders</h1>
       <!-- <order-list :orders="orders"></order-list> -->
-      <el-table :data="orders">
+      <el-table :data="orders" :row-class-name="tableRowClassName">
+        >
         <el-table-column prop="buyer.fullname" label="Name" width="280">
         </el-table-column>
-        <el-table-column prop="createdAt" label="Date" width="330">
+        <el-table-column prop="createdAt" label="Date" width="300">
           <template slot-scope="props">
             {{
               moment(props.row.createdAt).format(
@@ -15,9 +16,26 @@
             }}
           </template>
         </el-table-column>
-        <el-table-column prop="deliveryTime" label="Delivery Time" width="300">
+        <el-table-column prop="deliveryTime" label="Delivery Time" width="160">
           <template slot-scope="props">
             {{ props.row.deliveryTime }} Days
+          </template>
+        </el-table-column>
+        <el-table-column label="Operations" width="180">
+          <template slot-scope="props">
+            <el-button
+              @click="handleClick($event, props)"
+              type="text"
+              size="small"
+            >
+              Approve
+            </el-button>
+            <el-button
+              type="text"
+              size="small"
+              @click="handleClick($event, props)"
+              >Cancel</el-button
+            >
           </template>
         </el-table-column>
         <el-table-column prop="totalPrice" label="Price">
@@ -25,10 +43,10 @@
         </el-table-column>
       </el-table>
     </div>
-    <div class="gigs">
+    <!-- <div class="gigs">
       <h1>My Gigs</h1>
       <gig-list :gigs="gigs" :isProfile="true"></gig-list>
-    </div>
+    </div> -->
     <div class="price-by-day">
       <h1>Price Summary</h1>
       <price-summary :orders="orders" />
@@ -63,7 +81,33 @@ export default {
       moment: moment,
     };
   },
-  computed: {},
+  methods: {
+    handleClick(ev, props) {
+      const result = ev.target;
+      if (result.innerText === "Approve") {
+        this.$store.commit("changeStatus", {
+          res: result.innerText,
+          order: props.row,
+        });
+        this.$store.dispatch({ type: "saveOrder", order: props.row });
+        result.parentElement.parentElement.innerText = "Approved";
+      } else {
+        this.$store.commit("changeStatus", {
+          res: result.innerText,
+          order: props.row,
+        });
+        this.$store.dispatch({ type: "saveOrder", order: props.row });
+        result.parentElement.parentElement.innerText = "Cancelled";
+      }
+    },
+    tableRowClassName({ row, rowIndex }) {
+      if (row.status === "pending") {
+        return "warning-row";
+      } else if (row.status === "done") {
+        return "success-row";
+      } else return "cancel-row";
+    },
+  },
   components: {
     orderList,
     gigList,
