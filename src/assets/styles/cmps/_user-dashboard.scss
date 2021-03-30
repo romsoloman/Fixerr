@@ -3,11 +3,11 @@
     padding-left: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr;
     gap: 20px ;
-    & .orders{
+    & .orders-kpi{
       grid-column: 1/3;
-      grid-row: 1/2;
+      grid-row: 1/1;
       & h1{padding: 10px;}
     }
     & .gigs{

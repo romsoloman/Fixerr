@@ -1,5 +1,5 @@
 <template>
-  <ul class="flex column order-list-container">
+  <ul class="flex column order-kpi-container">
     <li class="order-container" v-for="order in orders" :key="order._id">
       <order-preview :order="order" />
     </li>
