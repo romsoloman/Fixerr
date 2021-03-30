@@ -81,14 +81,14 @@ export default {
       if(gig.isLike){
         this.$store.dispatch({ type: "saveGigs", gig });
         this.$store.dispatch({ type: "addLike", like: likedGig });
+        socketService.emit("like topic", this.topic);
+        socketService.emit("like", likedGig);
       }else{
         const likes = this.$store.getters.likes;
         const likeIdToRemove = likeService.findLikeId(likedGig._id,likedGig.currUser,likes);
         console.log('likeIdToRemove._id', likeIdToRemove._id);
         this.$store.dispatch({ type: "removeLike", likeId: likeIdToRemove._id });
       }
-      socketService.emit("like topic", this.topic);
-      socketService.emit("like", likedGig);
     },
 
     removeGig(gigId) {
