@@ -47,7 +47,10 @@
         padding-bottom: 25px;
         & .creator-info{
           display: flex;
-      }
+        }
+        & .creator-info >*{
+            display: flex;
+        }
         & .creator-img{
             width: 30px;
             height: 30px;
