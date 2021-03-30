@@ -141,8 +141,9 @@ export default {
     trendingCategory() {
       const gigs = this.$store.getters.gigs || [];
       const trendingCategory = gigs.filter((gig) => {
-        return gig.tags.includes("programming and tech");
+        return gig.rating > 4.4;
       });
+      console.log("trendingCategory", trendingCategory);
       return trendingCategory.slice(0, 7);
     },
   },

@@ -46,6 +46,17 @@
             transition: color .3s;
             margin-left: 3.5rem;
         }
+        & .header-img-profile{
+            position: relative;
+            display: inline;
+            margin-left: 1.5rem;
+            & img{
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+            }
+        }
     }
     nav .active {
         color: $clr1;

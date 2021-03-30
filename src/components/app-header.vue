@@ -22,8 +22,12 @@
       <router-link
         v-if="getLoggedInUser"
         :to="'/user/' + getLoggedInUserId + '/profile'"
-        >Profile</router-link
       >
+        Profile
+      </router-link>
+      <div v-if="getLoggedInUser" class="header-img-profile">
+        <img :src="getLoggedInUser.imgUrl" />
+      </div>
     </nav>
   </header>
 </template>
@@ -48,13 +52,6 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.updateScroll);
-    // window.addEventListener("resize", () => {
-    //   this.widthPosition = window.innerWidth;
-    //   if (this.widthPosition > 600 && window.innerWidth === 1440)
-    //     document
-    //       .querySelector(".app-header")
-    //       .classList.remove("mobile_version");
-    // });
   },
   methods: {
     updateScroll() {
@@ -62,9 +59,6 @@ export default {
     },
     openNavbar() {
       this.toggleNav = !this.toggleNav;
-      // if(this.toggleNav){
-      //   document.querySelector(currPage).classList.add('darkness');
-      // } else  document.querySelector(currPage).classList.remove('darkness');
     },
   },
   computed: {

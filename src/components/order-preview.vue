@@ -6,19 +6,6 @@
         {{ moment(order.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss a") }}
       </p>
     </div>
-    <div class="delivery-time">
-      <p>Estimated Delivery in {{ order.deliveryTime }} Days</p>
-    </div>
-    <div class="flex buyer-details">
-      <p>From:</p>
-      <img :src="order.buyer.imgUrl" alt="" />
-      <p>{{ order.buyer.fullname }}</p>
-    </div>
-    <div class="flex price">
-      <p>
-        Total Price: <span>${{ order.totalPrice }}</span>
-      </p>
-    </div>
   </section>
 </template>
 

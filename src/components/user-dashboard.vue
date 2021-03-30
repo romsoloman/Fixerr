@@ -53,7 +53,7 @@
       <price-summary :orders="orders" />
     </div>
     <div class="gig-category">
-      <h1>Gig Category</h1>
+      <h1>Top Selling Gig</h1>
       <gig-category :orders="orders" />
     </div>
   </article>

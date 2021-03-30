@@ -12,14 +12,49 @@ export const orderStore = {
         ordersSize(state) {
             return state.orders.length
         },
+        avgPrice(state, getters) {
+            const total = state.orders.reduce((sum, order) => {
+                return sum + order.totalPrice
+            }, 0)
+            const avg = total / getters.ordersSize;
+            return avg;
+        },
+        bestBuyer(state) {
+
+            var bestObj = {};
+
+            for (var order of state.orders) {
+                if (!bestObj[order.buyer.fullname]) {
+                    bestObj[order.buyer.fullname] = 1;
+                } else {
+                    bestObj[order.buyer.fullname]++;
+                }
+            }
+            return Object.keys(bestObj)[0];
+        },
         ordersTotal(state) {
             const total = state.orders.reduce((sum, order) => {
-                return sum + order.price
+                return sum + order.totalPrice
             }, 0)
             return total
         },
         ordersTotalForDisplay(state, getters) {
             return getters.ordersTotal.toLocaleString()
+        },
+        topSellingGig(state) {
+            const bestGig = state.orders.map((order) => {
+                return order.items[0].title;
+            });
+            var wordsObj = {};
+
+            for (var word of bestGig) {
+                if (!wordsObj[word]) {
+                    wordsObj[word] = 1;
+                } else {
+                    wordsObj[word]++;
+                }
+            }
+            return wordsObj;
         }
     },
     // Mutations should be SYNC and PURE functions (a pure function does not cause any side effects)
@@ -49,7 +84,7 @@ export const orderStore = {
             if (res === 'Approve') {
                 state.currOrder.status = 'done';
             } else state.currOrder.status = 'cancel';
-        }
+        },
     },
     actions: {
         loadOrders({ commit }, { userId }) {
