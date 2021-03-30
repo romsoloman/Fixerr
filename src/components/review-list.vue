@@ -46,13 +46,13 @@ export default {
       this.editNewReview = { ...this.editNewReview, rate: rate };
     },
     onAddReview() {
-       if(!this.user){
-          this.$store.commit({
+      if (!this.$store.getters.loggedinUser) {
+        this.$store.commit({
           type: "updateLastPath",
           path: this.$router.history.current.path,
         });
-          return this.$router.push(`/login`);
-        }
+        return this.$router.push(`/login`);
+      }
       this.$emit("addReview", this.editNewReview);
       this.editNewReview = reviewService.getEmptyReview();
     },
