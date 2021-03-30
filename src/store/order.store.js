@@ -3,6 +3,7 @@ import { orderService } from "../services/order.service.js";
 
 export const orderStore = {
     state: {
+        currOrder: null,
         orders: [],
         isLoading: false
     },
@@ -43,6 +44,12 @@ export const orderStore = {
         clearorders(state) {
             state.orders = [];
         },
+        changeStatus(state, { res, order }) {
+            state.currOrder = order
+            if (res === 'Approve') {
+                state.currOrder.status = 'done';
+            } else state.currOrder.status = 'cancel';
+        }
     },
     actions: {
         loadOrders({ commit }, { userId }) {
