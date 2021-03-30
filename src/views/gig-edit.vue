@@ -120,6 +120,7 @@ export default {
     selectTags,
   },
   created() {
+    window.scrollTo(0, 0);
     if (this.$store.getters.getLastPath === "/login") {
       this.gigToEdit = this.$store.getters.getEditChanges;
     }

@@ -111,6 +111,7 @@ export default {
     },
   },
   created() {
+    window.scrollTo(0, 0);
     const gigId = this.$route.params.gigId;
     gigService
       .getById(gigId)
