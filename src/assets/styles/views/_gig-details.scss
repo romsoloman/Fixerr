@@ -46,6 +46,9 @@
         align-items: center;
         padding-bottom: 25px;
         & .creator-info{
+            display: flex;
+        }
+        & .creator-info >*{
           display: flex;
       }
         & .creator-img{
