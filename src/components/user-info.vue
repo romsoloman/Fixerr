@@ -11,7 +11,7 @@
     </div>
     <div class="flex column notifications">
       <h1>Notifications</h1>
-      <notification-list :likes="likes" />
+      <notification-list />
     </div>
   </article>
 </template>

@@ -5,7 +5,7 @@
   border-bottom: 1px solid #eee;
   & header{
     grid-row: 1/1;
-    & .user-liked {
+    & .user-notification {
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -17,7 +17,7 @@
       }
     }
   }
-  & .like-msg{
+  & .notification-msg{
     grid-row: 2/2;
     display: flex;
     align-items: center;

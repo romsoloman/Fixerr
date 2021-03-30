@@ -1,15 +1,16 @@
 
 <template>
-  <section class="flex msg-container" v-if="like">
+  <section class="flex msg-container" v-if="notification">
     <header>
-      <div class="user-liked">
-        <img :src="like.currUser.imgUrl" alt="" />
-        <p>{{ like.currUser.fullname }}</p>
+      <div class="user-notification">
+        <img :src="notification.userThatLiked.imgUrl" alt="" />
+        <p>{{ notification.userThatLiked.fullname }}</p>
       </div>
     </header>
-    <div class="like-msg">
+    <div class="notification-msg">
       <p>
-        {{ like.currUser.fullname }} Liked {{ like.creator.fullname }}'s gig.
+        {{ notification.userThatLiked.fullname }} liked
+        {{ notification.likedGig.creator.fullname }}'s gig.
       </p>
     </div>
   </section>
@@ -17,8 +18,8 @@
 <script>
 export default {
   props: {
-    like: Object,
+    notification: Object,
   },
-  computed: {},
+  created() {},
 };
 </script>

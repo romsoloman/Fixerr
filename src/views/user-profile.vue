@@ -1,7 +1,6 @@
 <template>
   <loader v-if="isLoadingUser" />
   <section v-else-if="user" class="container user-details-container">
-  {{notifications}}
     <user-info :user="user" @doLogout="doLogout" />
     <user-dashboard :user="user" :gigs="gigs" :orders="orders" />
   </section>
@@ -49,10 +48,6 @@ export default {
     },
     gigs() {
       return [this.$store.getters.gig];
-    },
-    notifications() {
-      // console.log('this.$store.getters.notifications', this.$store.getters.notifications);
-      return this.$store.getters.notifications;
     },
   },
   methods: {

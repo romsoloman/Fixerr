@@ -3,7 +3,7 @@ import { socketService, SOCKET_EVENT_like_ADDED } from '../services/socket.servi
 
 export const notificationStore = {
   state: {
-    notifications: []
+    notifications: null,
   },
   getters: {
     notifications(state) {
@@ -11,16 +11,15 @@ export const notificationStore = {
     },
   },
   mutations: {
-    setNotification(state, notifications) {
+    setNotification(state, { notifications }) {
       state.notifications = notifications;
     },
   },
   actions: {
     async loadNotifications(context) {
       try {
-        const notification = await notificationService.query();
-        console.log('notification from store', notification);
-        context.commit({ type: 'setNotification', notification })
+        const notifications = await notificationService.query();
+        context.commit({ type: 'setNotification', notifications })
 
       } catch (err) {
         console.log('notificationtore: Error in loadNotification', err)
