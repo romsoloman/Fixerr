@@ -1,8 +1,9 @@
 <template>
   <article class="user-dashboard">
-    <div class="orders">
-      <h1>My Orders</h1>
-      <!-- <order-list :orders="orders"></order-list> -->
+    <div class="orders-kpi">
+      <order-kpi :orders="orders"></order-kpi>
+    </div>
+    <div class="orders-table">
       <el-table :data="orders" :row-class-name="tableRowClassName">
         >
         <el-table-column prop="buyer.fullname" label="Name" width="280">
@@ -59,7 +60,7 @@
 </template>
 
 <script>
-import orderList from "@/components/order-list.vue";
+import orderKpi from "@/components/order-kpi.vue";
 import gigList from "@/components/gig-list.vue";
 import gigCategory from "@/components/gig-category.vue";
 import priceSummary from "@/components/price-summary.vue";
@@ -109,7 +110,7 @@ export default {
     },
   },
   components: {
-    orderList,
+    orderKpi,
     gigList,
     priceSummary,
     gigCategory,
