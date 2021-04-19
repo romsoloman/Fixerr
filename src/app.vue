@@ -12,7 +12,6 @@ import appFooter from "@/components/app-footer";
 
 export default {
   created() {
-    console.log("Vue App was created!!!");
     this.$store.dispatch({ type: "loadGigs" });
   },
   components: {

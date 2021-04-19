@@ -146,7 +146,6 @@ export default {
       const trendingCategory = gigs.filter((gig) => {
         return gig.rating > 4.4;
       });
-      console.log("trendingCategory", trendingCategory);
       return trendingCategory.slice(0, 7);
     },
   },

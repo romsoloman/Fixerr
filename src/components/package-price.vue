@@ -26,9 +26,7 @@ export default {
       type: Object,
     },
   },
-  created() {
-    console.log("gigId in packeg-price", this.gig._id);
-  },
+  created() {},
   methods: {
     onCheckout() {
       this.$router.push(`/gig/${this.gig._id}/checkout`);

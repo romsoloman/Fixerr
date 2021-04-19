@@ -28,6 +28,9 @@ export default {
     socketService.setup();
     socketService.on("like-addLike", this.addLike);
   },
+  destroyed() {
+    socketService.off("like-addLike");
+  },
   data() {
     return {
       likes: [],

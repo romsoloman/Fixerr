@@ -105,7 +105,6 @@ export const orderStore = {
             const type = (order._id) ? 'updateOrder' : 'addOrder';
             return orderService.save(order)
                 .then(savedOrder => {
-                    console.log('savedOrder', savedOrder);
                     commit({ type, order: savedOrder })
                 })
                 .catch(err => {

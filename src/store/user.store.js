@@ -36,7 +36,6 @@ export const userStore = {
                 return userFromArray._id === user._id;
             })
             state.users.splice(idxToUpdate, 1, user);
-            console.log('state.users', state.users);
         },
     },
     actions: {
@@ -106,7 +105,6 @@ export const userStore = {
         async updateUser({ commit }, { user }) {
             try {
                 const newUser = await userService.update(user);
-                console.log('user', user);
                 commit({ type: 'updateUser', user: newUser })
             } catch (err) {
                 console.log('userStore: Error in updateUser', err)

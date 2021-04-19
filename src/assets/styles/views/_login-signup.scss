@@ -87,3 +87,19 @@
 
   }
 }
+
+@media (max-width : 600px ){
+  .app-footer{
+    display: none;
+  }
+  .register{
+    width: 72vh;
+    border: 1px solid lightgray;
+    background-color: white;
+    .register-modal-container{
+      form{
+        width: 100%;
+      }
+    }
+  }
+}

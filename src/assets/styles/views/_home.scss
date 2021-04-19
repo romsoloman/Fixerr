@@ -133,6 +133,9 @@
 }
 
 @media screen and (max-width:$mobile-breakpoint){
+    .gig-list-container{
+        padding: 0;
+    }
     .gig-categories{
         & .every-category {
          & .categories-list{

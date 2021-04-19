@@ -15,7 +15,6 @@ export default {
     // this.priceCounter = this.orderList.reduce((priceCounter, order) => {
     //   if (!priceCounter[order.price]) priceCounter[order.price] = 0;
     //   if(order.inStock) priceCounter[order.price]++;
-    //   console.log('priceCounter',priceCounter );
     //   return priceCounter;
     // }, {});
   },

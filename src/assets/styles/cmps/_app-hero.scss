@@ -101,7 +101,11 @@
         }
         .hero-app{
             height: 54vh;
+            .hero-backgrounds{
+                width: 106%;
+            }
             & .hero-container{
+                margin: 0 auto;
                 .title{width: 28ch; font-size: 1.9rem;word-spacing: 5px;
                 }
             }

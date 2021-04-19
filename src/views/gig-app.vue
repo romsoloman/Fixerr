@@ -63,15 +63,12 @@ export default {
     } else {
       this.$store.commit({ type: "setFilter", filterBy });
     }
-    console.log("filterBy", filterBy);
     this.$store.dispatch({ type: "loadGigs" });
     this.$store.dispatch({ type: "loadLikes" });
   },
   methods: {
     addLike(like) {
       const currUser = JSON.parse(sessionStorage.getItem("loggedinUser"));
-      console.log("currUser", currUser._id);
-      console.log("like.currUser._id", like.currUser._id);
       if (like.currUser._id === currUser._id) return;
       this.currLike = like;
       this.showLikeMsg = true;
@@ -95,7 +92,6 @@ export default {
           likedGig.currUser,
           likes
         );
-        console.log("likeIdToRemove._id", likeIdToRemove._id);
         this.$store.dispatch({
           type: "removeLike",
           likeId: likeIdToRemove._id,
@@ -116,6 +112,9 @@ export default {
       this.$store.commit({ type: "setFilter", filterBy });
       this.$store.dispatch({ type: "loadGigs" });
     },
+  },
+  destroyed() {
+    socketService.off("like-addLike");
   },
   components: {
     gigList,

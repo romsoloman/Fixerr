@@ -16,7 +16,6 @@ export const likeStore = {
     },
     addLike(state, { like }) {
       state.likes.push(like)
-      console.log('state.likes', state.likes);
     },
     removeLike(state, { likeId }) {
       state.likes = state.likes.filter(like => like._id !== likeId)

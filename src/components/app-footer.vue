@@ -1,5 +1,8 @@
 <template>
-  <section class="container align-center flex app-footer">
+  <footer
+    class="container align-center flex app-footer"
+    :class="{ 'register-page': isRegister }"
+  >
     <div class="flex align-center logo">
       <!-- <img src="" alt=""> TODO: Replace the H1 in IMG-->
       <h1>Fixerr</h1>
@@ -11,11 +14,27 @@
       <a href="#"><i class="fab fa-linkedin"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
     </div>
-  </section>
+  </footer>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      // routeName: this.$route.name,
+      isRegister: false,
+    };
+  },
+  // watch: {
+  //   $route(to, from) {
+  //     this.routeName = to.name;
+  //   },
+  // },
+  // created() {
+  //   if (this.routeName === "login-signup") this.isRegister = true;
+  //   else this.isRegister = false;
+  // },
+};
 </script>
 
 <style>

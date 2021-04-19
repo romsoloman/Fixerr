@@ -16,9 +16,16 @@
       </router-link>
     </div>
     <nav class="nav-links" :class="{ open_navbar: toggleNav }">
-      <router-link to="/gig">Explore</router-link>
-      <router-link to="/gig/edit">Become a Seller</router-link>
-      <router-link v-if="!getLoggedInUser" to="/login">Sign in</router-link>
+      <router-link to="/gig" @click.native="openNavbar">Explore</router-link>
+      <router-link to="/gig/edit" @click.native="openNavbar"
+        >Become a Seller</router-link
+      >
+      <router-link
+        v-if="!getLoggedInUser"
+        to="/login"
+        @click.native="openNavbar"
+        >Sign in</router-link
+      >
       <router-link
         v-if="getLoggedInUser"
         :to="'/user/' + getLoggedInUserId + '/profile'"

@@ -61,7 +61,6 @@ async function save(gig) {
       return updatedGig
     } else {
       const savedGig = await httpService.post(GIG_URL, gig)
-      console.log('savedGig', savedGig);
       return savedGig;
     }
   } catch (err) {

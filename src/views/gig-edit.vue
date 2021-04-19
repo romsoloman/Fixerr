@@ -90,7 +90,6 @@ export default {
   methods: {
     updateGigEditFromSelect(value) {
       this.gigToEdit.tags = value;
-      console.log("this.gigToEdit", this.gigToEdit);
     },
     saveGig() {
       if (!this.$store.getters.loggedinUser) {

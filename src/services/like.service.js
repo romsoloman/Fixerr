@@ -28,7 +28,6 @@ function remove(likeId) {
 
 }
 async function add(like) {
-  console.log('like', like);
   const addedLike = await httpService.post(`like`, like)
 
   // like.byUser = userService.getLoggedinUser()

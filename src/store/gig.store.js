@@ -79,8 +79,6 @@ export const gigStore = {
       commit({ type: 'setIsLoading', isLoading: true });
       gigService.query(state.filter || undefined)
         .then(gigs => {
-          console.log('gigs', gigs);
-          // console.log('gigs from store', gigs);
           commit({ type: 'setGigs', gigs });
         })
         .catch(err => {
@@ -115,7 +113,6 @@ export const gigStore = {
     remove(context, { gigId }) {
       return gigService.remove(gigId)
         .then(() => {
-          console.log('afterRemove-store')
           context.commit({ type: 'removeGig', gigId })
         })
         .catch(err => {

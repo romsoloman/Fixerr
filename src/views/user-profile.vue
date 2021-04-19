@@ -24,7 +24,6 @@ export default {
     userService
       .getById(userId)
       .then((newUser) => {
-        console.log("newUser", newUser);
         this.user = newUser;
       })
       .finally(() => {
